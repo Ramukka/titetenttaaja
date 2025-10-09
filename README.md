@@ -14,5 +14,7 @@ JSON-tiedoston rakenne:
 ```json
 [
 	{"question": "Kysymys",
-	 "options": ["Valinta1", "Valinta2", "Valinta3", "Valinta4"]}
+	 "options": ["Oikea vastaus", "Valinta2", "Valinta3", "Valinta4"]}
 ]
+```
+Ensimmäinen valinta on aina oikea vastaus. Ohjelma suorittaa kysymysten sekoituksen.
