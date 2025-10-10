@@ -41,11 +41,52 @@ def hae_tentit():
 # Lukee kysymykset jsonista
 def lue_kysymykset(tiedosto):
     with open(os.path.join(TENTTIKANSIO, tiedosto), "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    otsikko = hae_tenttiotsikko(data)
+    if isinstance(data, list):
+        return data, otsikko
+    if isinstance(data, dict):
+        questions = data.get("questions")
+        if isinstance(questions, list):
+            return questions, otsikko
+    return [], otsikko
+
+
+def hae_tenttiotsikko(lahde):
+    if isinstance(lahde, str):
+        polku = os.path.join(TENTTIKANSIO, lahde)
+        try:
+            with open(polku, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            return None
+    else:
+        data = lahde
+
+    def _etsi_title(obj):
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if key.upper() == "TITLE" and isinstance(value, str):
+                    otsikko = value.strip()
+                    if otsikko:
+                        return otsikko
+            for value in obj.values():
+                loytynyt = _etsi_title(value)
+                if loytynyt:
+                    return loytynyt
+        elif isinstance(obj, list):
+            for item in obj:
+                loytynyt = _etsi_title(item)
+                if loytynyt:
+                    return loytynyt
+        return None
+
+    return _etsi_title(data)
 
 
 # Tentin suoritus
-def suorita_tentti(questions):
+def suorita_tentti(questions, otsikko=None):
     valid_questions = []
     invalid_questions = []
 
@@ -88,13 +129,15 @@ def suorita_tentti(questions):
     quiz_questions = random.sample(valid_questions, k=question_amount)
 
     score = 0
+    perus_otsikko = "TiTentti"
+    naytettava_otsikko = f"{perus_otsikko} : {otsikko}" if otsikko else perus_otsikko
     answered = 0
     user_answers = []
 
     for index, q in enumerate(quiz_questions, 1):
         clear_screen()
         print("=" * 50)
-        print("   Tietoliikennetenttaaja".center(50))
+        print(naytettava_otsikko.center(50))
         print("=" * 50)
         print(render_progress(answered, question_amount, score))
 
@@ -135,7 +178,7 @@ def suorita_tentti(questions):
 
     clear_screen()
     print("=" * 50)
-    print("   Tietoliikennetenttaaja".center(50))
+    print(naytettava_otsikko.center(50))
     print("=" * 50)
     print(render_progress(question_amount, question_amount, score))
     print(f"\n{YELLOW}=== Yhteenveto ==={RESET}")
@@ -174,8 +217,8 @@ def main():
         valittu_tentti = tentit[valinta - 1]
         print(f"\n{YELLOW}Valitsit tentin: {valittu_tentti.replace('.json', '').capitalize()}{RESET}")
 
-        kysymykset = lue_kysymykset(valittu_tentti)
-        suorita_tentti(kysymykset)
+        kysymykset, tentti_otsikko = lue_kysymykset(valittu_tentti)
+        suorita_tentti(kysymykset, otsikko=tentti_otsikko)
 
         # kysytään käyttäjältä tentataanko vielä
         uudestaan = input("\nHaluatko tehdä toisen tentin? (k/e): ").strip().lower()
