@@ -11,8 +11,31 @@ RESET = "\033[0m"
 
 TENTTIKANSIO = "tentit"
 
+try:
+    from rich.align import Align
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.table import Table
+    from rich.text import Text
+except ImportError:  # Rich ei ole pakollinen, pidetään taaksepäin yhteensopivuus
+    Align = None
+    Console = None
+    Panel = None
+    Table = None
+    Text = None
 
-def render_progress(answered, total, score, bar_length=30):
+console = Console() if Console else None
+RICH_AVAILABLE = console is not None
+
+
+def get_panel_width():
+    if not console:
+        return None
+    usable = console.width - 4
+    return max(40, usable)
+
+
+def render_progress(answered, total, score, bar_length=50):
     ratio = answered / total if total else 0
     filled = int(bar_length * ratio)
     filled_part = "|" * filled
@@ -25,8 +48,25 @@ def render_progress(answered, total, score, bar_length=30):
         bar += f"{RED}{empty_part}{RESET}"
     bar += "]"
 
+    if console:
+        rich_filled = f"[green]{filled_part}[/]" if filled_part else ""
+        rich_empty = f"[red]{empty_part}[/]" if empty_part else ""
+        bar = f"[bold][{rich_filled}{rich_empty}][/]"
+
     percent = int(ratio * 100)
     return f"{bar} {percent:>3}% suoritettu\n{score}/{total} oikein"
+
+
+def print_progress(answered, total, score):
+    progress_text = render_progress(answered, total, score)
+    if console and Panel and Text:
+        width = get_panel_width()
+        text = Text.from_markup(progress_text)
+        text.justify = "center"
+        aligned = Align.left(text, width=width)
+        console.print(aligned)
+    else:
+        print(progress_text)
 
 
 def clear_screen():
@@ -136,10 +176,18 @@ def suorita_tentti(questions, otsikko=None):
 
     for index, q in enumerate(quiz_questions, 1):
         clear_screen()
-        print("=" * 50)
-        print(naytettava_otsikko.center(50))
-        print("=" * 50)
-        print(render_progress(answered, question_amount, score))
+        panel_width = get_panel_width()
+        if console and Text:
+            header = Text.assemble(
+                (naytettava_otsikko, "bold cyan"),
+                ("    "),
+                (f"Kysymys {index}/{question_amount}", "bold yellow"),
+            )
+            console.rule(header)
+        else:
+            print("=" * 50)
+            print(f"{naytettava_otsikko}  |  Kysymys {index}/{question_amount}")
+            print("=" * 50)
 
         options = q["options"][:]
         random.shuffle(options)
@@ -150,46 +198,134 @@ def suorita_tentti(questions, otsikko=None):
             print(f"{RED}Kysymyksen oikeaa vastausta ei löytynyt vaihtoehdoista.{RESET}")
             continue
 
-        print(f"\nKysymys {index}/{question_amount}: {q['question']}")
-        for opt_index, option in enumerate(options, 1):
-            print(f"{opt_index}. {option}")
+        question_header = f"Kysymys {index}/{question_amount}"
+        question_body = q["question"]
+        if console and Panel and Text:
+            title_text = Text("Kysymys", style="bold yellow")
+            body_text = Text(question_body)
+            question_panel = Panel(
+                body_text,
+                title=title_text,
+                border_style="cyan",
+                padding=(1, 2),
+                width=panel_width,
+            )
+            console.print(question_panel)
+        else:
+            print(f"\n{question_header}: {question_body}")
+
+        if console and Table:
+            option_table = Table(box=None, show_header=False, padding=(0, 1))
+            option_table.add_column(" ", justify="right", style="bold")
+            option_table.add_column("Vaihtoehto", overflow="fold")
+            for opt_index, option in enumerate(options, 1):
+                option_table.add_row(str(opt_index), option)
+            console.print(
+                Panel(
+                    option_table,
+                    title=Text("Vaihtoehdot", style="bold magenta"),
+                    border_style="magenta",
+                    padding=(0, 2),
+                    width=panel_width,
+                )
+            )
+        else:
+            for opt_index, option in enumerate(options, 1):
+                print(f"{opt_index}. {option}")
+
+        if console:
+            console.print()
+        print_progress(answered, question_amount, score)
 
         max_option = len(options)
+        prompt_message = f"Valitse vaihtoehto (1-{max_option}): "
+        if console and Text:
+            console.print(Text(prompt_message, style="bold magenta"))
         while True:
             try:
-                user_input = int(input(f"Valitse vaihtoehto (1-{max_option}): "))
+                raw_input = input("> " if console else prompt_message)
+                user_input = int(raw_input)
                 if 1 <= user_input <= max_option:
                     break
-                print(f"Anna luku välillä 1-{max_option}")
+                message = f"Anna luku välillä 1-{max_option}"
+                if console:
+                    console.print(f"[yellow]{message}[/]")
+                else:
+                    print(message)
             except ValueError:
-                print("Anna kokonaisluku")
+                message = "Anna kokonaisluku"
+                if console:
+                    console.print(f"[yellow]{message}[/]")
+                else:
+                    print(message)
 
         if user_input - 1 == answer_index:
-            print(f"{GREEN}Oikein!{RESET}")
+            if console:
+                console.print("[green]Oikein![/]")
+            else:
+                print(f"{GREEN}Oikein!{RESET}")
             score += 1
-            user_answers.append((q["question"], True, options[answer_index]))
+            user_answers.append(
+                (q["question"], True, options[answer_index], options[user_input - 1])
+            )
         else:
             correct_option = options[answer_index]
-            print(f"{RED}Väärin! Oikea vastaus: {correct_option}{RESET}")
-            user_answers.append((q["question"], False, correct_option))
+            if console:
+                console.print(f"[red]Väärin![/] Oikea vastaus: {correct_option}")
+            else:
+                print(f"{RED}Väärin! Oikea vastaus: {correct_option}{RESET}")
+            user_answers.append(
+                (q["question"], False, correct_option, options[user_input - 1])
+            )
 
         answered += 1
-        print(render_progress(answered, question_amount, score))
+        if console:
+            console.print()
+        print_progress(answered, question_amount, score)
 
     clear_screen()
-    print("=" * 50)
-    print(naytettava_otsikko.center(50))
-    print("=" * 50)
-    print(render_progress(question_amount, question_amount, score))
-    print(f"\n{YELLOW}=== Yhteenveto ==={RESET}")
-    print(f"Oikein vastattuja: {score}/{question_amount}")
-    print("\nYhteenvedon tulokset:")
-    for question, correct, answer in user_answers:
-        status = f"{GREEN}Oikein{RESET}" if correct else f"{RED}Väärin{RESET}"
-        print(f"- {question} → {status} (Oikea vastaus: {answer})")
+    if console and Text:
+        console.rule(Text(naytettava_otsikko, style="bold cyan"))
+        console.print(f"\n[bold yellow]=== Yhteenveto ===[/]")
+        console.print(f"Oikein vastattuja: {score}/{question_amount}")
+        console.print("\nYhteenvedon tulokset:")
+        for question, correct, answer, user_ans in user_answers:
+            if correct:
+                status = "[green]Oikein[/]"
+                console.print(f"- {question} → {status} (Vastaus: {answer})")
+            else:
+                console.print(
+                    f"- {question} → [red]Väärin[/] (Oikea: {answer}, Sinun vastaus: {user_ans})"
+                )
+    else:
+        print("=" * 50)
+        print(naytettava_otsikko.center(50))
+        print("=" * 50)
+        print(f"\n{YELLOW}=== Yhteenveto ==={RESET}")
+        print(f"Oikein vastattuja: {score}/{question_amount}")
+        print("\nYhteenvedon tulokset:")
+        for question, correct, answer, user_ans in user_answers:
+            if correct:
+                status = f"{GREEN}Oikein{RESET}"
+                print(f"- {question} → {status} (Vastaus: {answer})")
+            else:
+                print(
+                    f"- {question} → {RED}Väärin{RESET} (Oikea: {answer}, Sinun vastaus: {user_ans})"
+                )
+
+    if console:
+        console.print()
+    print_progress(question_amount, question_amount, score)
 
 # --- Pääohjelma ---
 def main():
+    if not RICH_AVAILABLE:
+        print(
+            f"{YELLOW}Huom:{RESET} Rich ei ole asennettuna. "
+            "Saat parannetun käyttöliittymän komennolla: "
+            "py -m pip install rich"
+        )
+
     while True: #pääsilmukka
         print(f"{YELLOW}=== TiTeTenttaaja ==={RESET}")
 
@@ -223,6 +359,7 @@ def main():
         # kysytään käyttäjältä tentataanko vielä
         uudestaan = input("\nHaluatko tehdä toisen tentin? (k/e): ").strip().lower()
         if uudestaan != "k":
+            clear_screen()
             print("Kiitos tenttailusta. Suljetaan...")
             break
 
