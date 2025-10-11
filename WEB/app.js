@@ -79,18 +79,28 @@ function shuffle(array) {
   return array;
 }
 
+function cloneQuestionsWithShuffledOptions(questions) {
+  return questions.map((question) => ({
+    ...question,
+    options: shuffle([...question.options]),
+  }));
+}
+
 function determineQuestionSet(quiz) {
   const requestedCountRaw = elements.questionCountInput?.value.trim();
   const total = quiz.questions.length;
 
   if (!requestedCountRaw) {
-    return { questions: [...quiz.questions], message: "" };
+    return {
+      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
+      message: "",
+    };
   }
 
   const requested = Number.parseInt(requestedCountRaw, 10);
   if (Number.isNaN(requested)) {
     return {
-      questions: [...quiz.questions],
+      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
       message: "Kysymysten määrän pitää olla numero. Käytetään kaikkia kysymyksiä.",
     };
   }
@@ -102,11 +112,19 @@ function determineQuestionSet(quiz) {
       : "";
 
   if (clamped >= total) {
-    return { questions: [...quiz.questions], message };
+    return {
+      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
+      message,
+    };
   }
 
-  const shuffled = shuffle([...quiz.questions]);
-  return { questions: shuffled.slice(0, clamped), message };
+  const shuffledQuestions = shuffle([...quiz.questions]);
+  const selectedQuestions = shuffledQuestions.slice(0, clamped);
+
+  return {
+    questions: cloneQuestionsWithShuffledOptions(selectedQuestions),
+    message,
+  };
 }
 
 function startQuiz(quiz, questions) {
@@ -166,7 +184,6 @@ function handleAnswer(button, question) {
     button.classList.add("correct");
   } else {
     button.classList.add("incorrect");
-    // Highlight the correct option to give feedback.
     for (const optionButton of elements.optionsList.querySelectorAll("button")) {
       if (optionButton.textContent === question.correct) {
         optionButton.classList.add("correct");
