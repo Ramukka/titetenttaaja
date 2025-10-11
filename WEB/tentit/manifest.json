@@ -1,0 +1,12 @@
+[
+  {
+    "id": "tietoliikenne",
+    "label": "Tietoliikenne",
+    "file": "tietoliikenne.json"
+  },
+  {
+    "id": "fysiikka",
+    "label": "Fysiikka",
+    "file": "fysiikka.json"
+  }
+]

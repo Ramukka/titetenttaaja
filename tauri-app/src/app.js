@@ -105,13 +105,21 @@ function shuffle(array) {
   return array;
 }
 
+function cloneQuestionWithShuffledOptions(question) {
+  const options = Array.isArray(question.options) ? [...question.options] : [];
+  return {
+    ...question,
+    options: shuffle(options),
+  };
+}
+
 function determineQuestionSet(quizData) {
   const requestedCountRaw = elements.questionCountInput?.value.trim() ?? "";
   const total = quizData.questions.length;
 
   if (!requestedCountRaw) {
     return {
-      questions: shuffle([...quizData.questions]),
+      questions: shuffle([...quizData.questions]).map(cloneQuestionWithShuffledOptions),
       message: "",
     };
   }
@@ -132,12 +140,14 @@ function determineQuestionSet(quizData) {
 
   if (clamped >= total) {
     return {
-      questions: shuffle([...quizData.questions]),
+      questions: shuffle([...quizData.questions]).map(cloneQuestionWithShuffledOptions),
       message,
     };
   }
 
-  const selected = shuffle([...quizData.questions]).slice(0, clamped);
+  const selected = shuffle([...quizData.questions])
+    .slice(0, clamped)
+    .map(cloneQuestionWithShuffledOptions);
   return {
     questions: selected,
     message,
