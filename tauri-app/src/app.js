@@ -1,21 +1,10 @@
-const QUIZ_MANIFEST = [
-  {
-    id: "tietoliikenne",
-    label: "Tietoliikenne",
-    path: "./tentit/tietoliikenne.json",
-  },
-];
+const isTauri = typeof window !== "undefined" && !!window.__TAURI__;
 
-const resolveAssetUrl = async (relativePath) => {
-  const normalized = relativePath.replace(/^\.?\//, "");
-  if (window.__TAURI__?.core?.getAssetUrl) {
-    try {
-      return await window.__TAURI__.core.getAssetUrl(normalized);
-    } catch (error) {
-      console.error("Asset URL resolution failed, falling back to relative path", error);
-    }
-  }
-  return `./${normalized}`;
+const CONFIG = {
+  basePath: isTauri ? "tentit/" : "../tentit/",
+  get manifestPath() {
+    return `${this.basePath}manifest.json`;
+  },
 };
 
 const elements = {
@@ -36,52 +25,76 @@ const elements = {
 };
 
 const state = {
+  manifest: [],
+  manifestLoaded: false,
   quiz: null,
   currentQuestionIndex: 0,
   score: 0,
   hasAnswered: false,
 };
 
-const cache = new Map();
+async function fetchManifest() {
+  if (state.manifestLoaded) {
+    return state.manifest;
+  }
+
+  const response = await fetch(CONFIG.manifestPath, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error("Tenttilistaa ei voitu ladata.");
+  }
+
+  const manifestData = await response.json();
+  state.manifest = manifestData.map((entry) => ({
+    ...entry,
+    id: entry.id ?? entry.file.replace(/\.json$/i, ""),
+    label: entry.label ?? entry.id ?? entry.file,
+    file: entry.file,
+  }));
+  state.manifestLoaded = true;
+  return state.manifest;
+}
 
 function populateExamSelect() {
-  if (!elements.examSelect) {
-    console.error("exam-select element puuttuu DOMista.");
+  const previousValue = elements.examSelect.value;
+  elements.examSelect.innerHTML = "";
+  state.manifest.forEach((entry) => {
+    const option = document.createElement("option");
+    option.value = entry.id;
+    option.textContent = entry.label;
+    elements.examSelect.append(option);
+  });
+
+  if (!state.manifest.length) {
+    elements.examSelect.value = "";
     return;
   }
 
-  elements.examSelect.innerHTML = "";
-  QUIZ_MANIFEST.forEach(({ id, label }) => {
-    const option = document.createElement("option");
-    option.value = id;
-    option.textContent = label;
-    elements.examSelect.append(option);
-  });
+  const hasPrevious = state.manifest.some((entry) => entry.id === previousValue);
+  elements.examSelect.value = hasPrevious ? previousValue : state.manifest[0].id;
+}
+
+function buildAssetPath(file) {
+  return `${CONFIG.basePath}${file}`;
 }
 
 async function loadQuiz(examId) {
-  const manifestEntry = QUIZ_MANIFEST.find((entry) => entry.id === examId);
+  const manifest = await fetchManifest();
+  const manifestEntry = manifest.find((entry) => entry.id === examId);
   if (!manifestEntry) {
-    throw new Error(`Tuntematon tentti: ${examId}`);
+    throw new Error(`Tenttiä ei löydy: ${examId}`);
   }
 
-  if (cache.has(examId)) {
-    return cache.get(examId);
-  }
-
-  const assetUrl = await resolveAssetUrl(manifestEntry.path);
-  const response = await fetch(assetUrl);
+  const response = await fetch(buildAssetPath(manifestEntry.file), { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Tenttitiedostoa ei voitu hakea (${response.status})`);
   }
 
-  const data = await response.json();
-  if (!data || !Array.isArray(data.questions)) {
-    throw new Error("Tenttitiedoston rakenne on virheellinen");
+  const quizData = await response.json();
+  if (!quizData || !Array.isArray(quizData.questions)) {
+    throw new Error("Tenttitiedoston rakenne on virheellinen.");
   }
 
-  cache.set(examId, data);
-  return data;
+  return { manifestEntry, quizData };
 }
 
 function shuffle(array) {
@@ -92,20 +105,13 @@ function shuffle(array) {
   return array;
 }
 
-function cloneQuestionsWithShuffledOptions(questions) {
-  return questions.map((question) => ({
-    ...question,
-    options: shuffle([...question.options]),
-  }));
-}
-
-function determineQuestionSet(quiz) {
-  const requestedCountRaw = elements.questionCountInput?.value.trim();
-  const total = quiz.questions.length;
+function determineQuestionSet(quizData) {
+  const requestedCountRaw = elements.questionCountInput?.value.trim() ?? "";
+  const total = quizData.questions.length;
 
   if (!requestedCountRaw) {
     return {
-      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
+      questions: shuffle([...quizData.questions]),
       message: "",
     };
   }
@@ -113,7 +119,7 @@ function determineQuestionSet(quiz) {
   const requested = Number.parseInt(requestedCountRaw, 10);
   if (Number.isNaN(requested)) {
     return {
-      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
+      questions: shuffle([...quizData.questions]),
       message: "Kysymysten määrän pitää olla numero. Käytetään kaikkia kysymyksiä.",
     };
   }
@@ -126,30 +132,31 @@ function determineQuestionSet(quiz) {
 
   if (clamped >= total) {
     return {
-      questions: cloneQuestionsWithShuffledOptions([...quiz.questions]),
+      questions: shuffle([...quizData.questions]),
       message,
     };
   }
 
-  const shuffledQuestions = shuffle([...quiz.questions]);
-  const selectedQuestions = shuffledQuestions.slice(0, clamped);
-
+  const selected = shuffle([...quizData.questions]).slice(0, clamped);
   return {
-    questions: cloneQuestionsWithShuffledOptions(selectedQuestions),
+    questions: selected,
     message,
   };
 }
 
-function startQuiz(quiz, questions) {
+function startQuiz(manifestEntry, quizData, questions) {
   state.quiz = {
-    TITLE: quiz.TITLE,
+    manifestEntry,
+    title: quizData.TITLE ?? manifestEntry.label ?? "Monivalintatentti",
     questions,
   };
   state.currentQuestionIndex = 0;
   state.score = 0;
+  state.hasAnswered = false;
 
-  elements.quizTitle.textContent = quiz.TITLE ?? "Monivalintatentti";
+  elements.quizTitle.textContent = state.quiz.title;
   elements.scoreLabel.textContent = "Pisteet: 0";
+  elements.progressLabel.textContent = "";
 
   elements.quizSection.classList.remove("hidden");
   elements.resultsSection.classList.add("hidden");
@@ -236,7 +243,6 @@ function showResults() {
 }
 
 function resetUI() {
-  elements.status.textContent = "";
   elements.quizSection.classList.add("hidden");
   elements.resultsSection.classList.add("hidden");
   elements.nextButton.classList.add("hidden");
@@ -246,25 +252,29 @@ function resetUI() {
   elements.scoreLabel.textContent = "";
 }
 
-function setLoading(isLoading, message) {
+function setLoading(isLoading, message = "") {
   elements.startButton.disabled = isLoading;
-  if (typeof message === "string") {
-    elements.status.textContent = message;
-  }
+  elements.status.textContent = message;
 }
 
 elements.startButton.addEventListener("click", async () => {
   const selectedExam = elements.examSelect.value;
+  if (!selectedExam) {
+    elements.status.textContent = "Valitse tentti ennen aloittamista.";
+    return;
+  }
+
   resetUI();
   setLoading(true, "Ladataan tenttiä...");
   try {
-    const quiz = await loadQuiz(selectedExam);
-    const { questions, message } = determineQuestionSet(quiz);
-    startQuiz(quiz, questions);
-    elements.status.textContent = message;
+    const { manifestEntry, quizData } = await loadQuiz(selectedExam);
+    const { questions, message } = determineQuestionSet(quizData);
+    startQuiz(manifestEntry, quizData, questions);
+    elements.status.textContent = message ?? "";
   } catch (error) {
     console.error(error);
-    elements.status.textContent = error instanceof Error ? error.message : "Tuntematon virhe";
+    elements.status.textContent =
+      error instanceof Error ? error.message : "Tuntematon virhe tenttiä ladattaessa.";
   } finally {
     setLoading(false);
   }
@@ -275,27 +285,40 @@ elements.nextButton.addEventListener("click", () => {
 });
 
 elements.restartButton.addEventListener("click", async () => {
-  const selectedExam = elements.examSelect.value;
-  if (!selectedExam) {
+  const activeExamId = state.quiz?.manifestEntry?.id;
+  if (!activeExamId) {
     return;
   }
 
-  elements.resultsSection.classList.add("hidden");
+  resetUI();
+  setLoading(true, "Käynnistetään tenttiä uudelleen...");
   try {
-    let quiz = cache.get(selectedExam);
-    if (!quiz) {
-      setLoading(true, "Ladataan tenttiä...");
-      quiz = await loadQuiz(selectedExam);
-    }
-    const { questions, message } = determineQuestionSet(quiz);
-    startQuiz(quiz, questions);
-    elements.status.textContent = message;
+    const { manifestEntry, quizData } = await loadQuiz(activeExamId);
+    const { questions, message } = determineQuestionSet(quizData);
+    startQuiz(manifestEntry, quizData, questions);
+    elements.status.textContent = message ?? "";
   } catch (error) {
     console.error(error);
-    elements.status.textContent = error instanceof Error ? error.message : "Tuntematon virhe";
+    elements.status.textContent =
+      error instanceof Error ? error.message : "Tenttiä ei voitu käynnistää uudelleen.";
   } finally {
     setLoading(false);
   }
 });
 
-populateExamSelect();
+async function initialize() {
+  setLoading(true, "Ladataan tenttilistaa...");
+  try {
+    await fetchManifest();
+    populateExamSelect();
+    elements.status.textContent = "";
+  } catch (error) {
+    console.error(error);
+    elements.status.textContent =
+      error instanceof Error ? error.message : "Tenttilistan lataus epäonnistui.";
+  } finally {
+    setLoading(false);
+  }
+}
+
+initialize();
