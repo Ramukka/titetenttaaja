@@ -1,0 +1,786 @@
+
+{
+  "TITLE": "Tietoliikenne",
+  "questions": [
+  {
+    "question": "Mikä on CAT-kaapeli?",
+    "options": [
+      "Kaapeliluokan ja suorituskyvyn määritelmä",
+      "Valmistajan merkki",
+      "Värikoodi",
+      "Kaapelin pituuden merkintä"
+    ],
+    "correct": "Kaapeliluokan ja suorituskyvyn määritelmä"
+  },
+  {
+    "question": "Mikä on asennus prosessina?",
+    "options": [
+      "Suunnittelu, asennus, testaus ja dokumentointi",
+      "Pelkkä kaapelin vetäminen",
+      "Kytkinten konfigurointi",
+      "Sähkötöiden tekeminen"
+    ],
+    "correct": "Suunnittelu, asennus, testaus ja dokumentointi"
+  },
+  {
+    "question": "Mikä on ferruli valokuituliittimessä?",
+    "options": [
+      "Kuidun päätä keskittävä ja suojaava holkki",
+      "Liittimen kuoriosa",
+      "Signaalivahvistin",
+      "Kuidun suojavaippa"
+    ],
+    "correct": "Kuidun päätä keskittävä ja suojaava holkki"
+  },
+  {
+    "question": "Mitä tarkoittaa kytkentävaimennus?",
+    "options": [
+      "Liitoksen tai jatkoksen aiheuttama lisävaimennus",
+      "Kuidun ylikuumeneminen",
+      "Kaapelin pituuden kasvu",
+      "Valon hajonta"
+    ],
+    "correct": "Liitoksen tai jatkoksen aiheuttama lisävaimennus"
+  },
+  {
+    "question": "Mitkä ovat yksimuotokuidun aallonpituusikkunat?",
+    "options": [
+      "1310 nm ja 1550 nm",
+      "850 nm ja 1300 nm",
+      "1200 nm ja 1650 nm",
+      "1000 nm ja 1250 nm"
+    ],
+    "correct": "1310 nm ja 1550 nm"
+  },
+  {
+    "question": "Mitä heijastusvaimennus kuvaa parikaapeloinnissa?",
+    "options": [
+      "Takaisinheijastuksen määrää",
+      "Kaapelin pituutta",
+      "Värikoodien määrää",
+      "Asennuslämpötilaa"
+    ],
+    "correct": "Takaisinheijastuksen määrää"
+  },
+  {
+    "question": "Mitä likaa yleisimmin esiintyy kuituliittimissä?",
+    "options": [
+      "Pöly, rasva ja sormenjäljet",
+      "Vesi ja hiekka",
+      "Metallilastut",
+      "Hiukkassumu"
+    ],
+    "correct": "Pöly, rasva ja sormenjäljet"
+  },
+  {
+    "question": "Mitä valokaapelitutka (OTDR) tekee?",
+    "options": [
+      "Mittaa vaimennuksen ja paikantaa viat",
+      "Mittaa lämpötilan",
+      "Näyttää valon värit",
+      "Kytkee kaapelit automaattisesti"
+    ],
+    "correct": "Mittaa vaimennuksen ja paikantaa viat"
+  },
+  {
+    "question": "Mikä on APC-hionta?",
+    "options": [
+      "8° kulmaan viistetty liitinpinta, joka vähentää heijastuksia",
+      "Suora hionta ilman kulmaa",
+      "Liittimen metallinen osa",
+      "Kuidun kuorinta"
+    ],
+    "correct": "8° kulmaan viistetty liitinpinta, joka vähentää heijastuksia"
+  },
+  {
+    "question": "Mikä on laatusuunnitelma?",
+    "options": [
+      "Työn laadunvarmistuksen ja tarkastuksen suunnitelma",
+      "Kaapelin värikartta",
+      "Verkon käyttöohje",
+      "Työmaan sähköpiirustus"
+    ],
+    "correct": "Työn laadunvarmistuksen ja tarkastuksen suunnitelma"
+  },
+  {
+    "question": "Mikä on tehomittapari?",
+    "options": [
+      "Valolähettimen ja vastaanottimen muodostama mittauspari",
+      "Kaksi parikaapelia",
+      "Kaksi liitintä samassa paneelissa",
+      "Jatkos ja adapteri"
+    ],
+    "correct": "Valolähettimen ja vastaanottimen muodostama mittauspari"
+  },
+  {
+    "question": "Mitä tarkoittaa kalibrointi?",
+    "options": [
+      "Mittalaitteen säätäminen oikeaan arvoon",
+      "Kaapelin pituuden mittaus",
+      "Värikoodin valinta",
+      "Kuidun puhdistus"
+    ],
+    "correct": "Mittalaitteen säätäminen oikeaan arvoon"
+  },
+  {
+    "question": "Kuinka suuri on optisen kaapelin työvara sisäkaapeloinnissa?",
+    "options": [
+      "Noin 2 metriä",
+      "10 cm",
+      "5 metriä",
+      "Ei vaadita"
+    ],
+    "correct": "Noin 2 metriä"
+  },
+  {
+    "question": "Mikä on johtotie?",
+    "options": [
+      "Kaapeleiden kulkureitti, kuten putki tai hylly",
+      "Kaapelin eriste",
+      "Kaapelin pituus",
+      "Signaalin nopeus"
+    ],
+    "correct": "Kaapeleiden kulkureitti, kuten putki tai hylly"
+  },
+  {
+    "question": "Mitkä sovellukset kuuluvat EA-luokkaan?",
+    "options": [
+      "10GBASE-T Ethernet",
+      "100BASE-TX",
+      "1GBASE-SX",
+      "40GBASE-SR4"
+    ],
+    "correct": "10GBASE-T Ethernet"
+  },
+  {
+    "question": "Mikä on luokan EA taajuusalue?",
+    "options": [
+      "500 MHz",
+      "250 MHz",
+      "100 MHz",
+      "750 MHz"
+    ],
+    "correct": "500 MHz"
+  },
+  {
+    "question": "Mikä on parikaapelin ominaisimpedanssi?",
+    "options": [
+      "100 Ω",
+      "50 Ω",
+      "75 Ω",
+      "120 Ω"
+    ],
+    "correct": "100 Ω"
+  },
+  {
+    "question": "Mitä ovat optisen liitoksen kohdistusvirheet?",
+    "options": [
+      "Sivuheittovirhe, kulmaerhe ja väli liitoksessa",
+      "Kuidun värin vaihtelu",
+      "Lämpötilaero liitoksessa",
+      "Liittimen likaantuminen"
+    ],
+    "correct": "Sivuheittovirhe, kulmaerhe ja väli liitoksessa"
+  },
+  {
+    "question": "Mikä on yksimuotokuidun ydinhalkaisija?",
+    "options": [
+      "Noin 9 mikrometriä",
+      "Noin 50 mikrometriä",
+      "Noin 62,5 mikrometriä",
+      "Noin 25 mikrometriä"
+    ],
+    "correct": "Noin 9 mikrometriä"
+  },
+  {
+    "question": "Mitä tehdään kytkentäpaneelissa?",
+    "options": [
+      "Kaapelit päätetään RJ45-liittimillä",
+      "Signaali vahvistetaan",
+      "Kuitu hitsataan",
+      "Kaapelit puhdistetaan"
+    ],
+    "correct": "Kaapelit päätetään RJ45-liittimillä"
+  },
+  {
+    "question": "Mikä on koaksiaalikaapeli?",
+    "options": [
+      "Keskijohdin, eriste, punos ja vaippa",
+      "Kaksi kierrettyä paria",
+      "Valokuitu",
+      "Tasavirtajohto"
+    ],
+    "correct": "Keskijohdin, eriste, punos ja vaippa"
+  },
+  {
+    "question": "Mikä on kuidun vaimennuksen yksikkö?",
+    "options": [
+      "dB/km",
+      "W/m",
+      "Ω",
+      "Hz"
+    ],
+    "correct": "dB/km"
+  },
+  {
+    "question": "Mitä tarkoittaa epäsymmetriavaimennus?",
+    "options": [
+      "Parien välinen vaimennusero",
+      "Kaapelin pituusero",
+      "Liitoksen virhe",
+      "Signaalin vahvistus"
+    ],
+    "correct": "Parien välinen vaimennusero"
+  },
+  {
+    "question": "Mikä on SC-liitin?",
+    "options": [
+      "Square Connector, lukittuva kuituliitin",
+      "RJ45-liitin",
+      "Koaksiaaliliitin",
+      "DIN-liitin"
+    ],
+    "correct": "Square Connector, lukittuva kuituliitin"
+  },
+  {
+    "question": "Mikä on SF/UTP-kaapeli?",
+    "options": [
+      "Koko kaapelin punos- ja foliosuojattu parikaapeli",
+      "Suojaamaton kaapeli",
+      "Yksimuotokuitu",
+      "Koaksiaalikaapeli"
+    ],
+    "correct": "Koko kaapelin punos- ja foliosuojattu parikaapeli"
+  },
+  {
+    "question": "Mitä tarkoittaa kulkuaika ja kulkuaikaero?",
+    "options": [
+      "Signaalin etenemisaika ja parien välinen ero",
+      "Kaapelin pituus ja paksuus",
+      "Liitoksen lämpötila ja väri",
+      "Vaimennus ja kaapelin nopeus"
+    ],
+    "correct": "Signaalin etenemisaika ja parien välinen ero"
+  },
+  {
+    "question": "Mitä rasituksia kaapeleihin voi kohdistua?",
+    "options": [
+      "Veto, taivutus, puristus, lämpötila ja kosteus",
+      "Vain sähkövirta",
+      "Painovoima",
+      "Auringonvalo ilman vaikutuksia"
+    ],
+    "correct": "Veto, taivutus, puristus, lämpötila ja kosteus"
+  },
+  {
+    "question": "Mikä on Rayleigh-sironta?",
+    "options": [
+      "Valon hajonta kuitumateriaalin epätasaisuuksista",
+      "Kuidun taivutusvirhe",
+      "Liittimen likaantuminen",
+      "Signaalin kulkuaikaero"
+    ],
+    "correct": "Valon hajonta kuitumateriaalin epätasaisuuksista"
+  },
+  {
+    "question": "Miten eroavat kanava ja pysyvä siirtotie?",
+    "options": [
+      "Kanava sisältää myös laitekaapelit, pysyvä siirtotie vain kiinteän osuuden",
+      "Kanava on lyhyempi",
+      "Pysyvä siirtotie on irrotettava",
+      "Ei eroa"
+    ],
+    "correct": "Kanava sisältää myös laitekaapelit, pysyvä siirtotie vain kiinteän osuuden"
+  },
+  {
+    "question": "Mikä on CP-siirtotie?",
+    "options": [
+      "Consolidation Point, väliliitos kerroskaapeloinnissa",
+      "Kaapelireitti lattian alla",
+      "Kytkentäpaneelin toinen nimi",
+      "Ylimääräinen laitekaapeli"
+    ],
+    "correct": "Consolidation Point, väliliitos kerroskaapeloinnissa"
+  },
+  {
+    "question": "Mitä tarkoittaa absorptio valokuidussa?",
+    "options": [
+      "Valon imeytymistä kuitumateriaaliin",
+      "Valon heijastumista takaisin",
+      "Kuidun taivutusta",
+      "Kuitujen kuorintaa"
+    ],
+    "correct": "Valon imeytymistä kuitumateriaaliin"
+  },
+  {
+    "question": "Mikä on VC-SEL?",
+    "options": [
+      "Vertical Cavity Surface Emitting Laser, monimuotokuitujen valonlähde",
+      "Yksimuotokuidun liitin",
+      "Suojauskaapeli",
+      "Koaksiaalikaapelin pään suojus"
+    ],
+    "correct": "Vertical Cavity Surface Emitting Laser, monimuotokuitujen valonlähde"
+  },
+  {
+    "question": "Kuinka pitkä saa olla kiinteä kerroskaapelointi (kupari)?",
+    "options": [
+      "90 metriä",
+      "100 metriä",
+      "75 metriä",
+      "120 metriä"
+    ],
+    "correct": "90 metriä"
+  },
+  {
+    "question": "Mitä tarkoittaa MICE-luokitus?",
+    "options": [
+      "Mechanical, Ingress, Climatic, Electromagnetic",
+      "Module, Interface, Cable, Ethernet",
+      "Main, Internal, Cable, Energy",
+      "Media, Insertion, Connector, Efficiency"
+    ],
+    "correct": "Mechanical, Ingress, Climatic, Electromagnetic"
+  },
+  {
+    "question": "Mitä neliparinen kaapeli sisältää?",
+    "options": [
+      "4 kierrettyä paria eli 8 johdinta",
+      "2 johtoa ja 2 suojakerrosta",
+      "Yhden johtimen ja foliosuojan",
+      "6 johtoa ja metallipunos"
+    ],
+    "correct": "4 kierrettyä paria eli 8 johdinta"
+  },
+  {
+    "question": "Mikä on kuparikaapelin tunkeutumissyvyys?",
+    "options": [
+      "Skin effect – virta kulkee johtimen pinnassa korkeilla taajuuksilla",
+      "Kaapelin eristeen paksuus",
+      "Liittimen syvyys",
+      "Signaalin heijastus"
+    ],
+    "correct": "Skin effect – virta kulkee johtimen pinnassa korkeilla taajuuksilla"
+  },
+  {
+    "question": "Mitä kuituja käytetään enimmäkseen asuinkiinteistöissä?",
+    "options": [
+      "Monimuotokuituja (OM3/OM4)",
+      "Yksimuotokuituja",
+      "Kuparikaapeleita",
+      "Koaksiaalikaapeleita"
+    ],
+    "correct": "Monimuotokuituja (OM3/OM4)"
+  },
+  {
+    "question": "Mitkä ovat yleiskaapeloinnin kolme pääosaa?",
+    "options": [
+      "Aluekaapelointi, nousukaapelointi ja kerroskaapelointi",
+      "Verkko, reititin ja modeemi",
+      "Rasia, johto ja liitin",
+      "Kytkin, tietokone ja patch-johto"
+    ],
+    "correct": "Aluekaapelointi, nousukaapelointi ja kerroskaapelointi"
+  },
+  {
+    "question": "Mitkä ovat yleiskaapeloinnin kolme jakamoa?",
+    "options": [
+      "Aluejakamo, talojakamo ja kerrosjakamo",
+      "Työpiste, kaapeli ja laite",
+      "Toimisto, varasto ja halli",
+      "Sisäverkko, ulkoverkko ja runkoverkko"
+    ],
+    "correct": "Aluejakamo, talojakamo ja kerrosjakamo"
+  },
+  {
+    "question": "Missä valokaapeleita käytetään yleisimmin?",
+    "options": [
+      "Runko- ja alueverkoissa, datakeskuksissa ja teollisuudessa",
+      "Vain kotitalouksissa",
+      "Vain sähkönsiirrossa",
+      "Ainoastaan antennikaapeleissa"
+    ],
+    "correct": "Runko- ja alueverkoissa, datakeskuksissa ja teollisuudessa"
+  },
+  {
+    "question": "Mikä on optisen kaapelin pienin sallittu taivutussäde?",
+    "options": [
+      "Noin 10 × kaapelin halkaisija",
+      "Noin 2 × kaapelin halkaisija",
+      "Ei rajoitusta",
+      "Noin 25 × halkaisija"
+    ],
+    "correct": "Noin 10 × kaapelin halkaisija"
+  },
+  {
+    "question": "Mitkä ovat kuituhitsauksen vaiheet?",
+    "options": [
+      "Kuorinta, puhdistus, katkaisu, kohdistus, hitsaus, suojaus, testaus",
+      "Kuidun kiillotus, taivutus ja puristus",
+      "Kytkimen asennus ja konfigurointi",
+      "Signaalin mittaus ja vahvistus"
+    ],
+    "correct": "Kuorinta, puhdistus, katkaisu, kohdistus, hitsaus, suojaus, testaus"
+  },
+  {
+    "question": "Mitä parikaapelin asennuksessa tulee välttää?",
+    "options": [
+      "Liiallista vetoa, purkua ja taivutusta",
+      "Liittimien puhdistusta",
+      "Kaapelin leikkaamista",
+      "Merkintöjen tekemistä"
+    ],
+    "correct": "Liiallista vetoa, purkua ja taivutusta"
+  },
+  {
+    "question": "Mitä NEXT, RL ja PSNEXT tarkoittavat?",
+    "options": [
+      "NEXT = ylikuuluminen, RL = heijastusvaimennus, PSNEXT = summahäiriö",
+      "Verkon nopeutta",
+      "Kaapelin väriä",
+      "Testilaitteen mallia"
+    ],
+    "correct": "NEXT = ylikuuluminen, RL = heijastusvaimennus, PSNEXT = summahäiriö"
+  },
+  {
+    "question": "Miten eroavat yksimuoto- ja monimuotokuidut?",
+    "options": [
+      "Yksimuoto siirtää yhtä valopolkua, monimuoto useita",
+      "Monimuoto on ohuempi",
+      "Yksimuoto on halvempi",
+      "Monimuoto toimii pidemmälle"
+    ],
+    "correct": "Yksimuoto siirtää yhtä valopolkua, monimuoto useita"
+  },
+  {
+    "question": "Miten valokaapeleita voidaan jatkaa?",
+    "options": [
+      "Hitsauksella, mekaanisella liitoksella tai liittimellä",
+      "Teippaamalla",
+      "Puristamalla metalliholkki",
+      "Juottamalla tinalla"
+    ],
+    "correct": "Hitsauksella, mekaanisella liitoksella tai liittimellä"
+  },
+  {
+    "question": "Mitä tarkoittaa makrotaipumavaimennus?",
+    "options": [
+      "Valon karkaamista kuidusta liian tiukassa taivutuksessa",
+      "Kuidun rikkoutumista",
+      "Valon vahvistumista",
+      "Kuidun paksuuden kasvua"
+    ],
+    "correct": "Valon karkaamista kuidusta liian tiukassa taivutuksessa"
+  },
+  {
+    "question": "Mitä tarkoittaa NVP (nopeuskerroin)?",
+    "options": [
+      "Signaalin etenemisnopeus suhteessa valonnopeuteen",
+      "Kaapelin lämpötilakerroin",
+      "Värikoodin nopeusindeksi",
+      "Kaapelin taivutuskulma"
+    ],
+    "correct": "Signaalin etenemisnopeus suhteessa valonnopeuteen"
+  },
+  {
+    "question": "Miten kaapeleita voidaan asentaa putkiin?",
+    "options": [
+      "Vetämällä, puhaltamalla tai työntämällä",
+      "Kaivamalla ja peittämällä",
+      "Painamalla ja kiristämällä",
+      "Vain pudottamalla"
+    ],
+    "correct": "Vetämällä, puhaltamalla tai työntämällä"
+  },
+  {
+    "question": "Mitä kuitujen päällysteet tekevät?",
+    "options": [
+      "Suojaavat kuitua mekaanisesti ja ympäristöltä",
+      "Johtavat sähköä",
+      "Vahvistavat signaalia",
+      "Lähettävät valoa"
+    ],
+    "correct": "Suojaavat kuitua mekaanisesti ja ympäristöltä"
+  },
+  {
+    "question": "Mikä on kenttätesteri?",
+    "options": [
+      "Laite, jolla testataan kaapeloinnin standardien mukaisuus",
+      "Sähköverkon mittari",
+      "Kuitujen puhdistusväline",
+      "Reititin"
+    ],
+    "correct": "Laite, jolla testataan kaapeloinnin standardien mukaisuus"
+  },
+  {
+    "question": "Miten parikaapeli päätetään?",
+    "options": [
+      "RJ45-liittimeen tai paneeliin T568A/B-standardilla",
+      "Suoraan seinään",
+      "Sähköteipillä",
+      "Kierrettämällä johtimet yhteen"
+    ],
+    "correct": "RJ45-liittimeen tai paneeliin T568A/B-standardilla"
+  },
+  {
+    "question": "Mitä ovat johtokanavat?",
+    "options": [
+      "Kaapelikourut, putket ja lattiarasiat",
+      "Verkon protokollat",
+      "Kaapelityypit",
+      "Reitittimet"
+    ],
+    "correct": "Kaapelikourut, putket ja lattiarasiat"
+  },
+  {
+    "question": "Mitä tehdään aistinvaraisessa tarkastuksessa?",
+    "options": [
+      "Tarkistetaan asennuksen siisteys ja turvallisuus silmämääräisesti",
+      "Mitataan sähkövastus",
+      "Kuunnellaan signaalin ääni",
+      "Tehdään kuormitustesti"
+    ],
+    "correct": "Tarkistetaan asennuksen siisteys ja turvallisuus silmämääräisesti"
+  },
+  {
+    "question": "Mitkä ovat yleisimmät FAIL-tulosten syyt parikaapeloinnissa?",
+    "options": [
+      "Väärä johdotus, liitinvika, liiallinen veto",
+      "Liian lyhyt kaapeli",
+      "Kaapelin väri",
+      "Liittimen väri"
+    ],
+    "correct": "Väärä johdotus, liitinvika, liiallinen veto"
+  },
+  {
+    "question": "Mitä tarkoittaa vian paikannus OTDR:llä?",
+    "options": [
+      "Mittaus, jolla paikannetaan kuituviat ja etäisyydet",
+      "Kaapelin puhdistus",
+      "Signaalin vahvistus",
+      "Reitittimen ohjelmointi"
+    ],
+    "correct": "Mittaus, jolla paikannetaan kuituviat ja etäisyydet"
+  },
+  {
+    "question": "Mitkä ovat kaapelien päätyypit?",
+    "options": [
+      "Parikaapeli, koaksiaalikaapeli ja valokaapeli",
+      "Sähköjohto, HDMI ja USB",
+      "Laitekaapeli ja jatkojohto",
+      "Optinen ja digitaalinen"
+    ],
+    "correct": "Parikaapeli, koaksiaalikaapeli ja valokaapeli"
+  },
+  {
+    "question": "Mikä on hyväksymistestauksen ja -tarkastuksen järjestys?",
+    "options": [
+      "Tarkastus, mittaus, tulosten vertailu, dokumentointi",
+      "Mittaus, tarkastus, vahvistus, asennus",
+      "Puhdistus, merkitseminen, käyttö",
+      "Käyttöönotto ennen mittausta"
+    ],
+    "correct": "Tarkastus, mittaus, tulosten vertailu, dokumentointi"
+  },
+  {
+    "question": "Mikä on häntäkuitu?",
+    "options": [
+      "Lyhyt kuitupätkä liittimellä, joka hitsataan verkkoon",
+      "Kaapelin päätöskohta ilman liitintä",
+      "Koaksiaalikaapelin osa",
+      "Sähköjohtimen jatkos"
+    ],
+    "correct": "Lyhyt kuitupätkä liittimellä, joka hitsataan verkkoon"
+  },
+  {
+    "question": "Miten parikaapeli suojataan sähköisesti?",
+    "options": [
+      "Folio- ja punossuojilla sekä maadoituksella",
+      "Paksulla muovilla ilman suojaa",
+      "Kytkemällä se valokuituun",
+      "Asettamalla se metalliputkeen ilman maadoitusta"
+    ],
+    "correct": "Folio- ja punossuojilla sekä maadoituksella"
+  },
+  {
+    "question": "Mitä tarkoittaa dispersio valokaapelissa?",
+    "options": [
+      "Valopulssin levenemistä eri aallonpituuksien etenemisnopeuden vuoksi",
+      "Valon vahvistumista kuitua pitkin",
+      "Sähköisen häiriön leviämistä",
+      "Kaapelin venymistä"
+    ],
+    "correct": "Valopulssin levenemistä eri aallonpituuksien etenemisnopeuden vuoksi"
+  },
+  {
+    "question": "Mikä on liitosvaimennus optisessa liitoksessa?",
+    "options": [
+      "Signaalihävikki liitoskohdassa, tyypillisesti 0,1–0,3 dB",
+      "Signaalin vahvistus",
+      "Kuidun ylikuumeneminen",
+      "Valon heijastus takaisin liittimeen"
+    ],
+    "correct": "Signaalihävikki liitoskohdassa, tyypillisesti 0,1–0,3 dB"
+  },
+  {
+    "question": "Mikä on koaksiaalikaapelin pienin asennuslämpötila?",
+    "options": [
+      "-15 °C",
+      "0 °C",
+      "-5 °C",
+      "-25 °C"
+    ],
+    "correct": "-15 °C"
+  },
+  {
+    "question": "Mikä on optisen ulkokaapelin pienin asennuslämpötila?",
+    "options": [
+      "-10 °C",
+      "0 °C",
+      "-5 °C",
+      "-20 °C"
+    ],
+    "correct": "-10 °C"
+  },
+  {
+    "question": "Mikä on parikaapelin pienin asennuslämpötila?",
+    "options": [
+      "-5 °C",
+      "0 °C",
+      "-10 °C",
+      "-15 °C"
+    ],
+    "correct": "-5 °C"
+  },
+  {
+    "question": "Mitä heijastusvaimennus kuvaa optisessa liitoksessa?",
+    "options": [
+      "Takaisinheijastuneen valon määrää dB-arvona",
+      "Signaalin kulkuaikaa",
+      "Kaapelin pituutta",
+      "Kuitujen taivutusta"
+    ],
+    "correct": "Takaisinheijastuneen valon määrää dB-arvona"
+  },
+  {
+    "question": "Mitä tutkamittaus tekee?",
+    "options": [
+      "Paikantaa vian ja mittaa kaapelin pituuden OTDR/TDR-menetelmällä",
+      "Mittaa vain lämpötilan",
+      "Näyttää signaalin nopeuden",
+      "Tarkistaa liittimen puhtauden"
+    ],
+    "correct": "Paikantaa vian ja mittaa kaapelin pituuden OTDR/TDR-menetelmällä"
+  },
+  {
+    "question": "Mitä tarkoittaa kaapelin asennusominaisuudet?",
+    "options": [
+      "Taivutettavuus, vetolujuus, jäykkyys, lämpökesto",
+      "Kaapelin väri ja pituus",
+      "Liittimen koko",
+      "Suojausluokka"
+    ],
+    "correct": "Taivutettavuus, vetolujuus, jäykkyys, lämpökesto"
+  },
+  {
+    "question": "Mikä on pysyvän siirtotien (kuparikaapeli) maksimipituus?",
+    "options": [
+      "90 metriä",
+      "100 metriä",
+      "80 metriä",
+      "70 metriä"
+    ],
+    "correct": "90 metriä"
+  },
+  {
+    "question": "Mikä on kanavan maksimipituus kuparikaapeloinnissa?",
+    "options": [
+      "100 metriä (sisältäen laitekaapelit)",
+      "90 metriä",
+      "85 metriä",
+      "120 metriä"
+    ],
+    "correct": "100 metriä (sisältäen laitekaapelit)"
+  },
+  {
+    "question": "Kuinka monta tietoliikennerasiaa suositellaan 25 m² tilaan?",
+    "options": [
+      "Vähintään kaksi",
+      "Yksi",
+      "Kolme",
+      "Ei vaatimusta"
+    ],
+    "correct": "Vähintään kaksi"
+  },
+  {
+    "question": "Mitä tarkoittaa NEXT-arvon PASS-tulos?",
+    "options": [
+      "NEXT-arvo ylittää standardin raja-arvon",
+      "NEXT-arvo alittaa standardin",
+      "Kaapeli on liian lyhyt",
+      "Signaali on liian voimakas"
+    ],
+    "correct": "NEXT-arvo ylittää standardin raja-arvon"
+  },
+  {
+    "question": "Mitkä ovat yleisimmät FAIL-tulosten syyt ja korjaukset?",
+    "options": [
+      "Väärä johdotus, liitinvika, liiallinen veto – korjaa päätös ja vaihda liitin",
+      "Väärä väri, vaihda kaapeli",
+      "Liian lyhyt kaapeli, jatka johdin",
+      "Väärä mittalaite, vaihda testeri"
+    ],
+    "correct": "Väärä johdotus, liitinvika, liiallinen veto – korjaa päätös ja vaihda liitin"
+  },
+  {
+    "question": "Mitä sisältää tyypillinen jakamon kokoonpano?",
+    "options": [
+      "Kytkimet, paneelit, virtalähteet, UPS ja valokaapelit",
+      "Vain pistorasiat",
+      "Tietokone ja näyttö",
+      "Reititin ja hiiri"
+    ],
+    "correct": "Kytkimet, paneelit, virtalähteet, UPS ja valokaapelit"
+  },
+  {
+    "question": "Mikä on FD-jakamo?",
+    "options": [
+      "Kerrosjakamo",
+      "Talojakamo",
+      "Aluejakamo",
+      "Ristikytkentäpiste"
+    ],
+    "correct": "Kerrosjakamo"
+  },
+  {
+    "question": "Mikä on BD-jakamo?",
+    "options": [
+      "Talojakamo",
+      "Aluejakamo",
+      "Kerrosjakamo",
+      "Kytkentärasia"
+    ],
+    "correct": "Talojakamo"
+  },
+  {
+    "question": "Mitä merkintä TO tarkoittaa kaapelointikuvassa?",
+    "options": [
+      "Tietoliikennerasiaa (Telecommunication Outlet)",
+      "Talojakamon osoitetta",
+      "Topologiaa",
+      "Testausohjetta"
+    ],
+    "correct": "Tietoliikennerasiaa (Telecommunication Outlet)"
+  },
+  {
+    "question": "Mitkä ovat tavallisimmat valokaapelirakenteet?",
+    "options": [
+      "Urarunko-, flex-, ontelo- ja kerrattu rakenne",
+      "Punos-, ristikko-, peltinen ja ohutkaapeli",
+      "Kierre-, suora- ja holkkirakenne",
+      "Mono-, duo- ja triokaapeli"
+    ],
+    "correct": "Urarunko-, flex-, ontelo- ja kerrattu rakenne"
+  }
+  ]
+}

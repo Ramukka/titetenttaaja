@@ -1,0 +1,105 @@
+{
+  "TITLE": "Aalto-oppi: Kaavat ja käsitteet",
+  "questions": [
+    {
+      "question": "Mikä kaava kuvaa aaltoliikkeen nopeutta taajuuden f ja aallonpituuden λ avulla?",
+      "options": [
+        "v = f · λ",
+        "v = f / λ",
+        "v = λ / f",
+        "v = 2πf"
+      ],
+      "correct": "v = f · λ"
+    },
+    {
+      "question": "Valitse kaava, joka antaa jännitetyn narun aaltoliikkeen nopeuden jännityksen T ja lineaarisen tiheyden μ perusteella.",
+      "options": [
+        "v = √(T / μ)",
+        "v = √(μ / T)",
+        "v = T · μ",
+        "v = T / μ"
+      ],
+      "correct": "v = √(T / μ)"
+    },
+    {
+      "question": "Kaavassa s(x, t) = A·sin(kx − ωt), mitä k kuvaa?",
+      "options": [
+        "Aallonlukua (2π/λ)",
+        "Kulmataajuutta (2πf)",
+        "Aaltorintaman amplitudia",
+        "Seisovan aallon solmujen lukumäärää"
+      ],
+      "correct": "Aallonlukua (2π/λ)"
+    },
+    {
+      "question": "Mikä väite kuvaa polarisoinnin fysikaalista merkitystä?",
+      "options": [
+        "Aaltoliikkeen värähtelyn suunta rajautuu yhteen tasoon",
+        "Aallon taajuus kasvaa väliaineen tiheyden kasvaessa",
+        "Aaltojen amplitudien summa on aina nolla",
+        "Aallon nopeus pienenee aina väliaineen rajalla"
+      ],
+      "correct": "Aaltoliikkeen värähtelyn suunta rajautuu yhteen tasoon"
+    },
+    {
+      "question": "Tarkastele kaavaa\n\nI = P / (4πr²)\n\nMitä suuretta kaava I kuvaa?",
+      "options": [
+        "Pistemäisen aaltolähteen intensiteettiä",
+        "Aallon vaihetta pisteessä r",
+        "Aallon amplitudeja superpositiossa",
+        "Painevaihtelua seisovassa aallossa"
+      ],
+      "correct": "Pistemäisen aaltolähteen intensiteettiä"
+    },
+    {
+      "question": "Mikä kaava yhdistää jaksoajan T ja taajuuden f?",
+      "options": [
+        "T = 1 / f",
+        "T = f / 2",
+        "T = 2f",
+        "T = f²"
+      ],
+      "correct": "T = 1 / f"
+    },
+    {
+      "question": "Mikä on kulmataajuuden ω ja taajuuden f välinen yhteys?",
+      "options": [
+        "ω = 2πf",
+        "ω = f / (2π)",
+        "ω = f²",
+        "ω = 2f/π"
+      ],
+      "correct": "ω = 2πf"
+    },
+    {
+      "question": "Kaavassa v = √(T / μ), mitä μ tarkoittaa?",
+      "options": [
+        "Narun massaa pituusyksikköä kohden",
+        "Narun kokonaismassaa",
+        "Narun jännitysvoimaa",
+        "Narun pitenemää"
+      ],
+      "correct": "Narun massaa pituusyksikköä kohden"
+    },
+    {
+      "question": "Mikä kuvaa diffraktiota aalto-opissa?",
+      "options": [
+        "Aallon taipumista esteen tai aukon reunan ohi",
+        "Aallon täydellistä absorptiota häviöisessä aineessa",
+        "Aallon amplitudin pienenemistä kitkan vuoksi",
+        "Aaltojen satunnaista etenemistä eri suuntiin"
+      ],
+      "correct": "Aallon taipumista esteen tai aukon reunan ohi"
+    },
+    {
+      "question": "Mikä kaava kuvaa diffraktiohilalle syntyvän maksimin kulmaehtoa hilavälillä d?",
+      "options": [
+        "d · sinθ = mλ",
+        "d · cosθ = mλ",
+        "d / sinθ = mλ",
+        "d = mλθ"
+      ],
+      "correct": "d · sinθ = mλ"
+    }
+  ]
+}

@@ -178,8 +178,6 @@ button:disabled {
   gap: clamp(0.55rem, 1vh + 0.5vw, 0.95rem);
   min-height: 0;
   overflow: hidden;
-  align-items: center;
-  text-align: center;
 }
 
 #question-text {
@@ -200,7 +198,7 @@ button:disabled {
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   background: rgba(99, 102, 241, 0.08);
   color: #1f2937;
   border: 1px solid transparent;
