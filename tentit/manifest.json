@@ -1,27 +1,50 @@
 [
   {
-    "id": "tietoliikenne",
-    "label": "Tietoliikenne",
-    "file": "tietoliikenne.json"
-  },
-  {
     "id": "fysiikka",
-    "label": "Fysiikka",
-    "file": "fysiikka.json"
+    "title": "Fysiikka",
+    "file": "fysiikka.json",
+    "category": "Fysiikka"
   },
   {
-    "id": "ohjelmointi_alkeet",
-    "label": "Ohjelmointi - Alkeet",
-    "file": "ohjelmointi_alkeet.json"
+    "id": "ohjelmointi",
+    "title": "Ohjelmointi",
+    "file": "ohjelmointi.json",
+    "category": "Ohjelmointi"
   },
   {
-    "id": "ohjelmointi_jatkotentti",
-    "label": "Ohjelmointi - Jatkotentti",
-    "file": "ohjelmointi_jatkotentti.json"
+    "id": "ohjelmointi-alkeet",
+    "title": "Ohjelmointi alkeet",
+    "file": "ohjelmointi_alkeet.json",
+    "category": "Ohjelmointi"
   },
   {
-    "id": "ohjelmointi_laaja",
-    "label": "Ohjelmointi - Laaja",
-    "file": "ohjelmointi_laaja.json"
+    "id": "ohjelmointi-jatkotentti",
+    "title": "Ohjelmointi jatkotentti",
+    "file": "ohjelmointi_jatkotentti.json",
+    "category": "Ohjelmointi"
+  },
+  {
+    "id": "ohjelmointi-laaja",
+    "title": "Ohjelmointi laaja",
+    "file": "ohjelmointi_laaja.json",
+    "category": "Ohjelmointi"
+  },
+  {
+    "id": "ohjelmistosuunnittelu",
+    "title": "Ohjelmistosuunnittelu",
+    "file": "ohjelmistosuunnittelu.json",
+    "category": "Tietotekniikka"
+  },
+  {
+    "id": "tietoliikenne",
+    "title": "Tietoliikenne",
+    "file": "tietoliikenne.json",
+    "category": "Tietotekniikka"
+  },
+  {
+    "id": "taydennakoodi",
+    "title": "Taydennakoodi",
+    "file": "taydennakoodi.json",
+    "category": "Muut"
   }
 ]

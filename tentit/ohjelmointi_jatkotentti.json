@@ -1,405 +1,405 @@
 {
-  "TITLE": "Ohjelmointi - Jatkotentti",
+  "TITLE": "Ohjelmoinnin jatkotentti",
   "questions": [
     {
-      "question": "Python: list comprehensionissa [______ for x in values if x % 2 == 0] puuttuva ilmaisu lisää saman x:n listaan.",
+      "question": "Mitä tarkoittaa ohjelmoinnissa 'funktioiden uudelleenkäyttö'?",
       "options": [
-        "x",
-        "values",
-        "even",
-        "append(x)"
+        "Samaa funktiota voidaan käyttää useissa kohdissa ilman koodin kopiointia",
+        "Funktioita ei voi kutsua useammin kuin kerran",
+        "Funktio palauttaa aina saman arvon",
+        "Funktio kopioidaan jokaiselle riville"
       ],
-      "correct": "x"
+      "correct": "Samaa funktiota voidaan käyttää useissa kohdissa ilman koodin kopiointia"
     },
     {
-      "question": "Python: dictionary comprehension {user['id']: ______ for user in users} kerää nimikentän.",
+      "question": "Mikä seuraavista avainsanoista määrittelee luokan Pythonissa?",
       "options": [
-        "user['name']",
-        "user.name",
-        "name",
-        "users['name']"
+        "class",
+        "def",
+        "object",
+        "struct"
       ],
-      "correct": "user['name']"
+      "correct": "class"
     },
     {
-      "question": "Python: funktio map käyttää lambdaa: list(map(lambda n: n * 2, ______)).",
+      "question": "Mitä tarkoittaa olio ohjelmoinnissa?",
       "options": [
-        "numbers",
-        "lambda",
-        "n",
-        "values()"
+        "Luokasta luotu instanssi, jolla on omat ominaisuudet ja metodit",
+        "Tietorakenne, joka sisältää vain lukuja",
+        "Staattinen koodi ilman toiminnallisuutta",
+        "Ohjelman pääfunktio"
       ],
-      "correct": "numbers"
+      "correct": "Luokasta luotu instanssi, jolla on omat ominaisuudet ja metodit"
     },
     {
-      "question": "Python: tiedostoon kirjoitetaan with open(path, 'w') as f: f.write(______). Täydennä merkkijono data.",
+      "question": "Miten alustetaan olio luokasta Henkilo?",
       "options": [
-        "data",
-        "\"data\"",
-        "f",
-        "write"
+        "h = Henkilo()",
+        "h = new Henkilo()",
+        "create Henkilo()",
+        "init Henkilo"
       ],
-      "correct": "data"
+      "correct": "h = Henkilo()"
     },
     {
-      "question": "Python: try/except lohkossa except ValueError as ______: tallettaa poikkeuksen muuttujaan err.",
+      "question": "Mitä tarkoittaa perintä (inheritance)?",
       "options": [
-        "err",
-        "e",
-        "error",
-        "value"
+        "Luokka voi periä ominaisuuksia ja metodeja toiselta luokalta",
+        "Luokka sisältää vain muuttujia",
+        "Luokka ei voi sisältää funktioita",
+        "Luokka toimii ilman konstruktoria"
       ],
-      "correct": "err"
+      "correct": "Luokka voi periä ominaisuuksia ja metodeja toiselta luokalta"
     },
     {
-      "question": "Python: generatorifunktiossa yield ______ palauttaa laskurin current arvon.",
+      "question": "Mikä on konstruktorin nimi Pythonissa?",
       "options": [
-        "current",
-        "yield",
-        "counter",
-        "value()"
+        "__init__",
+        "__start__",
+        "__class__",
+        "__create__"
       ],
-      "correct": "current"
+      "correct": "__init__"
     },
     {
-      "question": "Python: f-string f\"{value:.2f}\" käyttää muuttujaa ______.",
+      "question": "Mitä tarkoittaa kapselointi (encapsulation)?",
       "options": [
-        "value",
-        "val",
-        "result",
-        "format"
+        "Tietojen ja toimintojen piilottamista luokan sisään",
+        "Tietojen tallentamista tiedostoon",
+        "Tietojen yhdistämistä tietokantaan",
+        "Olioiden tuhoamista ohjelman lopussa"
       ],
-      "correct": "value"
+      "correct": "Tietojen ja toimintojen piilottamista luokan sisään"
     },
     {
-      "question": "Python: functools.reduce(lambda acc, item: acc + item, prices, ______) asettaa alkukertymän nollaksi.",
+      "question": "Mikä seuraavista on Pythonissa yksityinen (private) muuttuja?",
       "options": [
-        "0",
-        "None",
-        "[]",
-        "item"
+        "__nimi",
+        "_nimi",
+        "nimi__",
+        "nimi"
       ],
-      "correct": "0"
+      "correct": "__nimi"
     },
     {
-      "question": "Python: dataluokan kenttä määritellään @dataclass class Point: x: int; y: ______.",
+      "question": "Mitä tekee seuraava koodi?\n\ntry:\n    x = 1 / 0\nexcept:\n    print('Virhe!')",
       "options": [
-        "int",
-        "float",
-        "y",
-        "Point"
+        "Tulostaa 'Virhe!'",
+        "Lopettaa ohjelman virheeseen",
+        "Ei tee mitään",
+        "Tulostaa 0"
       ],
-      "correct": "int"
+      "correct": "Tulostaa 'Virhe!'"
     },
     {
-      "question": "Python: enumerate(items, start=1) palauttaa tuplen (index, ______).",
+      "question": "Mikä on Pythonin sisäänrakennettu tietorakenne avain-arvopareille?",
       "options": [
-        "item",
-        "items",
-        "value[0]",
-        "index"
+        "dictionary (dict)",
+        "list",
+        "tuple",
+        "set"
       ],
-      "correct": "item"
+      "correct": "dictionary (dict)"
     },
     {
-      "question": "Java: Stream.of(values).filter(v -> v > 0).map(v -> v * 2).collect(Collectors.toList()) sisältää toList-kutsun. Täydennä Collectors.______.?",
+      "question": "Miten lisätään uusi avain-arvo sanakirjaan?",
       "options": [
-        "toList()",
-        "list()",
-        "toArray()",
-        "collectList()"
+        "tiedot['ikä'] = 30",
+        "add('ikä', 30)",
+        "tiedot.append('ikä', 30)",
+        "insert('ikä', 30)"
       ],
-      "correct": "toList()"
+      "correct": "tiedot['ikä'] = 30"
     },
     {
-      "question": "Java: Optional.ofNullable(name).orElse(______) palauttaa oletusmerkkijonon \"Unknown\".",
+      "question": "Mitä seuraava koodi tekee?\n\nwith open('data.txt', 'w') as f:\n    f.write('Hei!')",
       "options": [
-        "\"Unknown\"",
-        "null",
-        "name",
-        "\"\""
+        "Kirjoittaa tekstiä tiedostoon data.txt",
+        "Lukee tiedoston data.txt",
+        "Poistaa tiedoston data.txt",
+        "Tulostaa tiedoston sisällön"
       ],
-      "correct": "\"Unknown\""
+      "correct": "Kirjoittaa tekstiä tiedostoon data.txt"
     },
     {
-      "question": "Java: lambda-ilmaisu (a, b) -> ______ yhdistää merkkijonot a ja b väliin välilyönti.",
+      "question": "Mitä tekee 'read()' tiedosto-olioille?",
       "options": [
-        "a + \" \" + b",
-        "a.concat(b)",
-        "a + b + \" \"",
-        "\" \" + a + b"
+        "Lukee koko tiedoston sisällön merkkijonona",
+        "Poistaa tiedoston",
+        "Sulkee tiedoston",
+        "Kirjoittaa tiedostoon"
       ],
-      "correct": "a + \" \" + b"
+      "correct": "Lukee koko tiedoston sisällön merkkijonona"
     },
     {
-      "question": "Java: Files.lines(path).map(String::trim).forEach(______) kutsuu metodia System.out::println.",
+      "question": "Mikä on 'import'-komennon tarkoitus?",
       "options": [
-        "System.out::println",
-        "println",
-        "out",
-        "line"
+        "Tuoda moduuli tai kirjasto ohjelmaan käytettäväksi",
+        "Tulostaa ohjelman nimen",
+        "Kääntää ohjelman automaattisesti",
+        "Tuoda muuttuja käyttöön"
       ],
-      "correct": "System.out::println"
+      "correct": "Tuoda moduuli tai kirjasto ohjelmaan käytettäväksi"
     },
     {
-      "question": "Java: uusi HashMap alustetaan Map<String, Integer> counts = new HashMap<>(______);",
+      "question": "Miten voidaan tuoda vain yksi funktio moduulista?",
       "options": [
-        ")",
-        "0",
-        "{}",
-        "null"
+        "from math import sqrt",
+        "import sqrt from math",
+        "include math.sqrt",
+        "load math.sqrt"
       ],
-      "correct": ")"
+      "correct": "from math import sqrt"
     },
     {
-      "question": "Java: synchronized (lock) { queue.______(task); } lisää tehtävän jonoon.",
+      "question": "Mikä on Pythonin 'lambda'-funktio?",
       "options": [
-        "add",
-        "push",
-        "offerFirst",
-        "insert"
+        "Lyhyt nimettömästi määritelty funktio",
+        "Erillinen tiedostofunktio",
+        "Osa pääohjelmaa",
+        "Virheenkäsittelyfunktio"
       ],
-      "correct": "add"
+      "correct": "Lyhyt nimettömästi määritelty funktio"
     },
     {
-      "question": "Java: CompletableFuture.supplyAsync(this::load).thenApply(______); kutsuu muunnoksen toUpperCase.",
+      "question": "Mitä tekee seuraava koodi?\n\nnums = [1, 2, 3]\nprint(list(map(lambda x: x * 2, nums)))",
       "options": [
-        "String::toUpperCase",
-        "toUpperCase()",
-        "String.toUpperCase",
-        "s -> s.upper()"
+        "[2, 4, 6]",
+        "[1, 2, 3]",
+        "[1, 4, 9]",
+        "[3, 2, 1]"
       ],
-      "correct": "String::toUpperCase"
+      "correct": "[2, 4, 6]"
     },
     {
-      "question": "Java: Stream.iterate(0, n -> n + 1).limit(10).reduce(0, Integer::______).",
+      "question": "Mikä on list comprehension?",
       "options": [
-        "sum",
-        "add",
-        "plus",
-        "valueOf"
+        "Lyhyt tapa luoda listoja silmukoiden avulla",
+        "Listojen lajittelutapa",
+        "Funktioiden kutsutapa",
+        "Tiedoston lukeminen listaksi"
       ],
-      "correct": "sum"
+      "correct": "Lyhyt tapa luoda listoja silmukoiden avulla"
     },
     {
-      "question": "Java: Pattern.compile(regex).matcher(text).find() tarvitsee muuttujan regex = ______;",
+      "question": "Mitä tekee 'enumerate()' funktio?",
       "options": [
-        "\"[0-9]+\"",
-        "\"\\\\d\"",
-        "\"regex\"",
-        "text"
+        "Palauttaa listan indeksit ja arvot",
+        "Poistaa listan ensimmäisen alkion",
+        "Järjestää listan nousevaan järjestykseen",
+        "Laskee listan summan"
       ],
-      "correct": "\"[0-9]+\""
+      "correct": "Palauttaa listan indeksit ja arvot"
     },
     {
-      "question": "Java: record Point(int x, int y) { } käyttää komponenttia ______ koordinaatille y.",
+      "question": "Miten Pythonissa tehdään moduuli?",
       "options": [
-        "y",
-        "Y",
-        "value",
-        "coordY"
+        "Kirjoitetaan koodi .py-tiedostoon ja tuodaan se import-komennolla",
+        "Luodaan uusi luokka ilman metodeja",
+        "Käytetään vain globaaleja muuttujia",
+        "Ajetaan ohjelma komentoriviltä"
       ],
-      "correct": "y"
+      "correct": "Kirjoitetaan koodi .py-tiedostoon ja tuodaan se import-komennolla"
     },
     {
-      "question": "JavaScript: const clone = { ...user, role: ______ }; täydennä merkkijono \"admin\".",
+      "question": "Mikä on Pythonin 'set'-tietorakenne?",
       "options": [
-        "\"admin\"",
-        "admin",
-        "user.role",
-        "role"
+        "Joukko, joka ei sisällä duplikaatteja",
+        "Lista, jossa on vain numeroita",
+        "Sanakirja ilman arvoja",
+        "Tiedosto-olio"
       ],
-      "correct": "\"admin\""
+      "correct": "Joukko, joka ei sisällä duplikaatteja"
     },
     {
-      "question": "JavaScript: const result = numbers.reduce((acc, n) => acc + n, ______); asettaa alkusumman nollaksi.",
+      "question": "Mikä ero on listalla ja tuplalla?",
       "options": [
-        "0",
-        "null",
-        "[]",
-        "acc"
+        "Lista on muokattava, tuple on muuttumaton",
+        "Tuple on nopeampi, mutta ei voi sisältää numeroita",
+        "Tuple käyttää hakasulkeita",
+        "Ei eroa"
       ],
-      "correct": "0"
+      "correct": "Lista on muokattava, tuple on muuttumaton"
     },
     {
-      "question": "JavaScript: const filtered = items.filter(item => ______); valitse ehto item.active.",
+      "question": "Mitä tarkoittaa 'rekursio' ohjelmoinnissa?",
       "options": [
-        "item.active",
-        "item === active",
-        "item.isActive()",
-        "active(item)"
+        "Funktio kutsuu itseään",
+        "Ohjelma toistaa silmukkaa",
+        "Tietorakenne viittaa itseensä",
+        "Funktio palauttaa virheen"
       ],
-      "correct": "item.active"
+      "correct": "Funktio kutsuu itseään"
     },
     {
-      "question": "JavaScript: async function load() { const response = await fetch(url); const data = await response.______(); }",
+      "question": "Mitä tekee 'super()' perinnässä?",
       "options": [
-        "json",
-        "text",
-        "body",
-        "parse"
+        "Kutsuu yläluokan metodia",
+        "Poistaa aliluokan",
+        "Luo uuden luokan",
+        "Muuttaa muuttujien arvot"
       ],
-      "correct": "json"
+      "correct": "Kutsuu yläluokan metodia"
     },
     {
-      "question": "JavaScript: destructurointi const { name, email: ______ } = user; tallentaa emailin muuttujaan contact.",
+      "question": "Mitä tarkoittaa polymorfismi?",
       "options": [
-        "contact",
-        "email",
-        "user.email",
-        "mail"
+        "Sama metodi voi toimia eri tavoin eri luokissa",
+        "Sama muuttuja voi olla useaa tyyppiä yhtä aikaa",
+        "Funktioita ei voi ylikuormittaa",
+        "Luokat yhdistetään automaattisesti"
       ],
-      "correct": "contact"
+      "correct": "Sama metodi voi toimia eri tavoin eri luokissa"
     },
     {
-      "question": "JavaScript: const sum = (...nums) => nums.______(0, (acc, n) => acc + n);",
+      "question": "Miten poistetaan tiedosto Pythonissa?",
       "options": [
-        "reduce",
-        "map",
-        "filter",
-        "join"
+        "import os; os.remove('tiedosto.txt')",
+        "delete tiedosto.txt",
+        "remove('tiedosto.txt')",
+        "file.delete('tiedosto.txt')"
       ],
-      "correct": "reduce"
+      "correct": "import os; os.remove('tiedosto.txt')"
     },
     {
-      "question": "JavaScript: const unique = new Set(______); luo joukon taulukosta values.",
+      "question": "Mitä tekee 'try...finally' rakenne?",
       "options": [
-        "values",
-        "[values]",
-        "{values}",
-        "values()"
+        "Suorittaa finally-osan aina, riippumatta virheestä",
+        "Suorittaa vain jos virhe tapahtuu",
+        "Lopettaa ohjelman virheeseen",
+        "Ohittaa kaikki virheet"
       ],
-      "correct": "values"
+      "correct": "Suorittaa finally-osan aina, riippumatta virheestä"
     },
     {
-      "question": "JavaScript: Promise.all(tasks).then(______); käyttää käsittelijää handleResults.",
+      "question": "Mikä Pythonin avainsana vapauttaa muistia?",
       "options": [
-        "handleResults",
-        "results",
-        "tasks",
-        "Promise"
+        "del",
+        "free",
+        "remove",
+        "clear"
       ],
-      "correct": "handleResults"
+      "correct": "del"
     },
     {
-      "question": "JavaScript: const sorted = [...items].sort((a, b) => ______); järjestää nousevasti erotuksella a-b.",
+      "question": "Mitä tarkoittaa JSON?",
       "options": [
-        "a - b",
-        "b - a",
-        "a < b",
-        "a + b"
+        "Tietomuoto, jota käytetään tietojen siirtämiseen ja tallentamiseen",
+        "Pythonin sisäänrakennettu luokka",
+        "Tiedostojärjestelmä",
+        "Tietokantakysely"
       ],
-      "correct": "a - b"
+      "correct": "Tietomuoto, jota käytetään tietojen siirtämiseen ja tallentamiseen"
     },
     {
-      "question": "JavaScript: moduulissa export default function ______() { return null; } nimenä on Component.",
+      "question": "Mitä tekee 'json.loads()'?",
       "options": [
-        "Component",
-        "component",
-        "render",
-        "App"
+        "Muuntaa JSON-merkkijonon Python-objektiksi",
+        "Tallentaa Python-olion JSONiksi",
+        "Poistaa JSON-tiedoston",
+        "Lukee JSON-tiedoston ja poistaa sen"
       ],
-      "correct": "Component"
+      "correct": "Muuntaa JSON-merkkijonon Python-objektiksi"
     },
     {
-      "question": "Python: @classmethod def from_dict(cls, data): return cls(data['name'], ______). Täydennä kenttä 'age'.",
+      "question": "Mitä tekee 'sorted()' funktio?",
       "options": [
-        "data['age']",
-        "data.age",
-        "age",
-        "cls['age']"
+        "Palauttaa järjestetyn kopion listasta",
+        "Järjestää listan paikan päällä",
+        "Poistaa toistuvat arvot",
+        "Laskee listan summan"
       ],
-      "correct": "data['age']"
+      "correct": "Palauttaa järjestetyn kopion listasta"
     },
     {
-      "question": "Python: list(zip(keys, values)) luo pareja. Täydennä parametri ______ toiseen listaan values.",
+      "question": "Mikä ero on 'is' ja '==' välillä?",
       "options": [
-        "values",
-        "keys",
-        "zip",
-        "pairs"
+        "'==' vertaa arvoja, 'is' vertaa olioiden identiteettiä",
+        "Ei mitään eroa",
+        "'is' toimii vain merkkijonoilla",
+        "'==' vertaa muistiosoitetta"
       ],
-      "correct": "values"
+      "correct": "'==' vertaa arvoja, 'is' vertaa olioiden identiteettiä"
     },
     {
-      "question": "Python: contextlib.ExitStack() as stack mahdollistaa resurssin pinon. stack.enter_context(______) lisää uuden tiedoston.",
+      "question": "Mikä on Pythonin 'decorator'?",
       "options": [
-        "open(path)",
-        "path.open()",
-        "stack.open",
-        "context(path)"
+        "Funktio, joka muokkaa toisen funktion toimintaa",
+        "Graafinen elementti",
+        "Tietorakenne",
+        "Virheenkäsittelymoduuli"
       ],
-      "correct": "open(path)"
+      "correct": "Funktio, joka muokkaa toisen funktion toimintaa"
     },
     {
-      "question": "Python: sorted(items, key=lambda item: item['score'], reverse=______) järjestää laskevasti.",
+      "question": "Mitä tarkoittaa 'list unpacking'?",
       "options": [
-        "True",
-        "False",
-        "\"True\"",
-        "1"
+        "Listan arvojen purkamista useisiin muuttujiin",
+        "Listan pakkaamista tiedostoon",
+        "Listan tyhjentämistä",
+        "Listan muuttamista tupleksi"
       ],
-      "correct": "True"
+      "correct": "Listan arvojen purkamista useisiin muuttujiin"
     },
     {
-      "question": "Python: async with aiohttp.ClientSession() as session: async with session.get(url) as response: data = await response.______();",
+      "question": "Mitä tekee 'zip()' funktio?",
       "options": [
-        "json",
-        "text",
-        "read",
-        "close"
+        "Yhdistää useita listoja pareittain",
+        "Pakkaa tiedostoja",
+        "Laskee listojen pituudet",
+        "Poistaa duplikaatit"
       ],
-      "correct": "json"
+      "correct": "Yhdistää useita listoja pareittain"
     },
     {
-      "question": "Java: builder pattern -kutsu new StringBuilder().append(first).append(______).toString(); täydentää second.",
+      "question": "Mitä tekee 'filter()' funktio?",
       "options": [
-        "second",
-        "\"second\"",
-        "first",
-        "builder"
+        "Palauttaa listan, joka sisältää vain ehdon täyttävät arvot",
+        "Järjestää listan",
+        "Laskee arvot yhteen",
+        "Poistaa kaikki arvot"
       ],
-      "correct": "second"
+      "correct": "Palauttaa listan, joka sisältää vain ehdon täyttävät arvot"
     },
     {
-      "question": "Java: list.stream().collect(Collectors.joining(\", \", \"[\", ______)); päättää merkkijonon hakasulkuun.",
+      "question": "Mikä on 'docstring' Pythonissa?",
       "options": [
-        "\"]\"",
-        "\",\"",
-        "\"}\"",
-        "\"\""
+        "Monirivinen dokumentaatiokommentti funktion tai luokan alussa",
+        "Yksi rivin kommentti",
+        "Funktio, joka tulostaa ohjeet",
+        "Kirjaston nimi"
       ],
-      "correct": "\"]\""
+      "correct": "Monirivinen dokumentaatiokommentti funktion tai luokan alussa"
     },
     {
-      "question": "JavaScript: const grouped = array.reduce((acc, item) => { const key = item.category; acc[key] = acc[key] ?? ______; acc[key].push(item); return acc; }, {});",
+      "question": "Mitä tekee '__str__' metodi?",
       "options": [
-        "[]",
-        "{}",
-        "null",
-        "item"
+        "Määrittelee, miten olio esitetään tekstinä",
+        "Palauttaa olion id:n",
+        "Määrittelee konstruktorin",
+        "Tulostaa virheen"
       ],
-      "correct": "[]"
+      "correct": "Määrittelee, miten olio esitetään tekstinä"
     },
     {
-      "question": "Python: itertools.groupby(items, key=lambda x: x['type']) palauttaa ryhmät. Avaimen nimi on ______.",
+      "question": "Mitä tarkoittaa 'generator' Pythonissa?",
       "options": [
-        "type",
-        "'type'",
-        "x",
-        "lambda"
+        "Funktio, joka tuottaa arvoja yksi kerrallaan 'yield'-avainsanalla",
+        "Satunnaislukujen tuottaja",
+        "Tietokantahaku",
+        "Virheenkäsittelijä"
       ],
-      "correct": "'type'"
+      "correct": "Funktio, joka tuottaa arvoja yksi kerrallaan 'yield'-avainsanalla"
     },
     {
-      "question": "Java: try (var reader = Files.newBufferedReader(path)) { return reader.readLine(); } käyttää var-määrettä. Muuttuja on nimeltään ______.",
+      "question": "Mikä on 'context manager' Pythonissa?",
       "options": [
-        "reader",
-        "buffer",
-        "line",
-        "path"
+        "Rakenne, joka hallitsee resurssien käyttöä automaattisesti (esim. tiedoston sulkeminen)",
+        "Ohjelman virheilmoitusten hallinta",
+        "Tietotyyppien muunnin",
+        "Kääntäjän osa"
       ],
-      "correct": "reader"
+      "correct": "Rakenne, joka hallitsee resurssien käyttöä automaattisesti (esim. tiedoston sulkeminen)"
     }
   ]
 }

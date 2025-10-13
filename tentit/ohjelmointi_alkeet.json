@@ -1,405 +1,405 @@
 {
-  "TITLE": "Ohjelmointi - Alkeet",
+  "TITLE": "Ohjelmoinnin alkeet",
   "questions": [
     {
-      "question": "Python: print-funktio kirjoitetaan muodossa print(______). Mikä sana puuttuu, jos halutaan tulostaa muuttuja message?",
+      "question": "Mikä on ohjelmoinnin perimmäinen tarkoitus?",
       "options": [
-        "\"message\"",
-        "message",
-        "msg",
-        "print"
+        "Antaa tietokoneelle käskyjä ongelmien ratkaisemiseksi",
+        "Luoda graafisia käyttöliittymiä",
+        "Tallentaa tietoa tietokantaan",
+        "Korvata käyttöjärjestelmä"
       ],
-      "correct": "message"
+      "correct": "Antaa tietokoneelle käskyjä ongelmien ratkaisemiseksi"
     },
     {
-      "question": "Python: muuttuja total alustetaan arvoon nolla kirjoittamalla total = ______.",
+      "question": "Mitä seuraava koodi tekee Pythonissa?\n\nprint('Terve maailma')",
       "options": [
-        "0",
-        "\"0\"",
-        "zero",
+        "Tulostaa tekstin 'Terve maailma' näytölle",
+        "Tallentaa tekstin muuttujaan",
+        "Tulostaa virheen",
+        "Ei tee mitään"
+      ],
+      "correct": "Tulostaa tekstin 'Terve maailma' näytölle"
+    },
+    {
+      "question": "Mikä seuraavista on muuttuja?",
+      "options": [
+        "x = 10",
+        "print(10)",
+        "10 = x",
+        "if 10"
+      ],
+      "correct": "x = 10"
+    },
+    {
+      "question": "Mikä on oikein määritelty merkkijono Pythonissa?",
+      "options": [
+        "'Hei maailma'",
+        "(Hei maailma)",
+        "{Hei maailma}",
+        "[Hei maailma]"
+      ],
+      "correct": "'Hei maailma'"
+    },
+    {
+      "question": "Mitä tarkoittaa tietotyyppi 'int'?",
+      "options": [
+        "Kokonaisluku",
+        "Desimaaliluku",
+        "Totuusarvo",
+        "Teksti"
+      ],
+      "correct": "Kokonaisluku"
+    },
+    {
+      "question": "Mikä on seuraavan koodin tulos?\n\na = 3\nb = 4\nprint(a + b)",
+      "options": [
+        "7",
+        "34",
+        "12",
+        "Virhe"
+      ],
+      "correct": "7"
+    },
+    {
+      "question": "Mitä tarkoittaa tietotyyppi 'float'?",
+      "options": [
+        "Desimaaliluku",
+        "Kokonaisluku",
+        "Tekstimuotoinen tieto",
+        "Totuusarvo"
+      ],
+      "correct": "Desimaaliluku"
+    },
+    {
+      "question": "Mikä on oikein kirjoitettu if-lause Pythonissa?",
+      "options": [
+        "if x > 5:",
+        "if (x > 5)",
+        "if x > 5 then",
+        "if: x > 5"
+      ],
+      "correct": "if x > 5:"
+    },
+    {
+      "question": "Mitä seuraava koodi tekee?\n\nfor i in range(3):\n    print(i)",
+      "options": [
+        "Tulostaa 0, 1 ja 2",
+        "Tulostaa 1, 2 ja 3",
+        "Tulostaa 3, 2 ja 1",
+        "Ei tulosta mitään"
+      ],
+      "correct": "Tulostaa 0, 1 ja 2"
+    },
+    {
+      "question": "Mikä on funktion tehtävä?",
+      "options": [
+        "Kapseloida toistuva toiminto yhteen kutsuttavaan osaan",
+        "Toistaa koodi aina automaattisesti",
+        "Tulostaa virheitä",
+        "Tallentaa muuttujia automaattisesti"
+      ],
+      "correct": "Kapseloida toistuva toiminto yhteen kutsuttavaan osaan"
+    },
+    {
+      "question": "Miten Pythonissa määritellään funktio nimeltä tervehdys?",
+      "options": [
+        "def tervehdys():",
+        "fun tervehdys()",
+        "tervehdys = function()",
+        "define tervehdys()"
+      ],
+      "correct": "def tervehdys():"
+    },
+    {
+      "question": "Mitä seuraava koodi tulostaa?\n\nx = 5\nif x == 5:\n    print('OK')",
+      "options": [
+        "OK",
+        "Virhe",
+        "5",
+        "Ei mitään"
+      ],
+      "correct": "OK"
+    },
+    {
+      "question": "Mikä seuraavista on looginen operaattori Pythonissa?",
+      "options": [
+        "and",
+        "plus",
+        "join",
+        "sum"
+      ],
+      "correct": "and"
+    },
+    {
+      "question": "Mikä on listan tunnusmerkki Pythonissa?",
+      "options": [
+        "Käyttää hakasulkeita []",
+        "Käyttää aaltosulkeita {}",
+        "Käyttää sulkeita ()",
+        "Käyttää lainausmerkkejä"
+      ],
+      "correct": "Käyttää hakasulkeita []"
+    },
+    {
+      "question": "Miten lisätään uusi alkio listaan nimeltä nimet?",
+      "options": [
+        "nimet.append('Matti')",
+        "nimet.add('Matti')",
+        "nimet.insert('Matti')",
+        "append(nimet, 'Matti')"
+      ],
+      "correct": "nimet.append('Matti')"
+    },
+    {
+      "question": "Mikä seuraavista ei ole looginen arvo?",
+      "options": [
+        "True",
+        "False",
+        "Maybe",
         "None"
       ],
-      "correct": "0"
+      "correct": "Maybe"
     },
     {
-      "question": "Python: while-silmukka jatkuu kunnes ehto on False. Riviltä while ______ < 5: puuttuu muuttuja count.",
+      "question": "Mitä seuraava koodi tulostaa?\n\nprint(type(3.14))",
       "options": [
-        "count",
-        "counter",
-        "i",
-        "n"
+        "<class 'float'>",
+        "<class 'int'>",
+        "<class 'str'>",
+        "<class 'bool'>"
       ],
-      "correct": "count"
+      "correct": "<class 'float'>"
     },
     {
-      "question": "Python: listaan numbers lisätään alkio `4` komennolla numbers.______(4).",
+      "question": "Mikä komento tulostaa muuttujan arvon?",
       "options": [
-        "append",
-        "add",
-        "push",
-        "insert"
+        "print(x)",
+        "output(x)",
+        "echo(x)",
+        "display(x)"
       ],
-      "correct": "append"
+      "correct": "print(x)"
     },
     {
-      "question": "Python: jos halutaan tarkistaa ehto `age >= 18`, kirjoitetaan if ______ >= 18:.",
+      "question": "Mitä tarkoittaa operaattori == ?",
       "options": [
-        "age",
-        "Age",
-        "ages",
-        "value"
+        "Vertaa kahta arvoa",
+        "Asettaa arvon muuttujaan",
+        "Tarkistaa tyypin",
+        "Kääntää boolean-arvon"
       ],
-      "correct": "age"
+      "correct": "Vertaa kahta arvoa"
     },
     {
-      "question": "Python: listan ensimmäinen alkio haetaan indeksillä 0. Kirjoita numbers[______].",
+      "question": "Miten kommentti kirjoitetaan Pythonissa?",
       "options": [
-        "0",
-        "1",
-        "first",
-        "-1"
+        "# Tämä on kommentti",
+        "// Tämä on kommentti",
+        "/* Tämä on kommentti */",
+        "-- Tämä on kommentti"
       ],
-      "correct": "0"
+      "correct": "# Tämä on kommentti"
     },
     {
-      "question": "Python: funktio hello määritellään rivillä def hello(______): jos sillä on yksi parametri name.",
+      "question": "Mitä tarkoittaa 'while'-silmukka?",
       "options": [
-        "name",
-        "self",
-        "value",
-        "args"
+        "Toistaa käskyjä niin kauan kuin ehto on tosi",
+        "Toistaa käskyjä tietyn määrän",
+        "Toistaa kerran",
+        "Ei tee mitään ilman funktiota"
       ],
-      "correct": "name"
+      "correct": "Toistaa käskyjä niin kauan kuin ehto on tosi"
     },
     {
-      "question": "Python: palautetaan arvo funktiosta komennolla return ______.",
+      "question": "Mitä tarkoittaa termi 'algoritmi'?",
       "options": [
-        "result",
-        "return",
-        "output",
-        "print"
+        "Ratkaisumenetelmä ongelmaan askel askeleelta",
+        "Tietokoneen nopeusmittari",
+        "Ohjelmointikieli",
+        "Tiedostomuoto"
       ],
-      "correct": "result"
+      "correct": "Ratkaisumenetelmä ongelmaan askel askeleelta"
     },
     {
-      "question": "Python: syötteen lukeminen tapahtuu rivillä name = input(______). Puuttuva merkkijono on 'Name? '.",
+      "question": "Mikä on Pythonin tiedostopääte?",
       "options": [
-        "'Name? '",
-        "Name?",
-        "\"Name?\"",
-        "input"
+        ".py",
+        ".java",
+        ".exe",
+        ".txt"
       ],
-      "correct": "'Name? '"
+      "correct": ".py"
     },
     {
-      "question": "Python: for i in range(______): käy läpi luvut 0-4.",
+      "question": "Mitä seuraava koodi tekee?\n\nnimi = input('Anna nimesi: ')\nprint('Hei', nimi)",
       "options": [
-        "5",
-        "4",
-        "(5)",
-        "0,5"
+        "Pyytää käyttäjältä nimen ja tervehtii",
+        "Tulostaa vain nimen",
+        "Antaa virheen",
+        "Lopettaa ohjelman"
       ],
-      "correct": "5"
+      "correct": "Pyytää käyttäjältä nimen ja tervehtii"
     },
     {
-      "question": "Java: muuttuja alustetaan int count = ______;",
+      "question": "Mitä funktio len(lista) palauttaa?",
       "options": [
-        "0",
-        "\"0\"",
-        "null",
-        "zero"
+        "Listan alkioiden lukumäärän",
+        "Listan suurimman arvon",
+        "Listan ensimmäisen arvon",
+        "Listan tyypin"
       ],
-      "correct": "0"
+      "correct": "Listan alkioiden lukumäärän"
     },
     {
-      "question": "Java: System.out.println(______) tulostaa muuttujan message.",
+      "question": "Mikä seuraavista on totta Pythonista?",
       "options": [
-        "message",
-        "\"message\"",
-        "System.out",
-        "println"
+        "Sisennys on osa syntaksia",
+        "Syntaksivirheet korjataan automaattisesti",
+        "Sulkeita ei koskaan käytetä",
+        "Kaikki muuttujat ovat globaaleja"
       ],
-      "correct": "message"
+      "correct": "Sisennys on osa syntaksia"
     },
     {
-      "question": "Java: if (score >= ______) tarkistaa pääsyn, jos raja on 50.",
+      "question": "Mikä seuraavista on totuusarvotyyppi Pythonissa?",
       "options": [
-        "50",
-        "score",
-        "\"50\"",
-        "pass"
+        "bool",
+        "float",
+        "int",
+        "char"
       ],
-      "correct": "50"
+      "correct": "bool"
     },
     {
-      "question": "Java: for (int i = 0; i < 10; ______) kasvattaa laskuria yhdellä.",
+      "question": "Mitä tekee 'break'-komento silmukassa?",
       "options": [
-        "i++",
-        "++i",
-        "i--",
-        "i += 2"
+        "Keskeyttää silmukan suorittamisen",
+        "Hyppää seuraavaan kierrokseen",
+        "Pysäyttää koko ohjelman",
+        "Tulostaa virheilmoituksen"
       ],
-      "correct": "i++"
+      "correct": "Keskeyttää silmukan suorittamisen"
     },
     {
-      "question": "Java: ArrayList<String> names = new ArrayList<>(______); luo tyhjän listan.",
+      "question": "Mitä tarkoittaa 'continue'-komento?",
       "options": [
-        ")",
-        "0",
-        "1",
-        "10"
+        "Siirtyy seuraavaan silmukan iteraatioon",
+        "Lopettaa ohjelman",
+        "Tulostaa muuttujan arvon",
+        "Aloittaa uuden funktion"
       ],
-      "correct": ")"
+      "correct": "Siirtyy seuraavaan silmukan iteraatioon"
     },
     {
-      "question": "Java: metodissa main parametrilista on String[] ______.",
+      "question": "Miten poistetaan muuttuja Pythonissa?",
       "options": [
-        "args",
-        "arguments",
-        "argv",
-        "params"
+        "del muuttuja",
+        "remove muuttuja",
+        "delete(muuttuja)",
+        "unset muuttuja"
       ],
-      "correct": "args"
+      "correct": "del muuttuja"
     },
     {
-      "question": "Java: while (running) { ______++; } kasvattaa muuttujaa steps.",
+      "question": "Mikä seuraavista on oikein kirjoitettu lista?",
       "options": [
-        "steps",
-        "running",
-        "++",
-        "i"
+        "[1, 2, 3]",
+        "{1, 2, 3}",
+        "(1, 2, 3)",
+        "1, 2, 3"
       ],
-      "correct": "steps"
+      "correct": "[1, 2, 3]"
     },
     {
-      "question": "Java: Scanner in = new Scanner(System.in); lukee syötteen komennolla String line = in.______();",
+      "question": "Mitä tekee 'return'-komento funktiossa?",
       "options": [
-        "nextLine",
-        "readLine",
-        "next",
-        "input"
+        "Palauttaa arvon kutsujalle",
+        "Tulostaa arvon ruudulle",
+        "Keskeyttää ohjelman",
+        "Poistaa funktion muistista"
       ],
-      "correct": "nextLine"
+      "correct": "Palauttaa arvon kutsujalle"
     },
     {
-      "question": "Java: taulukon ensimmäinen alkio haetaan muodossa nums[______];",
+      "question": "Mikä seuraavista on silmukka?",
       "options": [
-        "0",
-        "1",
-        "first",
-        "-1"
+        "for",
+        "def",
+        "if",
+        "try"
       ],
-      "correct": "0"
+      "correct": "for"
     },
     {
-      "question": "Java: boolean flag = ______; asettaa lipun todeksi.",
+      "question": "Mitä tarkoittaa indeksi listassa?",
       "options": [
-        "true",
-        "\"true\"",
-        "1",
-        "yes"
+        "Alkion sijaintia listassa",
+        "Listan pituutta",
+        "Listan nimeä",
+        "Tietotyyppiä"
       ],
-      "correct": "true"
+      "correct": "Alkion sijaintia listassa"
     },
     {
-      "question": "JavaScript: muuttuja let total = ______; alustaa laskurin nollaan.",
+      "question": "Mikä seuraavista on virheellinen muuttujan nimi?",
       "options": [
-        "0",
-        "\"0\"",
-        "null",
-        "NaN"
+        "2nimi",
+        "_nimi",
+        "nimi2",
+        "nimi_"
       ],
-      "correct": "0"
+      "correct": "2nimi"
     },
     {
-      "question": "JavaScript: konsoliin tulostetaan console.log(______). Täydennä muuttuja message.",
+      "question": "Mikä seuraavista tiedonmuodoista on muuttumaton (immutable)?",
       "options": [
-        "message",
-        "\"message\"",
-        "log",
-        "console"
-      ],
-      "correct": "message"
-    },
-    {
-      "question": "JavaScript: if (count === ______) tarkistaa nolla-arvon.",
-      "options": [
-        "0",
-        "\"0\"",
-        "null",
-        "NaN"
-      ],
-      "correct": "0"
-    },
-    {
-      "question": "JavaScript: for (let i = 0; i < 3; ______) lisää i:tä yhdellä.",
-      "options": [
-        "i++",
-        "++i",
-        "i--",
-        "i += 2"
-      ],
-      "correct": "i++"
-    },
-    {
-      "question": "JavaScript: taulukon loppuun lisätään numbers.______(value);",
-      "options": [
-        "push",
-        "append",
-        "add",
-        "insert"
-      ],
-      "correct": "push"
-    },
-    {
-      "question": "JavaScript: funktion määrittely function greet(______) { ... } sisältää parametrin name.",
-      "options": [
-        "name",
-        "this",
-        "args",
-        "value"
-      ],
-      "correct": "name"
-    },
-    {
-      "question": "JavaScript: palautus tehdään rivillä return ______;",
-      "options": [
-        "result",
-        "return",
-        "output",
-        "console.log"
-      ],
-      "correct": "result"
-    },
-    {
-      "question": "JavaScript: taulukon ensimmäinen alkio on items[______];",
-      "options": [
-        "0",
-        "1",
-        "first",
-        "-1"
-      ],
-      "correct": "0"
-    },
-    {
-      "question": "JavaScript: JSON-olio luodaan const user = { name: ______ }; kun nimi on muuttujassa nameValue.",
-      "options": [
-        "nameValue",
-        "\"nameValue\"",
-        "user",
-        "this.name"
-      ],
-      "correct": "nameValue"
-    },
-    {
-      "question": "Python: listan pituus saadaan len(______);",
-      "options": [
-        "items",
-        "len",
+        "tuple",
         "list",
-        "count"
+        "set",
+        "dict"
       ],
-      "correct": "items"
+      "correct": "tuple"
     },
     {
-      "question": "Python: merkkijonon muotoilu f\"Hei {______}\" täyttää muuttujalla name.",
+      "question": "Mikä on Pythonin komentorivin tulkki?",
       "options": [
-        "name",
-        "self",
-        "names",
-        "n"
+        "Interaktiivinen ympäristö, jossa voi suorittaa komentoja",
+        "Graafinen ohjelma",
+        "Tietokanta",
+        "Kääntäjä, joka luo exe-tiedostoja"
       ],
-      "correct": "name"
+      "correct": "Interaktiivinen ympäristö, jossa voi suorittaa komentoja"
     },
     {
-      "question": "Python: tyhjä lista luodaan komennolla ______ = [].",
+      "question": "Mitä tarkoittaa 'indentaatio' Pythonissa?",
       "options": [
-        "items",
-        "list",
-        "array",
-        "values"
+        "Koodin sisennystä, joka määrittää lohkot",
+        "Kommenttien kirjoittamista",
+        "Tyhjän rivin jättämistä",
+        "Rivien numerointia"
       ],
-      "correct": "items"
+      "correct": "Koodin sisennystä, joka määrittää lohkot"
     },
     {
-      "question": "Java: taulukon pituus haetaan nums.______. Täydennä length.",
+      "question": "Mikä on Pythonin avainsana ehtolauseelle?",
       "options": [
-        "length",
-        "size()",
-        "count",
-        "len()"
+        "if",
+        "when",
+        "case",
+        "switch"
       ],
-      "correct": "length"
+      "correct": "if"
     },
     {
-      "question": "Java: merkkijonojen yhdistäminen tapahtuu tekstissä first + ______.",
+      "question": "Mitä tekee 'input()'-funktio?",
       "options": [
-        "second",
-        "\"second\"",
-        "String",
-        "concat"
+        "Lukee käyttäjän syötteen merkkijonona",
+        "Tulostaa tekstin ruudulle",
+        "Laskee arvon automaattisesti",
+        "Tallentaa tiedoston"
       ],
-      "correct": "second"
-    },
-    {
-      "question": "JavaScript: template literal kirjoitetaan `Hei ${______}` muuttujalle name.",
-      "options": [
-        "name",
-        "this.name",
-        "names",
-        "value"
-      ],
-      "correct": "name"
-    },
-    {
-      "question": "JavaScript: const sum = a + ______; lisää luvun b.",
-      "options": [
-        "b",
-        "a",
-        "sum",
-        "total"
-      ],
-      "correct": "b"
-    },
-    {
-      "question": "Python: list comprehension [x for x in ______] toistaa listan numbers yli.",
-      "options": [
-        "numbers",
-        "range",
-        "x",
-        "list"
-      ],
-      "correct": "numbers"
-    },
-    {
-      "question": "Java: switch (option) { case 1: ______; break; } suorittaa metodin start();",
-      "options": [
-        "start()",
-        "run",
-        "option",
-        "case"
-      ],
-      "correct": "start()"
-    },
-    {
-      "question": "JavaScript: const result = items.filter(______); täydennä funktio predicate.",
-      "options": [
-        "predicate",
-        "item",
-        "filter",
-        "condition()"
-      ],
-      "correct": "predicate"
-    },
-    {
-      "question": "Python: tiedosto avataan with open(path, 'r') as ______:",
-      "options": [
-        "file",
-        "files",
-        "open",
-        "reader"
-      ],
-      "correct": "file"
+      "correct": "Lukee käyttäjän syötteen merkkijonona"
     }
   ]
 }
