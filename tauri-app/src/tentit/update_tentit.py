@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-Päivittää manifest.jsonin tentit-hakemiston JSON-tiedostojen perusteella.
+Päivittää manifest.jsonin tentit-hakemiston JSON-tiedostojen perusteella
+ja kopioi kaiken myös WEB/tentit/ -kansioon.
 
+- Luo automaattisesti WEB/tentit/ jos sitä ei ole.
 - Hakee kaikki *.json-tiedostot (mutta ohittaa manifest.jsonin).
 - Säilyttää aiemmin manifestissa olleet lisäkentät (esim. kuvaus).
-- Lisää/ajoittaa kategorian automaattisesti tiedostonimen perusteella.
+- Lisää kategorian tiedostonimen perusteella.
 - Luo luettavat otsikot (muuttaa _ ja - välilyönneiksi, isolla alkukirjaimella).
-- Kirjoittaa manifest.jsonin kauniisti sisennettynä (UTF-8, indent=2).
 """
 
 from __future__ import annotations
-
 import json
 import re
+import shutil
 from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
@@ -23,7 +24,7 @@ MANIFEST_FILENAME = "manifest.json"
 CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Muut"]
 CATEGORY_PRIORITY = {name: index for index, name in enumerate(CATEGORY_ORDER)}
 
-SMALL_WORDS = {"ja", "sekä", "tai", "ja", "vai"}
+SMALL_WORDS = {"ja", "sekä", "tai", "vai"}
 
 
 @dataclass
@@ -48,7 +49,7 @@ def slugify(value: str) -> str:
 
 def prettify_title(filename: str) -> str:
     stem = Path(filename).stem
-    words = re.split(r"[_\-\s]+", stem)
+    words = re.split(r"[_\\-\\s]+", stem)
     if not words:
         return stem.capitalize()
     pretty = [words[0].capitalize()]
@@ -109,7 +110,7 @@ def infer_category_from_filename(filename: str) -> str:
         return "Ohjelmointi"
     if "fysiikka" in name:
         return "Fysiikka"
-    if "tietotekniikka" in name or "it" in name or "tieto" in name:
+    if "tietoliikenne" in name or "ohjelmistosuunnittelu" in name or "tietotekniikka" in name:
         return "Tietotekniikka"
     return "Muut"
 
@@ -152,13 +153,24 @@ def gather_entries(manifest: Dict[str, Entry], tent_files: Iterable[Path]) -> Li
     return results
 
 
-def main() -> None:
-    root = Path(__file__).resolve().parent
-    manifest_path = root / MANIFEST_FILENAME
+def copy_to_web(source_dir: Path, target_dir: Path) -> None:
+    """Kopioi tenttitiedostot WEB/tentit -kansioon."""
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for file in source_dir.glob("*.json"):
+        shutil.copy2(file, target_dir / file.name)
+    print(f"✅ Kopioitu {len(list(source_dir.glob('*.json')))} tiedostoa → {target_dir}")
 
+
+def main() -> None:
+    # Tämä on tentit-kansion polku
+    tentit_dir = Path(__file__).resolve().parent
+    # Tämä on projektin juurikansio (yksi taso ylempänä)
+    project_root = tentit_dir.parent
+
+    manifest_path = tentit_dir / MANIFEST_FILENAME
     tent_files = [
         path
-        for path in root.glob("*.json")
+        for path in tentit_dir.glob("*.json")
         if path.name.lower() != MANIFEST_FILENAME.lower()
     ]
 
@@ -169,7 +181,11 @@ def main() -> None:
         json.dumps([entry.to_dict() for entry in updated_entries], indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"Päivitetty {manifest_path} ({len(updated_entries)} tenttiä).")
+    print(f"📝 Päivitetty {manifest_path} ({len(updated_entries)} tenttiä).")
+
+    # Nyt kopioidaan projektin juuren WEB/tentit -kansioon
+    web_tentit = project_root / "WEB" / "tentit"
+    copy_to_web(tentit_dir, web_tentit)
 
 
 if __name__ == "__main__":

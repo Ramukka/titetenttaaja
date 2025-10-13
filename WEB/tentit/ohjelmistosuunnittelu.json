@@ -1,0 +1,405 @@
+{
+  "TITLE": "Ohjelmistosuunnittelu",
+  "questions": [
+    {
+      "question": "Mitä tarkoittaa ohjelmistotuotanto?",
+      "options": [
+        "Ohjelmistojen järjestelmällistä kehittämistä ja ylläpitoa",
+        "Ohjelmien satunnaista koodaamista ilman suunnitelmaa",
+        "Tietokoneiden huoltoa",
+        "Laitteistojen tuotantoa"
+      ],
+      "correct": "Ohjelmistojen järjestelmällistä kehittämistä ja ylläpitoa"
+    },
+    {
+      "question": "Mikä on ohjelmistotuotannon päätavoite?",
+      "options": [
+        "Tuottaa ohjelmisto, joka täyttää käyttäjien tarpeet ajallaan ja budjetissa",
+        "Kirjoittaa mahdollisimman paljon koodia",
+        "Kehittää ohjelma ilman testejä",
+        "Välttää asiakkaiden osallistuminen"
+      ],
+      "correct": "Tuottaa ohjelmisto, joka täyttää käyttäjien tarpeet ajallaan ja budjetissa"
+    },
+    {
+      "question": "Mitä tarkoitetaan ohjelmistotuotannon elinkaarella?",
+      "options": [
+        "Kehitysvaiheiden sarjaa ideasta ylläpitoon",
+        "Tietokoneen käyttöikää",
+        "Ohjelman hinnoittelua",
+        "Käyttäjien koulutusta"
+      ],
+      "correct": "Kehitysvaiheiden sarjaa ideasta ylläpitoon"
+    },
+    {
+      "question": "Mitä tarkoittaa vesiputousmalli?",
+      "options": [
+        "Perinteinen ohjelmistokehitysmalli, jossa vaiheet etenevät järjestyksessä ilman paluuta",
+        "Ketterä kehitysmenetelmä",
+        "Tietoturvamalli",
+        "Testausautomaation vaihe"
+      ],
+      "correct": "Perinteinen ohjelmistokehitymalli, jossa vaiheet etenevät järjestyksessä ilman paluuta"
+    },
+    {
+      "question": "Mikä on ohjelmistotuotannon tärkein osa-alue?",
+      "options": [
+        "Vaatimusmäärittely",
+        "Koodin väri",
+        "Tietokannan väri",
+        "Asiakastuki"
+      ],
+      "correct": "Vaatimusmäärittely"
+    },
+    {
+      "question": "Mitä tarkoittaa vaatimusmäärittely?",
+      "options": [
+        "Ohjelmiston vaatimusten selvittämistä, dokumentointia ja hallintaa",
+        "Käyttäjien kouluttamista ohjelmiston käyttöön",
+        "Ohjelmakoodin kirjoittamista",
+        "Tietokannan hallintaa"
+      ],
+      "correct": "Ohjelmiston vaatimusten selvittämistä, dokumentointia ja hallintaa"
+    },
+    {
+      "question": "Mitä ovat toiminnalliset vaatimukset?",
+      "options": [
+        "Mitä käyttäjä voi tehdä ohjelmistolla",
+        "Ohjelman värit ja fontit",
+        "Käyttöjärjestelmän vaatimukset",
+        "Tietoturvaominaisuudet"
+      ],
+      "correct": "Mitä käyttäjä voi tehdä ohjelmistolla"
+    },
+    {
+      "question": "Mitä ovat ei-toiminnalliset vaatimukset?",
+      "options": [
+        "Laatuun ja ympäristöön liittyviä rajoitteita kuten käytettävyys ja suorituskyky",
+        "Ohjelmiston värit",
+        "Käyttäjän tehtävälista",
+        "Tietokannan rakenne"
+      ],
+      "correct": "Laatuun ja ympäristöön liittyviä rajoitteita kuten käytettävyys ja suorituskyky"
+    },
+    {
+      "question": "Mitä tarkoittaa MVP (Minimum Viable Product)?",
+      "options": [
+        "Tuoteversiota, jossa on vain välttämättömät ominaisuudet testauksen aloittamiseksi",
+        "Täysin valmis ohjelmisto",
+        "Prototyyppi ilman toiminnallisuuksia",
+        "Yksikkötesti"
+      ],
+      "correct": "Tuoteversiota, jossa on vain välttämättömät ominaisuudet testauksen aloittamiseksi"
+    },
+    {
+      "question": "Mikä on käyttäjätarina (User Story)?",
+      "options": [
+        "Lyhyt kuvaus käyttäjän tarpeesta ohjelmistolle",
+        "Tekninen määrittely dokumentti",
+        "Projektin aikataulu",
+        "Ohjelmointikieli"
+      ],
+      "correct": "Lyhyt kuvaus käyttäjän tarpeesta ohjelmistolle"
+    },
+    {
+      "question": "Mitä UML tarkoittaa?",
+      "options": [
+        "Unified Modeling Language, ohjelmistojen mallinnuskieli",
+        "Universal Machine Language",
+        "Usean mallin laskentatapa",
+        "Koodin optimointimenetelmä"
+      ],
+      "correct": "Unified Modeling Language, ohjelmistojen mallinnuskieli"
+    },
+    {
+      "question": "Mikä on UML-luokkakaavion tarkoitus?",
+      "options": [
+        "Kuvata järjestelmän rakenteen ja luokkien väliset suhteet",
+        "Kuvata käyttöliittymän värit",
+        "Esittää testausraportti",
+        "Näyttää ohjelman ajonopeus"
+      ],
+      "correct": "Kuvata järjestelmän rakenteen ja luokkien väliset suhteet"
+    },
+    {
+      "question": "Mikä on käyttötapauskaavio?",
+      "options": [
+        "Kuvaa, mitä käyttäjä voi tehdä järjestelmällä",
+        "Kuvaa luokkien perinnän",
+        "Esittää tietokantataulut",
+        "Näyttää järjestelmän virheet"
+      ],
+      "correct": "Kuvaa, mitä käyttäjä voi tehdä järjestelmällä"
+    },
+    {
+      "question": "Mitä sekvenssikaavio kuvaa?",
+      "options": [
+        "Olioiden välistä vuorovaikutusta ja tapahtumien järjestystä",
+        "Tietokantakaaviota",
+        "Käyttöliittymän painikkeita",
+        "Projektin aikataulua"
+      ],
+      "correct": "Olioiden välistä vuorovaikutusta ja tapahtumien järjestystä"
+    },
+    {
+      "question": "Mikä on Agile?",
+      "options": [
+        "Ketterä ohjelmistokehityksen menetelmä",
+        "Testausautomaation työkalu",
+        "Tietokantaohjelma",
+        "Versionhallintajärjestelmä"
+      ],
+      "correct": "Ketterä ohjelmistokehityksen menetelmä"
+    },
+    {
+      "question": "Mitä korostetaan ketterässä kehityksessä?",
+      "options": [
+        "Toimivaa ohjelmistoa ja tiivistä yhteistyötä asiakkaan kanssa",
+        "Laajaa dokumentaatiota ja jäykkää suunnittelua",
+        "Vesiputousmallia",
+        "Manuaalista testausta"
+      ],
+      "correct": "Toimivaa ohjelmistoa ja tiivistä yhteistyötä asiakkaan kanssa"
+    },
+    {
+      "question": "Mitä Lean-ajattelu korostaa?",
+      "options": [
+        "Arvoa tuottavan työn maksimointia ja hukan poistamista",
+        "Monimutkaisia prosesseja",
+        "Dokumenttien määrää",
+        "Pitkiä hyväksyntäketjuja"
+      ],
+      "correct": "Arvoa tuottavan työn maksimointia ja hukan poistamista"
+    },
+    {
+      "question": "Mikä on Kanbanin perusidea?",
+      "options": [
+        "Työn kulun näkyväksi tekeminen ja rajoittaminen eri vaiheissa",
+        "Kokonaisuuden suunnittelu etukäteen",
+        "Sattumanvarainen työnjako",
+        "Testaamisen automatisointi"
+      ],
+      "correct": "Työn kulun näkyväksi tekeminen ja rajoittaminen eri vaiheissa"
+    },
+    {
+      "question": "Mitä Scrum tarkoittaa?",
+      "options": [
+        "Ketterän ohjelmistokehityksen viitekehystä",
+        "Vesiputousmallin vaihetta",
+        "Tietokannan optimointia",
+        "Ohjelmointikieltä"
+      ],
+      "correct": "Ketterän ohjelmistokehityksen viitekehystä"
+    },
+    {
+      "question": "Ketkä kuuluvat Scrum-tiimiin?",
+      "options": [
+        "Tuoteomistaja, Scrum Master ja kehittäjät",
+        "Projektipäällikkö ja johtoryhmä",
+        "Testaajat ja käyttäjät",
+        "Suunnittelijat ja arkkitehdit"
+      ],
+      "correct": "Tuoteomistaja, Scrum Master ja kehittäjät"
+    },
+    {
+      "question": "Mikä on Scrum Masterin tehtävä?",
+      "options": [
+        "Huolehtia Scrumin sääntöjen noudattamisesta ja tiimin tukemisesta",
+        "Johtaa kehitystiimiä ylhäältäpäin",
+        "Laatii koodin testit",
+        "Omistaa tuotteen"
+      ],
+      "correct": "Huolehtia Scrumin sääntöjen noudattamisesta ja tiimin tukemisesta"
+    },
+    {
+      "question": "Mikä on sprintti?",
+      "options": [
+        "Aikajakso, jossa kehitystiimi tuottaa valmiin ohjelmistoversion",
+        "Projektin aloituspalaveri",
+        "Tietoturvatarkastus",
+        "Julkaisun nimi"
+      ],
+      "correct": "Aikajakso, jossa kehitystiimi tuottaa valmiin ohjelmistoversion"
+    },
+    {
+      "question": "Mitä `git clone` tekee?",
+      "options": [
+        "Lataa versionhallinnassa olevan projektin omalle koneelle",
+        "Yhdistää kaksi tiedostoa",
+        "Poistaa paikallisen haaran",
+        "Kääntää ohjelman"
+      ],
+      "correct": "Lataa versionhallinnassa olevan projektin omalle koneelle"
+    },
+    {
+      "question": "Mitä `git commit` tekee?",
+      "options": [
+        "Tallentaa paikalliset muutokset versiohistoriaan",
+        "Lataa etäsäilön sisällön",
+        "Luo uuden haaran",
+        "Poistaa tiedoston"
+      ],
+      "correct": "Tallentaa paikalliset muutokset versiohistoriaan"
+    },
+    {
+      "question": "Mitä tarkoittaa merge Gitissä?",
+      "options": [
+        "Haarojen yhdistämistä yhdeksi versioksi",
+        "Koodin poistamista",
+        "Julkaisun tekemistä",
+        "Projektin siirtoa"
+      ],
+      "correct": "Haarojen yhdistämistä yhdeksi versioksi"
+    },
+    {
+      "question": "Mitä tarkoittaa branch Gitissä?",
+      "options": [
+        "Eri kehityslinjan luomista uuden ominaisuuden testaamiseen",
+        "Koodin poistamista",
+        "Tietokannan varmuuskopiota",
+        "Julkaisun nimeä"
+      ],
+      "correct": "Eri kehityslinjan luomista uuden ominaisuuden testaamiseen"
+    },
+    {
+      "question": "Mitä tarkoittaa verifiointi ohjelmistotuotannossa?",
+      "options": [
+        "Varmistetaan, että ohjelma täyttää määritellyt vaatimukset",
+        "Tarkistetaan käyttäjän tyytyväisyys",
+        "Suoritetaan ohjelma asiakkaan koneella",
+        "Kirjataan testitulokset"
+      ],
+      "correct": "Varmistetaan, että ohjelma täyttää määritellyt vaatimukset"
+    },
+    {
+      "question": "Mitä tarkoittaa validointi?",
+      "options": [
+        "Varmistetaan, että ohjelmisto vastaa käyttäjien tarpeita",
+        "Testataan suorituskykyä",
+        "Tarkastetaan tietoturva",
+        "Poistetaan virheet"
+      ],
+      "correct": "Varmistetaan, että ohjelmisto vastaa käyttäjien tarpeita"
+    },
+    {
+      "question": "Mikä on yksikkötestaus?",
+      "options": [
+        "Yksittäisten ohjelman osien testausta erillään muusta järjestelmästä",
+        "Koko järjestelmän testausta",
+        "Käyttäjien tekemää testausta",
+        "Käyttöliittymän arviointia"
+      ],
+      "correct": "Yksittäisten ohjelman osien testausta erillään muusta järjestelmästä"
+    },
+    {
+      "question": "Mitä integraatiotestaus tarkistaa?",
+      "options": [
+        "Kuinka eri osat toimivat yhdessä",
+        "Koodin syntaksin",
+        "Käyttäjien palautteen",
+        "Kehitystiimin tehokkuuden"
+      ],
+      "correct": "Kuinka eri osat toimivat yhdessä"
+    },
+    {
+      "question": "Mikä on DevOpsin tavoite?",
+      "options": [
+        "Yhdistää kehitys ja ylläpito saumattomaksi kokonaisuudeksi",
+        "Korvata testaus",
+        "Poistaa versionhallinta",
+        "Hidastaa julkaisua"
+      ],
+      "correct": "Yhdistää kehitys ja ylläpito saumattomaksi kokonaisuudeksi"
+    },
+    {
+      "question": "Mitä tarkoittaa jatkuva integraatio (CI)?",
+      "options": [
+        "Koodin yhdistäminen automaattisesti päähaaraan ja testien suoritus",
+        "Tietoturvatestaus",
+        "Tietokannan optimointi",
+        "Käyttäjäpalautteen keruu"
+      ],
+      "correct": "Koodin yhdistäminen automaattisesti päähaaraan ja testien suoritus"
+    },
+    {
+      "question": "Mitä tarkoittaa jatkuva toimitus (CD)?",
+      "options": [
+        "Automaattinen ohjelmiston julkaisu tuotantoon testien jälkeen",
+        "Koodin kirjoittaminen käsin",
+        "Tietoturvaraportin luonti",
+        "Dokumentoinnin laatiminen"
+      ],
+      "correct": "Automaattinen ohjelmiston julkaisu tuotantoon testien jälkeen"
+    },
+    {
+      "question": "Mikä on savutesti (smoke test)?",
+      "options": [
+        "Nopea testi, joka varmistaa että ohjelma käynnistyy ja perustoiminnot toimivat",
+        "Lämpötilatesti",
+        "Tietoturvatesti",
+        "Beta-testi"
+      ],
+      "correct": "Nopea testi, joka varmistaa että ohjelma käynnistyy ja perustoiminnot toimivat"
+    },
+    {
+      "question": "Mitä Jenkins tekee DevOpsissa?",
+      "options": [
+        "Automatisoi rakentamisen, testauksen ja julkaisut",
+        "Valvoo käyttöliittymää",
+        "Korvaa versionhallinnan",
+        "Tuottaa raportteja käyttäjistä"
+      ],
+      "correct": "Automatisoi rakentamisen, testauksen ja julkaisut"
+    },
+    {
+      "question": "Mitä versionhallinnan hyötyjä on?",
+      "options": [
+        "Muutosten seurattavuus, yhteistyö ja palautus aiempiin versioihin",
+        "Koodin suojaus salasanalla",
+        "Tietokannan nopeutus",
+        "Ohjelman nopeampi käynnistys"
+      ],
+      "correct": "Muutosten seurattavuus, yhteistyö ja palautus aiempiin versioihin"
+    },
+    {
+      "question": "Mikä on katselmoinnin tarkoitus?",
+      "options": [
+        "Tarkistaa koodi ja dokumentit virheiden varalta",
+        "Testata suorituskyky",
+        "Julkaista ohjelma",
+        "Luoda tietokanta"
+      ],
+      "correct": "Tarkistaa koodi ja dokumentit virheiden varalta"
+    },
+    {
+      "question": "Mitä tarkoittaa atominen kommitti?",
+      "options": [
+        "Muutokset tallentuvat kokonaan tai eivät lainkaan",
+        "Osittainen tallennus",
+        "Samaa tarkoittaa kuin merge",
+        "Vain yksi tiedosto tallentuu"
+      ],
+      "correct": "Muutokset tallentuvat kokonaan tai eivät lainkaan"
+    },
+    {
+      "question": "Mikä on Product Ownerin rooli Scrumissa?",
+      "options": [
+        "Tuotteen vaatimusten määrittäjä ja priorisoija",
+        "Testauksen valvoja",
+        "Koodin tarkastaja",
+        "Projektin graafikko"
+      ],
+      "correct": "Tuotteen vaatimusten määrittäjä ja priorisoija"
+    },
+    {
+      "question": "Mitä sprintin retrospektiivi tarkoittaa?",
+      "options": [
+        "Tiimi arvioi omaa toimintaansa ja kehittää prosessia",
+        "Uuden sprintin aloittamista",
+        "Koodin varmistamista",
+        "Projektin lopetusta"
+      ],
+      "correct": "Tiimi arvioi omaa toimintaansa ja kehittää prosessia"
+    }
+  ]
+}

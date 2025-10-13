@@ -1,10 +1,8 @@
 const isTauri = typeof window !== "undefined" && !!window.__TAURI__;
 
 const CONFIG = {
-  basePath: isTauri ? "tentit/" : "../tentit/",
-  get manifestPath() {
-    return `${this.basePath}manifest.json`;
-  },
+  manifestPath: "./tentit/manifest.json",
+  basePath: "./tentit/",
 };
 
 

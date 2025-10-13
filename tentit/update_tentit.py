@@ -1,29 +1,33 @@
 #!/usr/bin/env python3
 """
-Päivittää manifest.jsonin tentit-hakemiston JSON-tiedostojen perusteella.
+Päivittää manifest.jsonin tentit-hakemiston JSON-tiedostojen perusteella
+ja kopioi kaiken myös WEB/tentit/ -kansioon.
 
+- Luo automaattisesti WEB/tentit/ jos sitä ei ole.
 - Hakee kaikki *.json-tiedostot (mutta ohittaa manifest.jsonin).
-- Säilyttää aiemmin manifestissa olleet lisäkentät (esim. kuvaus).
-- Lisää/ajoittaa kategorian automaattisesti tiedostonimen perusteella.
-- Luo luettavat otsikot (muuttaa _ ja - välilyönneiksi, isolla alkukirjaimella).
-- Kirjoittaa manifest.jsonin kauniisti sisennettynä (UTF-8, indent=2).
+- Lukee otsikon JSON-tiedoston TITLE-kentästä (tai fallback tiedostonimestä).
+- Lukee järjestysnumeron ORDER-kentästä (jos on).
+- Poistaa vanhan manifest.jsonin ennen uuden luontia (täysi päivitys).
+- Lisää kategorian tiedostonimen perusteella.
+- Luo luettavat otsikot (säilyttää ääkköset).
 """
 
 from __future__ import annotations
-
 import json
 import re
-from dataclasses import dataclass, replace
+import shutil
+import unicodedata
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
-TITLE_KEYS: tuple[str, ...] = ("title", "name", "otsikko", "nimi", "subject")
+TITLE_KEYS: tuple[str, ...] = ("TITLE", "title", "name", "otsikko", "nimi", "subject")
 MANIFEST_FILENAME = "manifest.json"
 
-CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Muut"]
+CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Ohjelmistosuunnittelu", "Muut"]
 CATEGORY_PRIORITY = {name: index for index, name in enumerate(CATEGORY_ORDER)}
 
-SMALL_WORDS = {"ja", "sekä", "tai", "ja", "vai"}
+SMALL_WORDS = {"ja", "sekä", "tai", "vai"}
 
 
 @dataclass
@@ -41,14 +45,18 @@ class Entry:
 
 
 def slugify(value: str) -> str:
+    """Luo tiedostonimestä URL/ID-yhteensopivan tunnisteen."""
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
     value = value.strip().lower()
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return re.sub(r"-{2,}", "-", value).strip("-") or "tentti"
 
 
 def prettify_title(filename: str) -> str:
+    """Luo siisti otsikko tiedostonimestä säilyttäen ääkköset."""
     stem = Path(filename).stem
-    words = re.split(r"[_\-\s]+", stem)
+    stem = stem.replace("_", " ").replace("-", " ").strip()
+    words = stem.split()
     if not words:
         return stem.capitalize()
     pretty = [words[0].capitalize()]
@@ -60,116 +68,105 @@ def prettify_title(filename: str) -> str:
     return " ".join(pretty)
 
 
-def load_manifest(path: Path) -> Dict[str, Entry]:
-    if not path.exists() or path.stat().st_size == 0:
-        return {}
-
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        print(f"⚠️  Virhe: {path.name} ei ole kelvollista JSONia, luodaan uusi manifest.")
-        return {}
-
-    entries: Dict[str, Entry] = {}
-    for raw in data:
-        file = raw.get("file")
-        if not isinstance(file, str):
-            continue
-        entry = Entry(
-            id=raw.get("id") or slugify(Path(file).stem),
-            title=raw.get("title") or raw.get("label") or prettify_title(file),
-            file=file,
-            extras={k: v for k, v in raw.items() if k not in {"id", "title", "label", "file"}},
-        )
-        entries[file] = entry
-    return entries
-
-
 def extract_title(data: Any, fallback: str) -> str:
+    """Etsii otsikon JSON-tiedoston sisällöstä TITLE-avainsanan avulla."""
     if isinstance(data, dict):
         for key in TITLE_KEYS:
             value = data.get(key)
             if isinstance(value, str) and value.strip():
                 return value.strip()
-        for value in data.values():
-            title = extract_title(value, fallback)
-            if title != fallback:
-                return title
-    elif isinstance(data, list):
-        for item in data:
-            title = extract_title(item, fallback)
-            if title != fallback:
-                return title
     return fallback
 
 
 def infer_category_from_filename(filename: str) -> str:
+    """Päättelee kategorian tiedostonimen perusteella."""
     name = filename.lower()
-    if "ohjelmointi" in name:
+    if "ohjelmointi" in name or "koodi" in name:
         return "Ohjelmointi"
     if "fysiikka" in name:
         return "Fysiikka"
-    if "tietotekniikka" in name or "it" in name or "tieto" in name:
+    if "tietoliikenne" in name or "tietotekniikka" in name:
         return "Tietotekniikka"
+    if "ohjelmistosuunnittelu" in name or "software" in name:
+        return "Ohjelmistosuunnittelu"
     return "Muut"
 
 
-def gather_entries(manifest: Dict[str, Entry], tent_files: Iterable[Path]) -> List[Entry]:
+def gather_entries(tent_files: Iterable[Path]) -> List[Entry]:
+    """Luo manifest-merkinnät tenttitiedostoista tyhjästä."""
     results: List[Entry] = []
+
     for file_path in tent_files:
         rel_name = file_path.name
-        data = json.loads(file_path.read_text(encoding="utf-8"))
-        previous = manifest.get(rel_name)
+        try:
+            data = json.loads(file_path.read_text(encoding="utf-8"))
+        except Exception:
+            data = {}
 
-        title = extract_title(data, previous.title if previous else prettify_title(rel_name))
-        category = (
-            previous.extras.get("category")
-            if previous and "category" in previous.extras
-            else infer_category_from_filename(rel_name)
-        )
+        # 🧠 Ensisijainen otsikko tiedoston TITLE-kentästä
+        title = extract_title(data, prettify_title(rel_name))
+        category = infer_category_from_filename(rel_name)
 
-        entry = previous or Entry(
+        # 🔢 Haetaan järjestysnumero, jos sellainen on JSONissa
+        order = 999
+        if isinstance(data, dict):
+            raw_order = data.get("ORDER") or data.get("order") or data.get("Order")
+            if isinstance(raw_order, (int, float)):
+                order = int(raw_order)
+
+        entry = Entry(
             id=slugify(file_path.stem),
             title=title,
             file=rel_name,
-            extras={},
+            extras={"category": category, "order": order},
         )
-
-        extras = dict(entry.extras)
-        extras["category"] = category
-
-        if entry.title != title or entry.extras != extras:
-            entry = replace(entry, title=title, extras=extras)
-
         results.append(entry)
 
-    def sort_key(item: Entry) -> tuple[int, str]:
+    def sort_key(item: Entry) -> tuple[int, str, int, str]:
+        """Järjestys: ensin kategoria, sitten ORDER, sitten otsikko."""
         category = item.extras.get("category", "Muut")
         priority = CATEGORY_PRIORITY.get(category, len(CATEGORY_PRIORITY))
-        return priority, category.lower(), item.title.lower()
+        order = item.extras.get("order", 999)
+        title = item.title.lower()
+        return (priority, category.lower(), order, title)
 
     results.sort(key=sort_key)
     return results
 
 
+def copy_to_web(source_dir: Path, target_dir: Path) -> None:
+    """Kopioi tenttitiedostot WEB/tentit -kansioon."""
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for file in source_dir.glob("*.json"):
+        shutil.copy2(file, target_dir / file.name)
+    print(f"✅ Kopioitu {len(list(source_dir.glob('*.json')))} tiedostoa → {target_dir}")
+
+
 def main() -> None:
-    root = Path(__file__).resolve().parent
-    manifest_path = root / MANIFEST_FILENAME
+    tentit_dir = Path(__file__).resolve().parent
+    project_root = tentit_dir.parent
+    manifest_path = tentit_dir / MANIFEST_FILENAME
 
     tent_files = [
-        path
-        for path in root.glob("*.json")
+        path for path in tentit_dir.glob("*.json")
         if path.name.lower() != MANIFEST_FILENAME.lower()
     ]
 
-    manifest_entries = load_manifest(manifest_path)
-    updated_entries = gather_entries(manifest_entries, tent_files)
+    # 🧹 Poistetaan vanha manifest.json kokonaan ennen luontia
+    if manifest_path.exists():
+        manifest_path.unlink()
+        print("🧹 Vanha manifest.json poistettu.")
+
+    updated_entries = gather_entries(tent_files)
 
     manifest_path.write_text(
         json.dumps([entry.to_dict() for entry in updated_entries], indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"Päivitetty {manifest_path} ({len(updated_entries)} tenttiä).")
+    print(f"📝 Luotu uusi {manifest_path} ({len(updated_entries)} tenttiä).")
+
+    web_tentit = project_root / "WEB" / "tentit"
+    copy_to_web(tentit_dir, web_tentit)
 
 
 if __name__ == "__main__":

@@ -333,4 +333,6 @@ button:disabled {
 /* --- Mobiili --- */
 @media (max-width: 760px) {
   body {
-    padding: clamp(0.5rem, 1.4vh,
+    padding: clamp(0.5rem, 1.4vh + 0.5vw, 1rem);
+  }
+}
