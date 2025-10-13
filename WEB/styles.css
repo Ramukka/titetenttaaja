@@ -23,15 +23,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: clamp(0.6rem, 1.4vh + 0.8vw, 2rem);
+  padding: clamp(0.4rem, 1vh + 0.5vw, 1.4rem);
   overflow: hidden;
 }
 
 .app {
-  width: min(940px, 100%);
+  width: min(880px, 100%);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.65rem, 1.6vh + 0.6vw, 1.6rem);
+  gap: clamp(0.5rem, 1.1vh + 0.5vw, 1.1rem);
   flex: 1 1 auto;
   min-height: 0;
 }
@@ -55,33 +55,49 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.94);
   border-radius: 16px;
-  padding: clamp(0.6rem, 1.1vh + 0.6vw, 1.4rem);
+  padding: clamp(0.55rem, 0.9vh + 0.6vw, 1.1rem);
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
   width: 100%;
   overflow: hidden;
 }
 
+/* --- Lomakekentät ja keskitys --- */
 .controls {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.55rem, 1.2vh + 0.4vw, 1.1rem);
+  gap: clamp(0.45rem, 1vh + 0.35vw, 0.9rem);
   flex-shrink: 0;
 }
 
 .controls-row {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.55rem, 1.2vh + 0.5vw, 1.1rem);
+  gap: 0.9rem;
   align-items: flex-end;
+  justify-content: center; /* keskitetään rivit */
 }
 
 .control-group {
-  flex: 1 1 min(240px, 100%);
+  flex: 1 1 280px;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.25rem, 0.4vh + 0.3vw, 0.45rem);
+  gap: 0.35rem;
+  max-width: 360px;
 }
 
+.controls-action {
+  align-self: center;
+  text-align: center;
+}
+
+/* Valintakenttien mitoitus */
+#exam-select,
+#question-count {
+  width: 100%;
+  max-width: 340px;
+}
+
+/* --- Yleinen kenttätyyli --- */
 label {
   font-weight: 600;
   color: #2d3748;
@@ -93,12 +109,24 @@ input[type="number"] {
   font: inherit;
   border-radius: 10px;
   border: 1px solid rgba(99, 102, 241, 0.35);
-  padding: clamp(0.45rem, 0.9vh + 0.35vw, 0.7rem) clamp(0.6rem, 0.8vh + 0.5vw, 0.9rem);
-  min-height: clamp(34px, 5vh, 44px);
+  padding: clamp(0.4rem, 0.8vh + 0.3vw, 0.65rem)
+    clamp(0.55rem, 0.7vh + 0.45vw, 0.85rem);
+  min-height: clamp(32px, 4.6vh, 42px);
   transition: border-color 0.2s ease, box-shadow 0.2s ease,
     transform 0.1s ease;
   background: rgba(255, 255, 255, 0.92);
   color: #1f2937;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 select option {
@@ -114,14 +142,16 @@ input[type="number"]:focus-visible {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
 }
 
+/* --- Painikkeet --- */
 button {
   background: #6366f1;
   color: white;
   cursor: pointer;
   font-weight: 600;
   border: none;
-  padding-inline: clamp(1rem, 1.4vh + 0.6vw, 1.8rem);
-  min-height: clamp(34px, 5.5vh, 46px);
+  padding-inline: clamp(0.9rem, 1.2vh + 0.5vw, 1.6rem);
+  min-height: clamp(32px, 5vh, 44px);
+  border-radius: 10px;
 }
 
 button:hover:not(:disabled) {
@@ -135,20 +165,17 @@ button:disabled {
   box-shadow: none;
 }
 
-.controls-action {
-  align-self: flex-start;
-}
-
 #status {
   min-height: clamp(0.7rem, 0.9vh + 0.4vw, 1.1rem);
   color: #2d3748;
 }
 
+/* --- Kysymyskortit --- */
 .quiz {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.65rem, 1.2vh + 0.5vw, 1.1rem);
+  gap: clamp(0.5rem, 0.9vh + 0.4vw, 0.9rem);
   min-height: 0;
 }
 
@@ -166,7 +193,7 @@ button:disabled {
 
 .progress {
   display: flex;
-  gap: clamp(0.5rem, 0.9vh + 0.4vw, 0.9rem);
+  gap: clamp(0.4rem, 0.7vh + 0.3vw, 0.75rem);
   color: #4a5568;
   font-weight: 600;
 }
@@ -175,7 +202,7 @@ button:disabled {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.55rem, 1vh + 0.5vw, 0.95rem);
+  gap: clamp(0.45rem, 0.8vh + 0.4vw, 0.8rem);
   min-height: 0;
   overflow: hidden;
   align-items: center;
@@ -192,7 +219,7 @@ button:disabled {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(0.4rem, 1vh + 0.4vw, 0.8rem);
+  gap: clamp(0.35rem, 0.7vh + 0.3vw, 0.7rem);
   justify-items: stretch;
 }
 
@@ -229,14 +256,14 @@ button:disabled {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: clamp(0.4rem, 0.8vh, 0.9rem);
+  margin-top: clamp(0.35rem, 0.6vh, 0.7rem);
 }
 
 .results {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.65rem, 1vh + 0.5vw, 1.1rem);
+  gap: clamp(0.5rem, 0.8vh + 0.4vw, 0.9rem);
   flex-shrink: 0;
 }
 
@@ -248,24 +275,62 @@ button:disabled {
   display: none !important;
 }
 
+/* --- Tenttilistan ja optioiden tyyli --- */
+#exam-select {
+  max-height: 280px;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: clamp(0.9rem, 1vh + 0.4vw, 1rem);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+/* Ryhmäotsikot (disabled option) */
+#exam-select option[disabled] {
+  color: #6b7280;
+  font-weight: 600;
+  background: #f3f4f6;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 6px 8px;
+  font-style: normal;
+}
+
+/* Varsinaiset tentit */
+#exam-select option:not([disabled]) {
+  color: #1f2937;
+  background: #ffffff;
+  padding: 5px 12px;
+  transition: background-color 0.15s ease;
+}
+
+/* Hover-efekti vain valittaville tenttivaihtoehdoille */
+#exam-select option:not([disabled]):hover {
+  background: #eef2ff;
+}
+
+/* Erottelu – hieman lisää ilmaa ryhmien väliin */
+#exam-select option[disabled] + option {
+  margin-top: 2px;
+}
+
+/* Vierityspalkin tyyli */
+#exam-select::-webkit-scrollbar {
+  width: 8px;
+}
+
+#exam-select::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 8px;
+}
+
+#exam-select::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.55);
+}
+
+/* --- Mobiili --- */
 @media (max-width: 760px) {
   body {
-    padding: clamp(0.5rem, 1.4vh, 1.1rem);
-  }
-
-  .app {
-    gap: clamp(0.55rem, 1.2vh + 0.5vw, 1.2rem);
-  }
-
-  .controls-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: clamp(0.45rem, 1.1vh, 0.7rem);
-  }
-
-  .controls-action,
-  .controls-action button,
-  button {
-    width: 100%;
-  }
-}
+    padding: clamp(0.5rem, 1.4vh,

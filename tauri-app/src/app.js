@@ -7,6 +7,7 @@ const CONFIG = {
   },
 };
 
+
 const elements = {
   examSelect: document.querySelector("#exam-select"),
   questionCountInput: document.querySelector("#question-count"),
@@ -33,6 +34,15 @@ const state = {
   hasAnswered: false,
 };
 
+const CATEGORY_FALLBACK_KEY = "muut";
+const CATEGORY_DISPLAY_NAMES = {
+  fysiikka: "Fysiikka",
+  ohjelmointi: "Ohjelmointi",
+  tietotekniikka: "Tietotekniikka",
+  [CATEGORY_FALLBACK_KEY]: "Muut",
+};
+const CATEGORY_KEY_ORDER = ["fysiikka", "ohjelmointi", "tietotekniikka", CATEGORY_FALLBACK_KEY];
+
 async function fetchManifest() {
   if (state.manifestLoaded) {
     return state.manifest;
@@ -47,7 +57,7 @@ async function fetchManifest() {
   state.manifest = manifestData.map((entry) => ({
     ...entry,
     id: entry.id ?? entry.file.replace(/\.json$/i, ""),
-    label: entry.label ?? entry.id ?? entry.file,
+    title: entry.title ?? entry.label ?? entry.id ?? entry.file,
     file: entry.file,
   }));
   state.manifestLoaded = true;
@@ -55,22 +65,71 @@ async function fetchManifest() {
 }
 
 function populateExamSelect() {
-  const previousValue = elements.examSelect.value;
-  elements.examSelect.innerHTML = "";
-  state.manifest.forEach((entry) => {
-    const option = document.createElement("option");
-    option.value = entry.id;
-    option.textContent = entry.label;
-    elements.examSelect.append(option);
+  const select = elements.examSelect;
+  const manifest = state.manifest;
+  select.innerHTML = "";
+
+  const grouped = new Map();
+  manifest.forEach((exam) => {
+    const rawCategory = typeof exam.category === "string" ? exam.category.trim() : "";
+    const categoryKey = rawCategory ? rawCategory.toLowerCase() : CATEGORY_FALLBACK_KEY;
+    const displayName =
+      CATEGORY_DISPLAY_NAMES[categoryKey] ?? (rawCategory || CATEGORY_DISPLAY_NAMES[CATEGORY_FALLBACK_KEY]);
+
+    if (!grouped.has(categoryKey)) {
+      grouped.set(categoryKey, { displayName, exams: [] });
+    }
+    const group = grouped.get(categoryKey);
+    if (rawCategory && !CATEGORY_DISPLAY_NAMES[categoryKey]) {
+      group.displayName = rawCategory;
+    }
+    group.exams.push(exam);
   });
 
-  if (!state.manifest.length) {
-    elements.examSelect.value = "";
+  const orderedKeys = [
+    ...CATEGORY_KEY_ORDER.filter((key) => grouped.has(key)),
+    ...[...grouped.keys()]
+      .filter((key) => !CATEGORY_KEY_ORDER.includes(key))
+      .sort((a, b) =>
+        grouped.get(a).displayName.localeCompare(
+          grouped.get(b).displayName,
+          "fi",
+          { sensitivity: "base" },
+        ),
+      ),
+  ];
+
+  orderedKeys.forEach((key) => {
+    const group = grouped.get(key);
+    if (!group) {
+      return;
+    }
+
+    group.exams.sort((a, b) => (a.title ?? "").localeCompare(b.title ?? "", "fi", { sensitivity: "base" }));
+
+    const headerOption = document.createElement("option");
+    headerOption.textContent = `— ${group.displayName} —`;
+    headerOption.disabled = true;
+    headerOption.value = "";
+    headerOption.dataset.category = key;
+    select.append(headerOption);
+
+    group.exams.forEach((exam) => {
+      const option = document.createElement("option");
+      option.value = exam.id;
+      option.textContent = `  ${exam.title ?? exam.id}`;
+      option.dataset.category = key;
+      select.append(option);
+    });
+  });
+
+  const firstAvailable = [...select.options].find((opt) => !opt.disabled);
+  if (firstAvailable) {
+    select.value = firstAvailable.value;
+  } else {
+    select.value = "";
     return;
   }
-
-  const hasPrevious = state.manifest.some((entry) => entry.id === previousValue);
-  elements.examSelect.value = hasPrevious ? previousValue : state.manifest[0].id;
 }
 
 function buildAssetPath(file) {
@@ -157,7 +216,7 @@ function determineQuestionSet(quizData) {
 function startQuiz(manifestEntry, quizData, questions) {
   state.quiz = {
     manifestEntry,
-    title: quizData.TITLE ?? manifestEntry.label ?? "Monivalintatentti",
+    title: quizData.TITLE ?? manifestEntry.title ?? "Monivalintatentti",
     questions,
   };
   state.currentQuestionIndex = 0;
@@ -317,6 +376,7 @@ elements.restartButton.addEventListener("click", async () => {
 });
 
 async function initialize() {
+  console.log("Manifest path:", CONFIG.manifestPath);
   setLoading(true, "Ladataan tenttilistaa...");
   try {
     await fetchManifest();
