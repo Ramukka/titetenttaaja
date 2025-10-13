@@ -1,7 +1,8 @@
 const CONFIG = {
-  manifestPath: "../tentit/manifest.json",
-  basePath: "../tentit/",
+  manifestPath: "./tentit/manifest.json",
+  basePath: "./tentit/",
 };
+
 
 const elements = {
   examSelect: document.querySelector("#exam-select"),
