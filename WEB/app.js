@@ -176,7 +176,8 @@ function renderQuestion() {
     const img = document.createElement('img');
     img.id = 'question-image';
     img.className = 'question-image';
-    img.src = q.image;
+    // Convert relative path ./images/X.png to tentit/images/X.png for correct resolution
+    img.src = q.image.startsWith('./') ? `tentit/${q.image.substring(2)}` : q.image;
     img.alt = q.question || 'Kysymyskuva';
     img.onerror = () => {
       img.style.display = 'none';
