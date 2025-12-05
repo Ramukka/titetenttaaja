@@ -157,7 +157,34 @@ function startQuiz(manifestEntry, quizData, questions) {
 function renderQuestion() {
   const q = state.quiz.questions[state.currentQuestionIndex];
   elements.progressLabel.textContent = `Kysymys ${state.currentQuestionIndex + 1}/${state.quiz.questions.length}`;
-  elements.questionText.textContent = q.question;
+  
+  // Näytetään kysymys jos se on olemassa
+  if (q.question) {
+    elements.questionText.textContent = q.question;
+    elements.questionText.style.display = 'block';
+  } else {
+    elements.questionText.style.display = 'none';
+  }
+  
+  // Tarkistetaan onko kuvaa
+  let existingImage = document.getElementById('question-image');
+  if (existingImage) {
+    existingImage.remove();
+  }
+  
+  if (q.image) {
+    const img = document.createElement('img');
+    img.id = 'question-image';
+    img.className = 'question-image';
+    img.src = q.image;
+    img.alt = q.question || 'Kysymyskuva';
+    img.onerror = () => {
+      img.style.display = 'none';
+      console.error('Kuvan lataus epäonnistui:', q.image);
+    };
+    elements.questionText.parentElement.insertBefore(img, elements.optionsList);
+  }
+  
   elements.optionsList.innerHTML = "";
   q.options.forEach((option) => {
     const li = document.createElement("li");

@@ -1,0 +1,447 @@
+Basic Electric Circuits & Components Chapter 2
+▪ Introduction
+▪ SI Units and Common Prefixes
+▪ Electrical Circuits
+▪ Direct Currents and Alternating Currents
+▪ Resistors, Capacitors and Inductors
+▪ Ohm’s and Kirchhoff’s Laws
+▪ Power Dissipation in Resistors
+▪ Resistors in Series and Parallel
+▪ Resistive Potential Dividers
+▪ Sinusoidal Quantities
+▪ Circuit Symbols
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Introduction
+
+2.1
+
+▪ This lecture outlines the basics of Electrical Circuits
+▪ For most students much of this will be familiar
+– this lecture can be seen as a revision session for
+this material
+
+▪ If there are any topics that you are unsure of (or that
+are new to you) you should get to grips with this
+material before the next lecture
+– the following lectures will assume a basic
+understanding of these topics
+
+▪ We will return to look at several of these topics in
+more detail in later lectures
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+SI Units
+
+2.2
+
+Quantity
+Capacitance
+Charge
+Current
+Electromotive force
+Frequency
+Inductance (self)
+Period
+Potential difference
+Power
+Resistance
+Temperature
+Time
+
+Quantity symbol
+C
+Q
+I
+E
+f
+L
+T
+V
+P
+R
+T
+t
+
+Unit
+Farad
+Coulomb
+Ampere
+Volt
+Hertz
+Henry
+Second
+Volt
+Watt
+Ohm
+Kelvin
+Second
+
+Unit symbol
+F
+C
+A
+V
+Hz
+H
+s
+V
+W
+Ω
+K
+s
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Common Prefixes
+
+2.3
+
+Prefix
+
+Name
+
+Meaning (multiply by)
+
+T
+
+tera
+
+1012
+
+G
+
+giga
+
+109
+
+M
+
+mega
+
+106
+
+k
+
+kilo
+
+103
+
+m
+
+milli
+
+10-3
+
+
+
+micro
+
+10-6
+
+n
+
+nano
+
+10-9
+
+p
+
+pico
+
+10-12
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Electrical Circuits
+
+2.4
+
+▪ Electric charge
+– an amount of electrical energy
+– can be positive or negative
+
+▪ Electric current
+– a flow of electrical charge, often a flow of electrons
+– conventional current is in the opposite direction to a
+flow of electrons
+
+▪ Current flow in a circuit
+– a sustained current needs a complete circuit
+– also requires a stimulus to cause the charge to flow
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Electrical Circuits
+▪ Electromotive force and potential difference
+– the stimulus that causes a current to flow is an e.m.f.
+– this represents the energy introduced into the circuit by
+a battery or generator
+– this results in an electric potential at each point in the
+circuit
+– between any two points in the circuit there may exist a
+potential difference
+– both e.m.f. and potential difference are measured in
+volts
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Electrical Circuits
+▪ A simple circuit
+
+▪ A water-based
+analogy
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Electrical Circuits
+▪ Voltage reference points
+– all potentials within a circuit must be measured with
+respect to some other point
+– we often measure voltages with respect to a zero volt
+reference called the ground or earth
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Electrical Circuits
+▪ Representing voltages in circuit diagrams
+– conventions vary around the world
+– we normally use an arrow, which is taken to represent
+the voltage on the head with respect to the tail
+– labels represent voltages with respect to earth
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Direct Current and Alternating Current
+
+2.5
+
+▪ Currents in electrical circuits may be constant or may
+vary with time
+▪ When currents vary with time they may be
+unidirectional or alternating
+▪ When the current flowing in a conductor always flows
+in the same direction this is direct current (DC)
+▪ When the direction of the current periodically
+changes this is alternating current (AC)
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Resistors, Capacitors and Inductors
+
+2.6
+
+▪ Resistors provide resistance
+– they oppose the flow of electricity
+– measured in Ohms ()
+
+▪ Capacitors provide capacitance
+– they store energy in an electric field
+– measured in Farads (F)
+
+▪ Inductors provide inductance
+– they store energy in a magnetic field
+– measured in Henry (H)
+
+▪ We will look at each component in later lectures
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Ohm’s Law
+
+2.7
+
+▪ The current flowing in a conductor is directly
+proportional to the applied voltage V and inversely
+proportional to its resistance R
+V = IR
+I = V/R
+R = V/I
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Kirchhoff’s Current Law
+
+2.8
+
+▪ At any instant the algebraic sum of the currents
+flowing into any junction in a circuit is zero
+▪ For example
+I1 – I2 – I3 = 0
+I2 = I1 – I3
+= 10 – 3
+=7A
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Kirchhoff’s Voltage Law
+
+2.8
+
+▪ At any instant the algebraic sum of the voltages
+around any loop in a circuit is zero
+▪ For example
+E – V1 – V2 = 0
+V1 = E – V2
+= 12 – 7
+= 5V
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Power Dissipation in Resistors
+
+2.9
+
+▪ The instantaneous power dissipation P of a resistor is
+given by the product of the voltage across it and the
+current passing through it. Combining this result with
+Ohm’s law gives:
+P = VI
+
+P = I2R
+P = V2/R
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Resistors in Series and Parallel
+
+2.10 & 2.11
+
+▪ Series
+R = R 1 + R 2 + R3
+▪ Parallel
+1
+1
+1
+1
+=
++
++
+R R1 R2 R3
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Resistive Potential Dividers
+
+2.12
+
+▪ General case
+
+V = V2 + (V1 − V2 )
+
+R2
+R1 + R2
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Resistive Potential Dividers
+▪ Example
+R2
+V = V2 + (V1 − V2 )
+R1 + R2
+R2
+= 10
+R1 + R2
+
+300
+= 10
+200 + 300
+= 6V
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Resistive Potential Dividers
+▪ Example
+
+V = V2 + (V1 − V2 )
+
+= 3 + 12
+
+R2
+R1 + R2
+
+500
+1000 + 500
+
+= 3+4
+= 7V
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Sinusoidal Quantities
+
+2.13
+
+▪ Length of time between corresponding points in
+successive cycles is the period T
+▪ Number of cycles per second is the frequency f
+▪ f = 1/T
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Circuit Symbols
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+2.14
+
+OHT 2.‹#›
+
+Circuit Symbols
+
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+Key Points
+▪ Understanding the next few lectures of this course relies on
+understanding the various topics covered in this session
+▪ A clear understanding of the concepts of voltage and current is
+essential
+▪ Ohm’s Law and Kirchhoff’s Laws are used extensively in later
+lectures
+▪ Experience shows that students have most problems with
+potential dividers – a topic that is used widely in the next few
+lectures
+▪ You are advised to make sure you are happy with this material
+now
+Storey: Electrical & Electronic Systems © Pearson Education Limited 2004
+
+OHT 2.‹#›
+
+
