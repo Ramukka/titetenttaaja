@@ -54,5 +54,12 @@
     "file": "ohjelmistosuunnittelu.json",
     "category": "Ohjelmistosuunnittelu",
     "order": 999
+  },
+  {
+    "id": "elektroniikan-perusteet",
+    "title": "Basic Electric Circuits & Components – Chapter 2",
+    "file": "elektroniikan_perusteet.json",
+    "category": "Muut",
+    "order": 999
   }
 ]
