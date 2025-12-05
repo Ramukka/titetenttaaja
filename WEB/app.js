@@ -143,6 +143,7 @@ function startQuiz(manifestEntry, quizData, questions) {
   state.quiz = {
     manifestEntry,
     questions,
+    content: quizData.content,
     title: quizData.TITLE ?? manifestEntry.title,
   };
   state.currentQuestionIndex = 0;
@@ -164,6 +165,9 @@ function renderReadingMaterial() {
   const item = state.quiz.content[state.currentQuestionIndex];
   elements.progressLabel.textContent = `${state.currentQuestionIndex + 1}/${state.quiz.content.length}`;
   
+  // Piiloita pääotsikko lukumateriaalissa
+  document.querySelector('.hero')?.classList.add('hidden');
+  
   // Otsikko
   elements.questionText.innerHTML = `<h3>${item.title}</h3>`;
   elements.questionText.style.display = 'block';
@@ -177,7 +181,7 @@ function renderReadingMaterial() {
   if (item.image) {
     const img = document.createElement('img');
     img.id = 'question-image';
-    img.className = 'question-image';
+    img.className = 'question-image reading-material-image';
     img.src = item.image.startsWith('./') ? `tentit/${item.image.substring(2)}` : item.image;
     img.alt = item.title || 'Kuva';
     img.onerror = () => {
@@ -220,6 +224,10 @@ function renderReadingMaterial() {
 
 function renderQuestion() {
   const q = state.quiz.questions[state.currentQuestionIndex];
+  
+  // Näytä pääotsikko tentissa
+  document.querySelector('.hero')?.classList.remove('hidden');
+  
   elements.progressLabel.textContent = `Kysymys ${state.currentQuestionIndex + 1}/${state.quiz.questions.length}`;
   
   // Näytetään kysymys jos se on olemassa
@@ -324,8 +332,16 @@ function showResults() {
 elements.startButton.addEventListener("click", async () => {
   if (!elements.examSelect.value) return;
   const { manifestEntry, quizData } = await loadQuiz(elements.examSelect.value);
-  const questions = determineQuestionSet(quizData);
-  startQuiz(manifestEntry, quizData, questions);
+  
+  // Tarkistetaan onko questions vai content
+  if (quizData.content) {
+    // Lukumateriaali - ei tarvita determineQuestionSet
+    startQuiz(manifestEntry, quizData, null);
+  } else {
+    // Tentti - käytä determineQuestionSet
+    const questions = determineQuestionSet(quizData);
+    startQuiz(manifestEntry, quizData, questions);
+  }
 });
 
 elements.restartButton.addEventListener("click", () => {
