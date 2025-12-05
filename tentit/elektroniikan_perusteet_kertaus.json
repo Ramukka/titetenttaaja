@@ -617,17 +617,7 @@
         "LED:n valaisemiseen"
       ],
       "correct": "Komponenttien väliaikaisen kytkentään ilman juottamista"
-    },
-    {
-      "image": "./images/35.png",
-      "question": "Mikä komponentti mittaa jännitettä piirissä?",
-      "options": [
-        "Voltmittari",
-        "Ammattari",
-        "Vastus",
-        "Kytkin"
-      ],
-      "correct": "Voltmittari"
     }
+  
   ]
 }
