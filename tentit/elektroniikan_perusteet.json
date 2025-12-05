@@ -1,0 +1,115 @@
+{
+  "TITLE": "Basic Electric Circuits & Components – Chapter 2",
+  "questions": [
+    {
+      "question": "Mikä on sähkövirta?",
+      "material_quote": "Electric current – a flow of electrical charge, often a flow of electrons",
+      "options": [
+        "Sähkövarauksen virtausta",
+        "Sähköenergian varastointia",
+        "Magneettikentän muutosta",
+        "Lämpöenergian siirtymistä"
+      ],
+      "correct": "Sähkövarauksen virtausta"
+    },
+    {
+      "question": "Mitä tapahtuu virran suunnalle tasavirrassa (DC)?",
+      "material_quote": "When the current flowing in a conductor always flows in the same direction this is direct current (DC)",
+      "options": [
+        "Se virtaa aina samaan suuntaan",
+        "Se vaihtaa suuntaa jatkuvasti",
+        "Se nousee ja laskee sinimuotoisesti",
+        "Se on satunnaista ja impulssimaista"
+      ],
+      "correct": "Se virtaa aina samaan suuntaan"
+    },
+    {
+      "question": "Mitä tapahtuu virran suunnalle vaihtovirrassa (AC)?",
+      "material_quote": "When the direction of the current periodically changes this is alternating current (AC)",
+      "options": [
+        "Se vaihtaa suuntaa jaksollisesti",
+        "Se ei koskaan vaihda suuntaa",
+        "Se virtaa vain positiiviseen suuntaan",
+        "Se toimii ilman sähköjännitettä"
+      ],
+      "correct": "Se vaihtaa suuntaa jaksollisesti"
+    },
+    {
+      "question": "Mitä resistori tekee?",
+      "material_quote": "Resistors provide resistance – they oppose the flow of electricity",
+      "options": [
+        "Vastustaa sähkövirran kulkua",
+        "Varastoi energiaa magneettikenttään",
+        "Varastoi energiaa sähkökenttään",
+        "Lisää jännitettä automaattisesti"
+      ],
+      "correct": "Vastustaa sähkövirran kulkua"
+    },
+    {
+      "question": "Mitä kondensaattori tekee?",
+      "material_quote": "Capacitors provide capacitance – they store energy in an electric field",
+      "options": [
+        "Varastoi energiaa sähkökenttään",
+        "Varastoi energiaa magneettikenttään",
+        "Vastustaa sähkövirran kulkua",
+        "Muuntaa AC:n DC:ksi"
+      ],
+      "correct": "Varastoi energiaa sähkökenttään"
+    },
+    {
+      "question": "Mitä induktori tekee?",
+      "material_quote": "Inductors provide inductance – they store energy in a magnetic field",
+      "options": [
+        "Varastoi energiaa magneettikenttään",
+        "Varastoi energiaa sähkökenttään",
+        "Tuottaa sähkövirtaa",
+        "Aiheuttaa jännitteen nousun"
+      ],
+      "correct": "Varastoi energiaa magneettikenttään"
+    },
+    {
+      "question": "Mitä vaaditaan virran ylläpitämiseksi piirissä?",
+      "material_quote": "a sustained current needs a complete circuit",
+      "options": [
+        "Suljettu virtapiiri",
+        "Kaksi virtalähdettä",
+        "Maadoittamaton kytkentä",
+        "Ainakin kolme komponenttia"
+      ],
+      "correct": "Suljettu virtapiiri"
+    },
+    {
+      "question": "Mikä aiheuttaa virran kulun piirissä?",
+      "material_quote": "the stimulus that causes a current to flow is an e.m.f.",
+      "options": [
+        "Sähkömotorinen voima (EMF)",
+        "Kondensaattorin purkautuminen",
+        "Johdon lämpötila",
+        "Sähkömagneettinen säteily"
+      ],
+      "correct": "Sähkömotorinen voima (EMF)"
+    },
+    {
+      "question": "Missä yksikössä resistanssia mitataan?",
+      "material_quote": "Resistors provide resistance – measured in Ohms (Ω)",
+      "options": [
+        "Ohmeissa",
+        "Ampeereissa",
+        "Faradeissa",
+        "Hertseissä"
+      ],
+      "correct": "Ohmeissa"
+    },
+    {
+      "question": "Missä yksikössä kapasitanssia mitataan?",
+      "material_quote": "Capacitance – measured in Farads (F)",
+      "options": [
+        "Faradeissa",
+        "Ampeereissa",
+        "Volteissa",
+        "Henryissä"
+      ],
+      "correct": "Faradeissa"
+    }
+  ]
+}
