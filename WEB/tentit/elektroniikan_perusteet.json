@@ -3,7 +3,6 @@
   "questions": [
     {
       "question": "Mitä sähkövirta tarkoittaa?",
-      "material_quote": "Electric current – a flow of electrical charge, often a flow of electrons",
       "options": [
         "Sähkövarauksen virtausta",
         "Sähköenergian varastointia",
@@ -14,7 +13,6 @@
     },
     {
       "question": "Miten tasavirta (DC) käyttäytyy?",
-      "material_quote": "When the current flowing in a conductor always flows in the same direction this is direct current (DC)",
       "options": [
         "Virta kulkee aina samaan suuntaan",
         "Virta vaihtaa suuntaa jatkuvasti",
@@ -25,7 +23,6 @@
     },
     {
       "question": "Miten vaihtovirta (AC) käyttäytyy?",
-      "material_quote": "When the direction of the current periodically changes this is alternating current (AC)",
       "options": [
         "Virta vaihtaa suuntaa jaksollisesti",
         "Virta ei koskaan vaihda suuntaa",
@@ -36,7 +33,6 @@
     },
     {
       "question": "Mikä on vastuksen tehtävä sähköpiirissä?",
-      "material_quote": "Resistors provide resistance – they oppose the flow of electricity",
       "options": [
         "Vastustaa sähkövirran kulkua",
         "Varastoi energiaa magneettikenttään",
@@ -47,7 +43,6 @@
     },
     {
       "question": "Mitä kondensaattori tekee?",
-      "material_quote": "Capacitors provide capacitance – they store energy in an electric field",
       "options": [
         "Varastoi energiaa sähkökenttään",
         "Varastoi energiaa magneettikenttään",
@@ -58,7 +53,6 @@
     },
     {
       "question": "Mitä induktori tekee?",
-      "material_quote": "Inductors provide inductance – they store energy in a magnetic field",
       "options": [
         "Varastoi energiaa magneettikenttään",
         "Varastoi energiaa sähkökenttään",
@@ -69,7 +63,6 @@
     },
     {
       "question": "Mitä tarvitaan, jotta virta kulkee piirissä jatkuvasti?",
-      "material_quote": "a sustained current needs a complete circuit",
       "options": [
         "Suljettu virtapiiri",
         "Kaksi virtalähdettä",
@@ -80,7 +73,6 @@
     },
     {
       "question": "Mikä saa virran kulkemaan sähköpiirissä?",
-      "material_quote": "the stimulus that causes a current to flow is an e.m.f.",
       "options": [
         "Sähkömotorinen voima (EMF)",
         "Kondensaattorin purkautuminen",
@@ -91,7 +83,6 @@
     },
     {
       "question": "Missä yksikössä resistanssia mitataan?",
-      "material_quote": "Resistors provide resistance – measured in Ohms (Ω)",
       "options": [
         "Ohmeissa",
         "Ampeereissa",
@@ -102,7 +93,6 @@
     },
     {
       "question": "Missä yksikössä kapasitanssia mitataan?",
-      "material_quote": "Capacitance – measured in Farads (F)",
       "options": [
         "Faradeissa",
         "Ampeereissa",
@@ -110,6 +100,166 @@
         "Henryissä"
       ],
       "correct": "Faradeissa"
+    },
+    {
+      "question": "Mitä kuorma sähköpiirissä tarkoittaa?",
+      "image": "./images/chap02/BASIC.png",
+      "options": [
+        "Komponentti, joka kuluttaa energiaa virtauksesta",
+        "Virtalähde, joka tuottaa energiaa",
+        "Johdin, joka johtaa virtaa",
+        "Vastus, joka estää virtaa"
+      ],
+      "correct": "Komponentti, joka kuluttaa energiaa virtauksesta"
+    },
+    {
+      "question": "Mikä on Ohmin laki?",
+      "image": "./images/chap02/OHM.png",
+      "options": [
+        "V = I × R (jännite = virta × resistanssi)",
+        "P = V + I + R",
+        "R = V - I",
+        "I = R + V"
+      ],
+      "correct": "V = I × R (jännite = virta × resistanssi)"
+    },
+    {
+      "question": "Mitä Kirchhoffin virtalaki kertoo?",
+      "image": "./images/chap02/KNOT.png",
+      "options": [
+        "Solmuun tulevien virtojen summa = lähtevien virtojen summa",
+        "Virta on aina vakio",
+        "Virta vaihtaa suuntaa säännöllisesti",
+        "Virta kasvaa eksponentiaalisesti"
+      ],
+      "correct": "Solmuun tulevien virtojen summa = lähtevien virtojen summa"
+    },
+    {
+      "question": "Miten vastukset käyttäytyvät sarjaan kytketyissä piireissä?",
+      "image": "./images/chap02/SERIES.png",
+      "options": [
+        "Virta on sama kaikissa, jännite laskee",
+        "Virta jakautuu, jännite on sama",
+        "Sekä virta että jännite ovat samoja",
+        "Vastukset neutraloivat toisensa"
+      ],
+      "correct": "Virta on sama kaikissa, jännite laskee"
+    },
+    {
+      "question": "Miten vastukset käyttäytyvät rinnakkain kytketyissä piireissä?",
+      "image": "./images/chap02/PARALLEL.png",
+      "options": [
+        "Jännite on sama, virta jakautuu",
+        "Virta on sama, jännite laskee",
+        "Molemmat pysyvät vakioina",
+        "Molemmat kasvavat eksponentiaalisesti"
+      ],
+      "correct": "Jännite on sama, virta jakautuu"
+    },
+    {
+      "question": "Mikä on SI-järjestelmän perussuureiden välinen suhde elektroniikassa?",
+      "options": [
+        "Virta mitataan ampeereissa, jännite volteissa, resistanssi ohmissa",
+        "Virta mitataan volteissa, jännite ampeereissa, resistanssi faradeissa",
+        "Kaikki mitataan samassa yksikössä",
+        "Yksiköt vaihtelevat maittain"
+      ],
+      "correct": "Virta mitataan ampeereissa, jännite volteissa, resistanssi ohmissa"
+    },
+    {
+      "question": "Mitä kilo (k) etuliite tarkoittaa SI-järjestelmässä?",
+      "options": [
+        "1 000 (tuhat)",
+        "100 (sata)",
+        "1 000 000 (miljona)",
+        "0.001 (tuhannesosa)"
+      ],
+      "correct": "1 000 (tuhat)"
+    },
+    {
+      "question": "Mitä mikro (μ) etuliite tarkoittaa SI-järjestelmässä?",
+      "options": [
+        "0.000001 (miljoonasosa)",
+        "1 000 000 (miljona)",
+        "0.001 (tuhannesosa)",
+        "0.01 (sadasosa)"
+      ],
+      "correct": "0.000001 (miljoonasosa)"
+    },
+    {
+      "question": "Mitä tapahtuu, kun konventionaalinen virta kulkee vastuksen läpi?",
+      "options": [
+        "Energia muuntuu lämmöksi",
+        "Energia varastoituu magneettikenttään",
+        "Energia varastoituu sähkökenttään",
+        "Energia häviää ilman muuntumista"
+      ],
+      "correct": "Energia muuntuu lämmöksi"
+    },
+    {
+      "question": "Sarjapiirissä kolme identtistä lamppua on kytketty sarjaan. Miten jännite jakautuu?",
+      "image": "./images/chap02/SERIES.png",
+      "options": [
+        "Jännite laskee kolmanneksen jokaisen lampun kohdalla",
+        "Jännite säilyy samana kaikissa lampuissa",
+        "Jännite on korkein ensimmäisessä lampussa",
+        "Jännite jakautuu epäsäännöllisesti"
+      ],
+      "correct": "Jännite laskee kolmanneksen jokaisen lampun kohdalla"
+    },
+    {
+      "question": "Rinnakkaispiirissä kolme identtistä lamppua on kytketty rinnakkain. Miten virta jakautuu?",
+      "image": "./images/chap02/PARALLEL.png",
+      "options": [
+        "Virta jakautuu tasan kolmeen haaraan",
+        "Kaikki virta kulkee ensimmäisen lampun läpi",
+        "Virta ei jakaudu ollenkaan",
+        "Virta kasvaa jokaisen lampun kohdalla"
+      ],
+      "correct": "Virta jakautuu tasan kolmeen haaraan"
+    },
+    {
+      "question": "Sarjan ja rinnakkaisen yhdistelmäpiirissä, mikä tapahtuu?",
+      "image": "./images/chap02/COMBINATION.png",
+      "options": [
+        "Sekä jännitteen alenemista että virran jakautumista",
+        "Vain jännitteen alenemista",
+        "Vain virran jakautumista",
+        "Näistä mikään ei tapahdu"
+      ],
+      "correct": "Sekä jännitteen alenemista että virran jakautumista"
+    },
+    {
+      "question": "Mitä konventionaalinen virta tarkoittaa?",
+      "options": [
+        "Virta kulkee positiivisesta negatiiviseen terminaaliin",
+        "Virta on sama kuin elektronien liike",
+        "Virta kulkee satunnaisesti",
+        "Virta on vain teoreettinen käsite"
+      ],
+      "correct": "Virta kulkee positiivisesta negatiiviseen terminaaliin"
+    },
+    {
+      "question": "Missä yksikössä induktanssia mitataan?",
+      "options": [
+        "Henryissä",
+        "Faradeissa",
+        "Ohmeissa",
+        "Volteissa"
+      ],
+      "correct": "Henryissä"
+    },
+    {
+      "question": "Mitä vastusvärikoodi ilmaisee?",
+      "image": "./images/chap02/RESCOLOR.png",
+      "options": [
+        "Resistanssin arvon ja toleranssin",
+        "Vastuksen tehoksi",
+        "Vastuksen valmistajan nimen",
+        "Vastuksen käyttölämpötilan"
+      ],
+      "correct": "Resistanssin arvon ja toleranssin"
     }
   ]
 }
+

@@ -128,32 +128,37 @@
                         "image":  "./images/chap02/SERIES.png"
                     },
                     {
-                        "title":  "26. Sarjan ja rinnakkaisen yhdistelmä",
-                        "text":  "Piiri, jossa kuormaelementtejä on sijoitettu sekä sarjaan että rinnakkain, aiheuttaa sekä jännitteen alenemista että virran jakautumista. Tämän yhdistelmän kokonaisresistanssi on puolitoista kertaa yhden resistiivisen elementin resistanssi.",
-                        "image":  "./images/chap02/COMBINATION.png"
-                    },
-                    {
-                        "title":  "27. Kirchhoffin virtalaki - Solmu",
-                        "text":  "Kolme virtaa, jotka tulevat solmuun, I1, I2, I3, ovat positiivisia arvoltaan ja kaksi virtaa, jotka lähtevät solmusta, I4 ja I5, ovat negatiivisia arvoltaan. Yhtälö: I1 + I2 + I3 - I4 - I5 = 0",
-                        "image":  "./images/chap02/KNOT.png"
-                    },
-                    {
-                        "title":  "28. Ohmin laki - Vastus",
-                        "text":  "Vastukset ovat laitteita, joita käytetään piireissä rajoittamaan virran kulkua tai asettamaan jännitetasoja piirin sisällä. R on resistanssi (Ω), P on tehonhäviö (W), V/U on jännite (V), I on virta (A). Johtavuus (S) on resistanssin käänteisarvo.",
-                        "image":  "./images/chap02/OHM.png"
-                    },
-                    {
-                        "title":  "29. Rinnakkaispiiri",
+                        "title":  "26. Rinnakkaispiiri",
                         "text":  "Rinnakkaispiiri sisältää kuormaelementtejä, joiden liitännät on tehty niin, että jännite on sama jokaisessa haarassa. Jos kaikilla lampulla on sama resistanssi, paristosta tuleva virta jakautuu tasan kolmeen haaraan. Lamput eivät himmene, mutta paristosta kulkee kolme kertaa enemmän virtaa, joten se tyhjenee nopeammin. Kokonaisresistanssi on kolmasosa yhden lampun resistanssista.",
                         "image":  "./images/chap02/PARALLEL.png"
                     },
                     {
-                        "title":  "30. Ohmin lain esimerkki",
+                        "title":  "27. Sarjan ja rinnakkaisen yhdistelmä",
+                        "text":  "Piiri, jossa kuormaelementtejä on sijoitettu sekä sarjaan että rinnakkain, aiheuttaa sekä jännitteen alenemista että virran jakautumista. Tämän yhdistelmän kokonaisresistanssi on puolitoista kertaa yhden resistiivisen elementin resistanssi.",
+                        "image":  "./images/chap02/COMBINATION.png"
+                    },
+                    {
+                        "title":  "28. Kirchhoffin virtalaki - Solmu",
+                        "text":  "Kolme virtaa, jotka tulevat solmuun, I1, I2, I3, ovat positiivisia arvoltaan ja kaksi virtaa, jotka lähtevät solmusta, I4 ja I5, ovat negatiivisia arvoltaan. Yhtälö: I1 + I2 + I3 - I4 - I5 = 0",
+                        "image":  "./images/chap02/KNOT.png"
+                    },
+                    {
+                        "title":  "29. Ohmin laki - Vastus",
+                        "text":  "Vastukset ovat laitteita, joita käytetään piireissä rajoittamaan virran kulkua tai asettamaan jännitetasoja piirin sisällä. R on resistanssi (Ω), P on tehonhäviö (W), V/U on jännite (V), I on virta (A). Johtavuus (S) on resistanssin käänteisarvo.",
+                        "image":  "./images/chap02/OHM.png"
+                    },
+                    {
+                        "title":  "30. Rinnakkaispiiri",
+                        "text":  "Rinnakkaispiiri sisältää kuormaelementtejä, joiden liitännät on tehty niin, että jännite on sama jokaisessa haarassa. Jos kaikilla lampulla on sama resistanssi, paristosta tuleva virta jakautuu tasan kolmeen haaraan. Lamput eivät himmene, mutta paristosta kulkee kolme kertaa enemmän virtaa, joten se tyhjenee nopeammin. Kokonaisresistanssi on kolmasosa yhden lampun resistanssista.",
+                        "image":  "./images/chap02/PARALLEL.png"
+                    },
+                    {
+                        "title":  "31. Ohmin lain esimerkki",
                         "text":  "Käytännön laskuesimerkki, jossa lasketaan jännitteen, virran ja vastuksen suhdetta konkreettisella esimerkillä.",
                         "image":  "./images/chap02/ohmExample.png"
                     },
                     {
-                        "title":  "31. Vastusvärikoodi",
+                        "title":  "32. Vastusvärikoodi",
                         "text":  "Vastusvärikoodit kertovat resistanssin arvon ja toleranssin. Värien järjestys määrää numeerisen arvon ja viimeinen väri toleranssin.",
                         "image":  "./images/chap02/RESCOLOR.png"
                     }
