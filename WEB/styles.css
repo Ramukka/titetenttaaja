@@ -374,3 +374,46 @@ button:disabled {
 .hidden {
   display: none !important;
 }
+
+/* 🔟 LUKUMATERIAALI ----------------------------------------*/
+.reading-text {
+  background: var(--bg-surface);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.6;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.reading-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.reading-nav button {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.reading-nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-color);
+  opacity: 0.9;
+}
+
+#question-text h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+

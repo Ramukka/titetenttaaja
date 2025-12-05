@@ -151,7 +151,71 @@ function startQuiz(manifestEntry, quizData, questions) {
   elements.quizTitle.textContent = state.quiz.title;
   elements.quizSection.classList.remove("hidden");
   elements.resultsSection.classList.add("hidden");
-  renderQuestion();
+  
+  // Tarkistetaan onko questions vai content
+  if (!state.quiz.questions && state.quiz.content) {
+    renderReadingMaterial();
+  } else {
+    renderQuestion();
+  }
+}
+
+function renderReadingMaterial() {
+  const item = state.quiz.content[state.currentQuestionIndex];
+  elements.progressLabel.textContent = `${state.currentQuestionIndex + 1}/${state.quiz.content.length}`;
+  
+  // Otsikko
+  elements.questionText.innerHTML = `<h3>${item.title}</h3>`;
+  elements.questionText.style.display = 'block';
+  
+  // Kuva
+  let existingImage = document.getElementById('question-image');
+  if (existingImage) {
+    existingImage.remove();
+  }
+  
+  if (item.image) {
+    const img = document.createElement('img');
+    img.id = 'question-image';
+    img.className = 'question-image';
+    img.src = item.image.startsWith('./') ? `tentit/${item.image.substring(2)}` : item.image;
+    img.alt = item.title || 'Kuva';
+    img.onerror = () => {
+      img.style.display = 'none';
+      console.error('Kuvan lataus epäonnistui:', item.image);
+    };
+    elements.questionText.parentElement.insertBefore(img, elements.optionsList);
+  }
+  
+  // Teksti
+  elements.optionsList.innerHTML = `<div class="reading-text">${item.text}</div>`;
+  
+  // Seuraava/Edellinen painikkeet
+  const navDiv = document.createElement('div');
+  navDiv.className = 'reading-nav';
+  navDiv.innerHTML = '';
+  
+  if (state.currentQuestionIndex > 0) {
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = '← Edellinen';
+    prevBtn.onclick = () => {
+      state.currentQuestionIndex--;
+      renderReadingMaterial();
+    };
+    navDiv.appendChild(prevBtn);
+  }
+  
+  if (state.currentQuestionIndex < state.quiz.content.length - 1) {
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Seuraava →';
+    nextBtn.onclick = () => {
+      state.currentQuestionIndex++;
+      renderReadingMaterial();
+    };
+    navDiv.appendChild(nextBtn);
+  }
+  
+  elements.optionsList.appendChild(navDiv);
 }
 
 function renderQuestion() {

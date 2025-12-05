@@ -1,623 +1,182 @@
 {
-  "TITLE": "Elektroniikan perusteet - Kertausmateriaali",
+  "TITLE": "Elektroniikan perusteet - Lukumateriaali",
   "ORDER": 1,
-  "questions": [
+  "isReadingMaterial": true,
+  "content": [
     {
+      "title": "1. Sähköpiirin peruskomponentit",
       "image": "./images/1.png",
-      "question": "Tutki kuvaa. Mikä seuraavista väitteistä on oikein yksinkertaisesta piiristä?",
-      "options": [
-        "Piirissä virta kulkee vastusta pitkin takaisin jännitelähteelle",
-        "Piirissä on kaksi erillistä virtapiiriä",
-        "Vastus lisää jännitettä piirissä",
-        "Vesianalogian mukaan johdin vastaa vesipumppua"
-      ],
-      "correct": "Piirissä virta kulkee vastusta pitkin takaisin jännitelähteelle"
+      "text": "Yksinkertaisessa sähköpiirissä virtaa kuljettaa jännitelähde (kuten paristo), joka pumppaa elektroneja piirin läpi. Vesianalogian mukaan jännitelähde toimii kuin vesipumppu, joka nostaa vettä korkeammalle. Energia mitataan e.m.f:n (electromotive force) avulla, joka kuvaa energian määrää per varausyksikkö."
     },
     {
-      "image": "./images/1.png",
-      "question": "Vesianalogian mukaan, mitä sähköpiirin osaa pumppu (pump) edustaa?",
-      "options": [
-        "Jännitelähdettä (voltage source)",
-        "Vastusta (resistance)",
-        "Johdinta (wire)",
-        "Virtaa (current)"
-      ],
-      "correct": "Jännitelähdettä (voltage source)"
-    },
-    {
-      "image": "./images/1.png",
-      "question": "Mikä on e.m.f. (electromotive force) sähköpiirissä?",
-      "options": [
-        "Jännitelähteen tuottama sähkövirta",
-        "Jännitelähteen lähtöpaine (output pressure)",
-        "Virtapiirin kokonaisvastus",
-        "Johdinten sähköinen kapasitanssi"
-      ],
-      "correct": "Jännitelähteen lähtöpaine (output pressure)"
-    },
-    {
+      "title": "2. Jännitteen merkintätavat",
       "image": "./images/2.png",
-      "question": "Miten jännite merkitään piirikaavioihin?",
-      "options": [
-        "Nuolella, joka osoittaa jännitteen suunnan pään ja hännän välillä",
-        "Viivalla, joka yhdistää kaksi pistettä",
-        "Neliöllä, joka ympäröi komponentin",
-        "Ympyrällä, joka merkitsee maadoitusta"
-      ],
-      "correct": "Nuolella, joka osoittaa jännitteen suunnan pään ja hännän välillä"
+      "text": "Jännite merkitään piirikaavioihin nuolella, joka osoittaa suunnan pään ja hännän välillä. Jännitemerkinnät esitetään aina maahan (earth) nähden, mikä on nolla-volttiviite. Kuvassa näkyy, kuinka eri pisteet piirissä voivat olla eri potentiaaleissa, mutta samalla tasolla olevat pisteet ovat samassa potentiaalissa."
     },
     {
-      "image": "./images/2.png",
-      "question": "Mihin nähden jännitemerkinnät (labels) esitetään piirikaavioissa?",
-      "options": [
-        "Maahan (earth) nähden",
-        "Virtaan nähden",
-        "Taajuuteen nähden",
-        "Aikaan nähden"
-      ],
-      "correct": "Maahan (earth) nähden"
-    },
-    {
-      "image": "./images/2.png",
-      "question": "Kuvassa (a) mikä on solmupisteen ja maan (0 V) välinen jännite?",
-      "options": [
-        "VA",
-        "VB",
-        "VA + VB",
-        "VA - VB"
-      ],
-      "correct": "VA"
-    },
-    {
-      "image": "./images/2.png",
-      "question": "Kuvassa (b) mitkä pisteet ovat samassa potentiaalissa?",
-      "options": [
-        "Kaikki kolme pistettä ovat samassa vaakasuorassa linjassa",
-        "Vain ylimmät pisteet",
-        "Vain alimmat pisteet (0 V)",
-        "Kaikki pisteet ovat eri potentiaalissa"
-      ],
-      "correct": "Kaikki kolme pistettä ovat samassa vaakasuorassa linjassa"
-    },
-    {
+      "title": "3. Ground-referenssi ja potentiaalit",
       "image": "./images/3.png",
-      "question": "Mihin kohtaan piiriä jännitteet mitataan?",
-      "options": [
-        "Johonkin toiseen pisteeseen nähden",
-        "Suoraan ilmasta",
-        "Virtapiirin ulkopuolelta",
-        "Ei tarvitse referenssipistettä"
-      ],
-      "correct": "Johonkin toiseen pisteeseen nähden"
+      "text": "Jännitteet mitataan aina johonkin referenssipisteeseen nähden. Yleisin nolla-voltin referenssipiste on 'ground' tai 'earth' (maa), jota merkitään erityisellä ground-symbolilla. Tämä symboli näkyy kuvassa oikeassa alakulmassa, ja se auttaa piirikaavioissa selkeyttämään referenssipistettä."
     },
     {
-      "image": "./images/3.png",
-      "question": "Mikä on yleinen nolla-voltin referenssipiste nimeltään?",
-      "options": [
-        "Ground tai earth (maa)",
-        "Positive terminal (positiivinen napa)",
-        "Neutral point (neutraali piste)",
-        "Center tap (keskiulosotto)"
-      ],
-      "correct": "Ground tai earth (maa)"
-    },
-    {
-      "image": "./images/3.png",
-      "question": "Mitä kuvassa (b) oleva symboli oikeassa alakulmassa edustaa?",
-      "options": [
-        "Ground-symbolia (maadoitus)",
-        "Jännitelähteen symbolia",
-        "Vastuksen symbolia",
-        "Kondensaattorin symbolia"
-      ],
-      "correct": "Ground-symbolia (maadoitus)"
-    },
-    {
-      "image": "./images/3.png",
-      "question": "Kumpi piirikaaviosta (a) vai (b) näyttää selkeämmin ground-referenssin?",
-      "options": [
-        "Kuva (b), koska siinä on ground-symboli",
-        "Kuva (a), koska siinä on 0 V merkintä",
-        "Molemmat ovat yhtä selkeitä",
-        "Kummastakaan ei näe ground-referenssiä"
-      ],
-      "correct": "Kuva (b), koska siinä on ground-symboli"
-    },
-    {
+      "title": "4. Piirikomponentit ja niiden funktiot",
       "image": "./images/4.png",
-      "question": "Mitkä komponentit varastoivat energiaa sähkökenttään?",
-      "options": [
-        "Kondensaattorit (Capacitors)",
-        "Resistorit (Resistors)",
-        "Kelat (Inductors)",
-        "Diodit (Diodes)"
-      ],
-      "correct": "Kondensaattorit (Capacitors)"
+      "text": "Sähköpiirissä on erilaisia komponentteja, joilla on omat tehtävänsä. Kondensaattorit (capacitors) varastoivat energiaa sähkökenttään, kun taas kelat (inductors) varastoivat energiaa magneettikenttään. Resistorit vastustavat sähkövirran kulkua ja muuttavat sähköenergiaa lämmöksi. Muuttuvia resistoreita voidaan käyttää piirin vastuksen säätämiseen."
     },
     {
-      "image": "./images/4.png",
-      "question": "Mitkä komponentit varastoivat energiaa magneettikenttään?",
-      "options": [
-        "Kelat (Inductors)",
-        "Kondensaattorit (Capacitors)",
-        "Resistorit (Resistors)",
-        "Transistorit (Transistors)"
-      ],
-      "correct": "Kelat (Inductors)"
-    },
-    {
-      "image": "./images/4.png",
-      "question": "Mitä resistorit tekevät piirissä?",
-      "options": [
-        "Vastustavat sähkövirran kulkua",
-        "Vahvistavat signaalia",
-        "Varastoivat energiaa",
-        "Tasasuuntaavat virtaa"
-      ],
-      "correct": "Vastustavat sähkövirran kulkua"
-    },
-    {
-      "image": "./images/4.png",
-      "question": "Millä komponentilla voidaan säätää piirin vastusta?",
-      "options": [
-        "Muuttuvalla resistorilla (Variable resistor)",
-        "Kiinteällä kondensaattorilla",
-        "Diodilla",
-        "Transistorilla"
-      ],
-      "correct": "Muuttuvalla resistorilla (Variable resistor)"
-    },
-    {
+      "title": "5. Jännitemerkintöjen soveltaminen",
       "image": "./images/5.png",
-      "question": "Mitä nuoli jännitteen merkinnässä edustaa?",
-      "options": [
-        "Jännitteen suuntaa pään ja hännän välillä",
-        "Virran suuntaa",
-        "Komponentin fyysistä kokoa",
-        "Vastuksen suuruutta"
-      ],
-      "correct": "Jännitteen suuntaa pään ja hännän välillä"
+      "text": "Jännitteen suuntaa merkitsevät nuolet kertovat, kuinka jännite mitataan. Kuvassa näkyy, kuinka eri resistoreiden ylissä olevat jännitteet (VB, VC) edustavat kyseisen komponentin pään jännitettä häntään nähden. Kaikki jännitemerkinnät esitetään suhteessa maahan."
     },
     {
-      "image": "./images/5.png",
-      "question": "Kuvassa (a), mikä on jännite vasemmanpuoleisimman resistorin yli?",
-      "options": [
-        "VB",
-        "VA",
-        "VA + VB",
-        "VA - VB"
-      ],
-      "correct": "VB"
-    },
-    {
-      "image": "./images/5.png",
-      "question": "Kuvassa (b), mikä jännitemerkintä on ylimmän resistorin yli?",
-      "options": [
-        "VC",
-        "VD",
-        "VC + VD",
-        "0 V"
-      ],
-      "correct": "VC"
-    },
-    {
-      "image": "./images/5.png",
-      "question": "Miten jännitteet merkitään suhteessa maahan (earth)?",
-      "options": [
-        "Labelit edustavat jännitteitä maan suhteen",
-        "Nuolet osoittavat aina ylöspäin",
-        "Merkinnät ovat satunnaisia",
-        "Kaikki jännitteet ovat samat"
-      ],
-      "correct": "Labelit edustavat jännitteitä maan suhteen"
-    },
-    {
+      "title": "6. Resistorien sarjaan- ja rinnankytketyt",
       "image": "./images/6.png",
-      "question": "Mitä tapahtuu kun resistoreita kytketään sarjaan?",
-      "options": [
-        "Kokonaisvastus kasvaa",
-        "Kokonaisvastus pienenee",
-        "Vastus pysyy samana",
-        "Jännite katoaa"
-      ],
-      "correct": "Kokonaisvastus kasvaa"
+      "text": "Resistoreita voidaan kytkeä kahdella tavalla. Sarjakytkennässä kokonaisvastus kasvaa (R_tot = R1 + R2 + ...), ja sama virta kulkee kaikkien komponenttien läpi. Rinnankytketyssä piirissä kokonaisvastus pienenee ja lasketaan käänteisarvojen summan käänteisluvuna (1/R_tot = 1/R1 + 1/R2 + ...). Rinnankytketyssä piirissä jännite on sama kaikilla komponenteilla."
     },
     {
-      "image": "./images/6.png",
-      "question": "Mitä tapahtuu kun resistoreita kytketään rinnan?",
-      "options": [
-        "Kokonaisvastus pienenee",
-        "Kokonaisvastus kasvaa",
-        "Vastus pysyy samana",
-        "Virta katkeaa"
-      ],
-      "correct": "Kokonaisvastus pienenee"
-    },
-    {
-      "image": "./images/6.png",
-      "question": "Miten sarjakytkennän kokonaisvastus lasketaan?",
-      "options": [
-        "Lasketaan vastusten arvot yhteen",
-        "Lasketaan käänteisarvojen summa",
-        "Kerrotaan vastusten arvot keskenään",
-        "Jaetaan suurin vastus pienimmällä"
-      ],
-      "correct": "Lasketaan vastusten arvot yhteen"
-    },
-    {
-      "image": "./images/6.png",
-      "question": "Sarjakytkennässä sama virta kulkee kaikkien komponenttien läpi. Mikä pysyy samana rinnankytketyssä piirissä?",
-      "options": [
-        "Jännite kaikkien komponenttien yli",
-        "Virta kaikkien komponenttien läpi",
-        "Vastus kaikissa komponenteissa",
-        "Teho kaikissa komponenteissa"
-      ],
-      "correct": "Jännite kaikkien komponenttien yli"
-    },
-    {
+      "title": "7. Ohmin laki",
       "image": "./images/7.png",
-      "question": "Mikä on Ohmin laki?",
-      "options": [
-        "V = I × R",
-        "V = I / R",
-        "V = I + R",
-        "V = R / I"
-      ],
-      "correct": "V = I × R"
+      "text": "Ohmin laki on yksi tärkeimmistä sähkötekniikan peruslaeista: V = I × R. Jännite (V) on virran (I) ja vastuksen (R) tulo. Tämä yhtälö voidaan järjestää myös muotoihin I = V / R ja R = V / I. Esimerkiksi: jos jännite on 12V ja vastus 4Ω, virta on 3A; jos vastus on 10Ω ja virta 2A, jännite on 20V."
     },
     {
-      "image": "./images/7.png",
-      "question": "Jos jännite on 12V ja vastus 4Ω, mikä on virta?",
-      "options": [
-        "3A",
-        "4A",
-        "8A",
-        "48A"
-      ],
-      "correct": "3A"
-    },
-    {
-      "image": "./images/7.png",
-      "question": "Miten lasketaan vastus kun jännite ja virta tunnetaan?",
-      "options": [
-        "R = V / I",
-        "R = V × I",
-        "R = I / V",
-        "R = V + I"
-      ],
-      "correct": "R = V / I"
-    },
-    {
-      "image": "./images/7.png",
-      "question": "Jos vastus on 10Ω ja virta 2A, mikä on jännite?",
-      "options": [
-        "20V",
-        "5V",
-        "12V",
-        "8V"
-      ],
-      "correct": "20V"
-    },
-    {
+      "title": "8. Johdanto perusperiaatteisiin",
       "image": "./images/8.png",
-      "question": "Mikä on luvun johdannon päätarkoitus?",
-      "options": [
-        "Kertaus sähköpiirien perusteista",
-        "Syventävä kvanttielektroniikka",
-        "Ohjelmointikielten esittely",
-        "Ainoastaan laboratorioturvallisuus"
-      ],
-      "correct": "Kertaus sähköpiirien perusteista"
+      "text": "Tämä luku toimii kertauksena sähköpiirien perusteista ja luo pohjaa syvemmälle oppimiselle. Täällä opimme tärkeimmät käsitteet ja periaatteet, joita käytämme myöhemmin elektronisten piirien suunnittelussa."
     },
     {
+      "title": "9. Kapasitanssi ja sen yksikkö",
       "image": "./images/9.png",
-      "question": "Mikä on kapasitanssin SI-yksikkö?",
-      "options": [
-        "Faradi (F)",
-        "Henry (H)",
-        "Ohmi (Ω)",
-        "Watti (W)"
-      ],
-      "correct": "Faradi (F)"
+      "text": "Kapasitanssi kuvaa komponentin kykyä varastoida sähköä. Kapasitanssin SI-yksikkö on faradi (F). Kondensaattorin kapasitanssi kertoo, kuinka paljon varausta se voi varastoida tietyllä jännitteellä. Suurempi kapasitanssi tarkoittaa suurempaa varausvarastointikykyä."
     },
     {
+      "title": "10. SI-etuliitteet",
       "image": "./images/10.png",
-      "question": "Mitä etuliite giga (G) tarkoittaa?",
-      "options": [
-        "10^9",
-        "10^6",
-        "10^3",
-        "10^-9"
-      ],
-      "correct": "10^9"
+      "text": "Sähkötekniikassa käytetään SI-etuliitteitä suurten ja pienten lukujen esittämiseen. Giga (G) tarkoittaa 10^9, mega (M) tarkoittaa 10^6, kilo (k) tarkoittaa 10^3, milli (m) tarkoittaa 10^-3, ja mikro (μ) tarkoittaa 10^-6. Näiden kanssa säästyy kirjoitustyötä ja tekemisestä tulee selkeämpää."
     },
     {
+      "title": "11. Virtapiiri ja sen ehdot",
       "image": "./images/11.png",
-      "question": "Mikä pitää yllä jatkuvaa virtaa piirissä?",
-      "options": [
-        "Suljettu virtapiiri ja lähde",
-        "Pelkkä vastus",
-        "Johdinten pituus",
-        "Kondensaattorin varaus"
-      ],
-      "correct": "Suljettu virtapiiri ja lähde"
+      "text": "Jatkuva virta virtapiirissä vaatii kaksi asiaa: suljetun virtapiirin ja energialähteen. Pelkkä vastus ei aiheuta virtaa ilman energialähdettä. Johdinten pituus tai kondensaattorin varaus yksinään eivät riitä jatkuvan virran ylläpitoon."
     },
     {
+      "title": "12. Elektromotorinen voima (e.m.f.)",
       "image": "./images/12.png",
-      "question": "Mitä e.m.f. (electromotive force) edustaa?",
-      "options": [
-        "Energian lisäystä piirissä (jännitelähteen vaikutus)",
-        "Vastuksen aiheuttamaa häviötä",
-        "Johdinten lämpötilaa",
-        "Magneettikentän vaihtelua"
-      ],
-      "correct": "Energian lisäystä piirissä (jännitelähteen vaikutus)"
+      "text": "E.m.f. (electromotive force) edustaa energian lisäystä piirissä – se on jännitelähteen tuottaman energian mitta per varausyksikkö. E.m.f. on eri asia kuin vastuksen aiheuttama häviö tai johdinten lämpötila. Se on puhtaasti energialähteen ominaisuus."
     },
     {
+      "title": "13. Virtapiirin vaatimukset",
       "image": "./images/13.png",
-      "question": "Mitä vaaditaan, jotta virta kulkee jatkuvasti?",
-      "options": [
-        "Suljettu piiri ja potentiaaliero",
-        "Vain suuri resistanssi",
-        "Ainoastaan kondensaattori",
-        "Mahdollisimman lyhyt johto"
-      ],
-      "correct": "Suljettu piiri ja potentiaaliero"
+      "text": "Jotta virta voisi kulkea jatkuvasti piirissä, tarvitaan kaksi tekijää: suljettu piiri ja potentiaaliero (jännite). Pelkkä suuri resistanssi tai ainoastaan kondensaattori eivät riitä, vaan tarvitaan aktiivinen energialähde, joka ylläpitää potentiaalieroa."
     },
     {
+      "title": "14. Jännitemittaus piirissä",
       "image": "./images/14.png",
-      "question": "Mihin nähden piirissä jännitteet yleensä mitataan?",
-      "options": [
-        "Maahan/earth-referenssiin",
-        "Satunnaiseen pisteeseen",
-        "Johdon pituuteen",
-        "Virtalähteen sisäiseen vastukseen"
-      ],
-      "correct": "Maahan/earth-referenssiin"
+      "text": "Sähköpiireissä jännitteet mitataan yleensä maahan/earth-referenssiin nähden. Satunnaiseen pisteeseen mittaaminen voi tuottaa sekavia tuloksia. Tämän takia on tärkeä valita selkeä referenssipiste (yleensä maadoitus) ennen mittaamista."
     },
     {
+      "title": "15. Jännitemerkit ja suunta",
       "image": "./images/15.png",
-      "question": "Mitä nuoli jännitemerkinnässä kuvaa?",
-      "options": [
-        "Pään jännite häntään nähden",
-        "Virran suuntaa",
-        "Tehon kulkusuuntaa",
-        "Maadoituksen sijaintia"
-      ],
-      "correct": "Pään jännite häntään nähden"
+      "text": "Jännitemerkintöjen nuoli kuvaa pään jännitettä häntään nähden. Se on tavalla, jonka valitsemme esittää jännitteen suunnan piirissä. Tämä merkintätapa auttaa välttämään sekavuutta monimutkaisisissa piireissä ja tekee laskelmista yhdenmukaisempia."
     },
     {
+      "title": "16. Vaihtovirta (AC) ja tasavirta (DC)",
       "image": "./images/16.png",
-      "question": "Miten vaihtovirta (AC) eroaa tasavirrasta (DC)?",
-      "options": [
-        "AC vaihtaa suuntaa jaksollisesti, DC ei",
-        "AC ei tarvitse jännitelähdettä",
-        "DC vaihtaa suuntaa, AC ei",
-        "AC kulkee vain superjohteessa"
-      ],
-      "correct": "AC vaihtaa suuntaa jaksollisesti, DC ei"
+      "text": "Tasavirta (DC) kulkee aina samaan suuntaan, kun taas vaihtovirta (AC) vaihtaa suuntaa jaksollisesti. AC-virran etuja ovat pitkien matkojen tehokas siirto, kun taas DC-virtaa käytetään usein akkujen ja elektronisten laitteiden kanssa. Molemmat tarvitsevat jännitelähdettä toimiakseen."
     },
     {
+      "title": "17. Energia kondensaattorissa",
       "image": "./images/17.png",
-      "question": "Mihin energia varastoituu kondensaattorissa?",
-      "options": [
-        "Sähkökenttään",
-        "Magneettikenttään",
-        "Lämpöön",
-        "Mekaaniseen energiaan"
-      ],
-      "correct": "Sähkökenttään"
+      "text": "Kondensaattori varastoi energiaa sähkökenttään, ei magneettikenttään, lämpöön tai mekaaniseen energiaan. Kondensaattorin energia voidaan muuntaa takaisin sähköenergiaksi, kun se purkaantuu. Tämä tekee kondensaattoreista hyödyllisiä energian välivarastoina sovelluksissa."
     },
     {
+      "title": "18. Ohmin lain soveltaminen",
       "image": "./images/18.png",
-      "question": "Mikä yhtälö kuvaa Ohmin lakia?",
-      "options": [
-        "V = I × R",
-        "V = I + R",
-        "V = R / I",
-        "V = I^2 × R"
-      ],
-      "correct": "V = I × R"
+      "text": "Ohmin lain perusyhtälö on V = I × R. Tämä yhtälö pätee sekä DC- että AC-piireille tasasuuntaisen vastarintayhtälön osalta. Se on perusta sähkövirtojen ja jännitteiden laskemiselle piireissä ja sen hallitseminen on välttämätöntä elektronikon työlle."
     },
     {
+      "title": "19. Kirchhoffin virtalaki",
       "image": "./images/19.png",
-      "question": "Mitä Kirchhoffin virtalaki sanoo solmupisteestä?",
-      "options": [
-        "Sisään tulevien ja lähtevien virtojen summa on nolla",
-        "Jännitteet solmupisteessä ovat yhtä suuret",
-        "Teho on vakio kaikissa haaroissa",
-        "Resistanssien summa on nolla"
-      ],
-      "correct": "Sisään tulevien ja lähtevien virtojen summa on nolla"
+      "text": "Kirchhoffin virtalaki (KCL) sanoo, että solmupisteeseen sisään tulevien ja sieltä ulos lähtevien virtojen summa on nolla. Virta ei voi kadota tai ilmestyä tyhjästä – se on varauksen säilymisen periaatteen soveltaminen. Tämä laki on ratkaiseva verkon analyysissä."
     },
     {
+      "title": "20. Kirchhoffin jännitelaki",
       "image": "./images/20.png",
-      "question": "Mitä Kirchhoffin jännitelaki sanoo silmukasta?",
-      "options": [
-        "Jännitteiden algebrallinen summa silmukassa on nolla",
-        "Virtojen summa silmukassa on nolla",
-        "Silmukan resistanssit ovat yhtäsuuret",
-        "Teho on sama jokaisessa komponentissa"
-      ],
-      "correct": "Jännitteiden algebrallinen summa silmukassa on nolla"
+      "text": "Kirchhoffin jännitelaki (KVL) sanoo, että jännitteiden algebrallinen summa suljetussa silmukassa on nolla. Silmukan resistanssit eivät ole yhtäsuuret ja teho ei ole sama jokaisessa komponentissa. Tämä laki perustuu energian säilymisen periaatteeseen."
     },
     {
+      "title": "21. Tehohäviö resistorissa",
       "image": "./images/21.png",
-      "question": "Mikä kaava antaa vastuksen tehohäviön jännitteen avulla?",
-      "options": [
-        "P = V^2 / R",
-        "P = V × R",
-        "P = R / V",
-        "P = V + R"
-      ],
-      "correct": "P = V^2 / R"
+      "text": "Vastuksen tehohäviö lasketaan kaavalla P = V² / R, missä P on teho, V on jännite ja R on vastus. Vaihtoehtoisesti P = I² × R tai P = V × I. Vastukset muuttavat sähköenergiaa lämmöksi, ja tehohäviö määrittää, kuinka kuuma vastus kuumenee."
     },
     {
+      "title": "22. Rinnankytkettyjen vastusten kokonaisvastus",
       "image": "./images/22.png",
-      "question": "Mikä on oikea kaava rinnankytkettyjen vastusten kokonaisvastukselle?",
-      "options": [
-        "1/R = 1/R1 + 1/R2 + 1/R3",
-        "R = R1 + R2 + R3",
-        "R = R1 × R2 × R3",
-        "R = (R1 + R2)/2"
-      ],
-      "correct": "1/R = 1/R1 + 1/R2 + 1/R3"
+      "text": "Kun resistoreita kytketään rinnan, kokonaisvastus lasketaan käänteisarvojen summasta: 1/R = 1/R1 + 1/R2 + 1/R3. Tämä ei ole sama kuin arvojen summa (R1 + R2 + R3) tai niiden tulo. Rinnankytkettyjen vastusten kokonaisvastus on aina pienempi kuin pienimmän vastuksen arvo."
     },
     {
+      "title": "23. Jännitejaon periaate",
       "image": "./images/23.png",
-      "question": "Miten jännitejaon (potential divider) ulostulojännite riippuu R2:sta?",
-      "options": [
-        "Suoraan verrannollinen R2:een",
-        "Suoraan verrannollinen R1:een",
-        "Riippumaton R2:sta",
-        "Kasvaa kun R2 pienenee"
-      ],
-      "correct": "Suoraan verrannollinen R2:een"
+      "text": "Jännitejaossa (potential divider) ulostulojännite on suoraan verrannollinen sarjakytkennän toiseen vastukseen (R2). Kaava on V_out = V_in × R2 / (R1 + R2). Jännitejaon avulla voidaan säätää jännitteitä haluttuihin tasoihin kompleksisten piirien sisällä."
     },
     {
+      "title": "24. Jännitejaon esimerkki 1",
       "image": "./images/24.png",
-      "question": "Paljonko on ulostulojännite esimerkissä (V1=10V, R1=200, R2=300)?",
-      "options": [
-        "6V",
-        "4V",
-        "8V",
-        "10V"
-      ],
-      "correct": "6V"
+      "text": "Kun tulosähköjännite on 10V ja resistanssit ovat R1=200Ω ja R2=300Ω, ulostulojännite R2 yli on V_out = 10V × 300 / (200 + 300) = 10V × 300 / 500 = 6V. Tämä esimerkki näyttää, kuinka jännite jakautuu vastuksien väillä."
     },
     {
+      "title": "25. Jännitejaon esimerkki 2",
       "image": "./images/25.png",
-      "question": "Paljonko on ulostulojännite esimerkissä (V1=15V, V2=3V, R1=1000, R2=500)?",
-      "options": [
-        "7V",
-        "10V",
-        "5V",
-        "12V"
-      ],
-      "correct": "7V"
+      "text": "Monimutkaisemmassa esimerkissä, jossa V1=15V, V2=3V, R1=1000Ω ja R2=500Ω, voidaan laskea nettojännite ja sen jälkeen jännitejaon tulos. Tämä osoittaa, kuinka useat jännitelähteet ja vastukset voidaan yhdistää yhteen piiriin."
     },
     {
+      "title": "26. Taajuus ja jaksonaika",
       "image": "./images/26.png",
-      "question": "Mikä on taajuuden f ja jaksonajan T välinen yhteys?",
-      "options": [
-        "f = 1 / T",
-        "f = T",
-        "f = T^2",
-        "f = 2T"
-      ],
-      "correct": "f = 1 / T"
+      "text": "Taajuuden f ja jaksonajan T välillä on käänteinen suhde: f = 1 / T. Jos jaksonautaika on 1 sekunti, taajuus on 1 Hz. Taajuus mitataan hertseinä (Hz), ja se kertoo, kuinka monta jaksoa signaalit tekevät sekunnissa."
     },
     {
+      "title": "27. Piirrosmerkit ja niiden tarkoitus",
       "image": "./images/27.png",
-      "question": "Mitä varten piirrosmerkkejä käytetään?",
-      "options": [
-        "Yhtenäiseen komponenttien esittämiseen",
-        "Estämään virran kulku",
-        "Vähentämään jännitettä",
-        "Laskemaan taajuutta"
-      ],
-      "correct": "Yhtenäiseen komponenttien esittämiseen"
+      "text": "Piirrosmerkkejä (circuit symbols) käytetään yhtenäiseen komponenttien esittämiseen. Ne eivät estä virran kulkua, vähennä jännitettä tai laske taajuutta – ne ovat yksinkertaisesti standardoituja tapoja piirtää komponentteja. Jokainen merkki edustaa tiettyä komponenttia, kuten vastusta, kondensaattoria tai diodia."
     },
     {
+      "title": "28. Piirrosmerkkien merkitys",
       "image": "./images/28.png",
-      "question": "Miksi piirrosmerkit ovat tärkeitä suunnittelussa?",
-      "options": [
-        "Nopea ja yksiselitteinen kommunikointi",
-        "Lisäävät piirin tehoa",
-        "Muuttavat jännitteen taajuutta",
-        "Korvaavat komponenttien mitoituksen"
-      ],
-      "correct": "Nopea ja yksiselitteinen kommunikointi"
+      "text": "Piirrosmerkit ovat tärkeitä suunnittelussa, koska ne mahdollistavat nopean ja yksiselitteisen kommunikoinnin insinöörien ja teknikkojen välillä. Standardisoidut merkit varmiststavat, että kuka tahansa voi lukea ja ymmärtää piirikaavioita ympäri maailmaa. Ne eivät kuitenkaan vaikuta suoraan piirin tehoon, taajuuteen tai mitoitukseen."
     },
     {
+      "title": "29. Yleisiä oppimisvaikeuksia",
       "image": "./images/29.png",
-      "question": "Mikä aiheuttaa tyypillisesti eniten hankaluuksia opiskelijoille?",
-      "options": [
-        "Jännitejaot (potential dividers)",
-        "Johdon väri",
-        "Virtalähteiden liitäntä",
-        "Komponenttien pakkaus"
-      ],
-      "correct": "Jännitejaot (potential dividers)"
+      "text": "Jännitejaot (potential dividers) aiheuttavat tyypillisesti eniten hankaluuksia opiskelijoille. Johdon väri, virtalähteiden liitäntä ja komponenttien pakkaus ovat usein pienempiä ongelmia. Jännitejaon ymmärtäminen on tärkeää, koska se on keskeinen periaate jännitteen manipulointiin piireissä."
     },
     {
+      "title": "30. Oppimisen jatkaminen",
       "image": "./images/30.png",
-      "question": "Mitä suositellaan, jos jokin aihe tuntuu epävarmalta?",
-      "options": [
-        "Kertaa materiaalit ennen seuraavaa luentoa",
-        "Ohita aiheet",
-        "Laske kaikki vastukset nollaan",
-        "Vaihda aiheen ulkopuolelle"
-      ],
-      "correct": "Kertaa materiaalit ennen seuraavaa luentoa"
+      "text": "Jos jokin aihe tuntuu epävarmalta, suositellaan materiaalien kertaamista ennen seuraavaa luentoa. Aiheita ei kannata ohittaa, koska neistä tulee pohja myöhemmälle oppimiselle. Säännöllinen harjoittelu ja kertaaminen varmistavat, että peruskäsitteet jäävät mieleesi."
     },
     {
+      "title": "31. Sähköpiirin peruskomponentit käytännössä",
       "image": "./images/31.png",
-      "question": "Mitä kuva osoittaa sähköpiirin toiminnasta?",
-      "options": [
-        "Sähköpiirin peruskomponentit ja niiden vuorovaikutus",
-        "Vain vastuksen vastustus",
-        "Ainoastaan LED:n valaistus",
-        "Jännitelähteen sisäinen rakenne"
-      ],
-      "correct": "Sähköpiirin peruskomponentit ja niiden vuorovaikutus"
+      "text": "Kuva osoittaa sähköpiirin peruskomponenttien toimintaa ja niiden vuorovaikutusta. Se ei näytä vain yhden komponentin (kuten vastuksen) vastustusta, ainoastaan LED:n valaistusta tai jännitelähteen sisäistä rakennetta. Se on kattava näkemys siitä, kuinka piiri toimii kokonaisuutena."
     },
     {
+      "title": "32. Piirin peruselementit",
       "image": "./images/32.png",
-      "question": "Mitkä ovat opetusmateriaaliossa esitetyt piirin peruselementit?",
-      "options": [
-        "Jännitelähde, johdotus, komponentit ja sulkija",
-        "Vain vastukset",
-        "Pelkkä LED",
-        "Ainoastaan kondensaattori"
-      ],
-      "correct": "Jännitelähde, johdotus, komponentit ja sulkija"
+      "text": "Opetusmateriaaleissa esitetyt piirin peruselementit ovat jännitelähde (virran energialähde), johdotus (kuljettaa virtaa), komponentit (vastukset, LED:t, jne.) ja sulkija (kytkin virtaa ohjaavaksi). Nämä neljä elementtiä ovat jokaisen toimivan sähköpiirin rakennuspalat."
     },
     {
+      "title": "33. Piirin potentiaalit",
       "image": "./images/33.png",
-      "question": "Mitä piirin potentiaalit (potentials) kuvaavat?",
-      "options": [
-        "Jännitteet eri pisteissä piirissä",
-        "Virran voimakkuus johdin-osassa",
-        "Resistanssin arvon muutos",
-        "Komponenttien fysikaalinen sijainti"
-      ],
-      "correct": "Jännitteet eri pisteissä piirissä"
+      "text": "Piirin potentiaalit kuvaavat jännitteitä eri pisteissä piirissä. Ne eivät kuvaa virran voimakkuutta yksittäisessä osassa, resistanssin arvon muutosta tai komponenttien fysikaalista sijaintia. Potentiaalidiagrammi näyttää, kuinka jännite muuttuu piirin eri kohdissa."
     },
     {
+      "title": "34. Energian muunnokset",
       "image": "./images/34.png",
-      "question": "Mitä energian muunnokset sähköpiirissä tarkoittavat?",
-      "options": [
-        "Sähköenergia muuntuu muiksi energiamuodoiksi (lämpö, valo, mekaaninen)",
-        "Energia häviää kokonaan",
-        "Energia pysyy aina samana",
-        "Vain sähköenergia on olemassa"
-      ],
-      "correct": "Sähköenergia muuntuu muiksi energiamuodoiksi (lämpö, valo, mekaaninen)"
+      "text": "Sähköpiireissä energia muuntuu jatkuvasti: sähköenergia muuntuu lämmöksi (vastuksissa), valoksi (LED:ssä) tai mekaaniseksi energiaksi (moottoreissa). Energia ei häviä kokonaan eikä pysy aina samana – se muuttaa muotoaan. Tämä on soveltamista energian säilymisen lakiin."
     },
     {
+      "title": "35. Käytännön komponentit ja laboratoriovälineet",
       "image": "./images/35.png",
-      "question": "Mitä käytännön komponentteja kuvassa näkyy sähköpiirin rakentamiseen?",
-      "options": [
-        "Arduino, breadboard, voltmittari, vastus, LED ja kytkin",
-        "Pelkkä Arduino",
-        "Vain LED ja vastus",
-        "Ainoastaan kytkin"
-      ],
-      "correct": "Arduino, breadboard, voltmittari, vastus, LED ja kytkin"
-    },
-    {
-      "image": "./images/35.png",
-      "question": "Mihin breadboard käytetään piirin kokeilijoissa?",
-      "options": [
-        "Komponenttien väliaikaisen kytkentään ilman juottamista",
-        "Pysyvien piirin rakentamiseen",
-        "Ainoastaan virtalähteen säilytykseen",
-        "LED:n valaisemiseen"
-      ],
-      "correct": "Komponenttien väliaikaisen kytkentään ilman juottamista"
+      "text": "Käytännön sähköpiirin rakentamiseen tarvitaan useita komponentteja ja välineitä: Arduino (ohjausyksikkö), breadboard (väliaikainen kytkentäalusta), voltmittari (jännitteen mittaus), vastus (sähkövirran rajoitus), LED (näkyvä indikaattori) ja kytkin (virtaa ohjataksi). Breadboardia käytetään komponenttien väliaikaiseen kytkentään ilman juottamista, mikä tekee prototypoinnista nopeaa ja helppoa."
     }
-  
   ]
 }
