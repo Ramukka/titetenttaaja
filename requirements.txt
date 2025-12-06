@@ -1,1 +1,13 @@
+# TiTeTenttaaja - Python riippuvuudet
+
+# Komentorivikäyttöliittymä
 rich>=13.7
+
+# PDF-kuvien käsittely
+pdf2image>=1.16.0
+Pillow>=10.0.0
+
+# Huom: pdf2image vaatii myös Poppler-kirjaston asennuksen:
+# Windows: winget install oschwartz10612.Poppler
+# Linux: sudo apt-get install poppler-utils
+# macOS: brew install poppler

@@ -135,11 +135,33 @@ def gather_entries(tent_files: Iterable[Path]) -> List[Entry]:
 
 
 def copy_to_web(source_dir: Path, target_dir: Path) -> None:
-    """Kopioi tenttitiedostot WEB/tentit -kansioon."""
+    """Kopioi tenttitiedostot ja images-kansion WEB/tentit -kansioon."""
     target_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Kopioi JSON-tiedostot
+    json_count = 0
     for file in source_dir.glob("*.json"):
         shutil.copy2(file, target_dir / file.name)
-    print(f"✅ Kopioitu {len(list(source_dir.glob('*.json')))} tiedostoa → {target_dir}")
+        json_count += 1
+    print(f"✅ Kopioitu {json_count} JSON-tiedostoa → {target_dir}")
+    
+    # Kopioi images-kansio rekursiivisesti
+    source_images = source_dir / "images"
+    target_images = target_dir / "images"
+    
+    if source_images.exists() and source_images.is_dir():
+        # Poista vanha images-kansio WEB:stä ja kopioi uusi
+        if target_images.exists():
+            shutil.rmtree(target_images)
+        shutil.copytree(source_images, target_images)
+        
+        # Laske kuvatiedostot
+        image_count = sum(1 for _ in target_images.rglob("*.png")) + \
+                      sum(1 for _ in target_images.rglob("*.jpg")) + \
+                      sum(1 for _ in target_images.rglob("*.jpeg"))
+        print(f"📁 Kopioitu images-kansio ({image_count} kuvaa) → {target_images}")
+    else:
+        print("⚠️ images-kansiota ei löytynyt, ohitetaan")
 
 
 def main() -> None:
