@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>README – TiTeTenttaaja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #181c20;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem 1rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffecb3;
+      margin-top: 2.2em;
+      margin-bottom: 0.7em;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    a { color: #90caf9; text-decoration: underline; }
+    .toc {
+      background: #23272e;
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      margin-bottom: 2em;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .toc-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      color: #ffe082;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li {
+      margin: 0.2em 0;
+    }
+    .accordion-section {
+      margin-bottom: 1.2em;
+      border-radius: 6px;
+      background: #23272e;
+      box-shadow: 0 1px 4px #0002;
+      overflow: hidden;
+    }
+    .accordion-header {
+      cursor: pointer;
+      padding: 1em 1.2em;
+      font-size: 1.1em;
+      background: #23272e;
+      border: none;
+      outline: none;
+      color: #ffe082;
+      font-weight: 600;
+      transition: background 0.2s;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .accordion-header:hover {
+      background: #2c313a;
+    }
+    .accordion-header .arrow {
+      transition: transform 0.2s;
+      font-size: 1.2em;
+    }
+    .accordion-header.open .arrow {
+      transform: rotate(90deg);
+    }
+    .accordion-content {
+      display: none;
+      padding: 1em 1.5em 1.2em 1.5em;
+      background: #23272e;
+      color: #e0e0e0;
+      border-top: 1px solid #333;
+      animation: fadeIn 0.3s;
+    }
+    .accordion-content.open {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    code, pre {
+      background: #22262b;
+      color: #ffe082;
+      border-radius: 4px;
+      font-family: 'Fira Mono', 'Consolas', monospace;
+      font-size: 0.98em;
+    }
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+    blockquote {
+      border-left: 4px solid #90caf9;
+      background: #1a1e23;
+      color: #b0c4d4;
+      margin: 1em 0;
+      padding: 0.7em 1.2em;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      background: #23272e;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 0.5em 0.8em;
+      text-align: left;
+    }
+    th {
+      background: #1a1e23;
+      color: #ffe082;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1rem 0.2rem 2rem 0.2rem; }
+      .accordion-header, .accordion-content { padding-left: 0.7em; padding-right: 0.7em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sisällysluettelo poistettu -->
+    <div id="accordion"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Utility: Slugify string for id
+    function slugify(text) {
+      return text.toLowerCase().replace(/[^a-z0-9äöå\- ]/gi, '').replace(/\s+/g, '-');
+    }
+
+    fetch('README.md')
+      .then(r => r.text())
+      .then(md => buildAccordion(md))
+      .catch(() => {
+        document.getElementById('accordion').innerHTML = '<p style="color:red">README.md-tiedostoa ei löytynyt WEB-kansiosta.</p>';
+      });
+
+    function buildAccordion(md) {
+      // Split markdown into sections by H2 (##)
+      const sectionRegex = /(^|\n)(## .+?)(?=\n## |$)/gs;
+      const matches = [...md.matchAll(sectionRegex)];
+      let sections = [];
+      // Add H1 (main title) at the top
+      let html = '';
+      const h1Match = md.match(/^# (.+)/);
+      if (h1Match) {
+        html += `<h1>${h1Match[1]}</h1>`;
+      }
+      // Kerää kaikki H2-osiot taulukkoon
+      for (const match of matches) {
+        const section = match[0];
+        const h2Match = section.match(/^## (.+)/m);
+        if (!h2Match) continue;
+        const title = h2Match[1].trim();
+        const id = slugify(title);
+        // Remove the first H2 from section for content
+        const contentMd = section.replace(/^## .+\n/, '');
+        const contentHtml = marked.parse(contentMd);
+        sections.push({title, id, contentHtml});
+      }
+      // Järjestetään osiot: Poista Sisällysluettelo, Tiivistelmä ensin
+      const findIndex = (arr, title) => arr.findIndex(s => s.title.trim() === title);
+      const tocIdx = findIndex(sections, 'Sisällysluettelo');
+      const ohjeetIdx = findIndex(sections, 'OHJEET FORKKAAJILLE');
+      let ordered = [];
+      
+      // Lisää kaikki paitsi Sisällysluettelo
+      sections.forEach((s, i) => {
+        if (i !== tocIdx) ordered.push(s);
+      });
+      
+      // Siirrä OHJEET FORKKAAJILLE kolmanneksi
+      if (ohjeetIdx !== -1 && ohjeetIdx !== tocIdx) {
+        const ohjeetItem = ordered.find(s => s.title === 'OHJEET FORKKAAJILLE');
+        if (ohjeetItem) {
+          ordered = ordered.filter(s => s.title !== 'OHJEET FORKKAAJILLE');
+          if (ordered.length >= 2) {
+            ordered.splice(2, 0, ohjeetItem);
+          }
+        }
+      }
+
+      // Yksi pulldown-valikko (select)
+      let selectHtml = '<label for="readme-section-select" style="font-weight:bold;color:#ffe082;">Valitse osio:</label> ';
+      selectHtml += '<select id="readme-section-select" style="margin:0.5em 0 1.5em 0;font-size:1.1em;padding:0.2em 0.7em;border-radius:5px;background:#23272e;color:#ffe082;border:1px solid #333;">';
+      ordered.forEach((s, idx) => {
+        selectHtml += `<option value="${s.id}">${s.title}</option>`;
+      });
+      selectHtml += '</select>';
+
+      // Näytä vain valittu osio
+      let allSectionsHtml = '';
+      ordered.forEach((s, idx) => {
+        allSectionsHtml += `
+          <div class="accordion-section" id="section-${s.id}" style="display:${idx===0?'block':'none'};">
+            <div class="accordion-content open" id="content-${s.id}">
+              ${s.contentHtml}
+            </div>
+          </div>
+        `;
+      });
+      document.getElementById('accordion').innerHTML = selectHtml + allSectionsHtml;
+
+      // Vaihda näkyvä osio selectistä
+      const select = document.getElementById('readme-section-select');
+      select.addEventListener('change', function() {
+        ordered.forEach((s, idx) => {
+          const sectionDiv = document.getElementById('section-' + s.id);
+          if (s.id === select.value) {
+            sectionDiv.style.display = 'block';
+            setTimeout(() => sectionDiv.scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
+          } else {
+            sectionDiv.style.display = 'none';
+          }
+        });
+      });
+
+      // Sisällysluettelo poistettu, ei TOC-linkkejä
+    }
+  </script>
+</body>
+</html>
